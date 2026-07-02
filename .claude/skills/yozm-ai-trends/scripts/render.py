@@ -132,7 +132,7 @@ def build_card(article, idx, cat_labels, streak=1):
     chips = paper_tags(article)[:6]
     chips_html = "".join(f'<span class="chip">{esc(c)}</span>' for c in chips)
 
-    one = an.get("one_liner") or first_sentence(raw.get("summary")) or esc(article.get("title"))
+    one = an.get("one_liner") or first_sentence(raw.get("summary")) or article.get("title")
     oneliner = esc(one)
 
     body_html = f'<p>{esc(an.get("summary_ko") or raw.get("summary") or "")}</p>'
