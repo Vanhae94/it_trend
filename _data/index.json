@@ -1,101 +1,44 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-02T20:28:13+09:00",
+  "generated_at": "2026-07-02T21:02:56+09:00",
   "weeks_covered": [
     "2026-W27"
   ],
   "category_timeseries": {
-    "(미분류)": {
-      "2026-W27": 3
+    "ai-coding": {
+      "2026-W27": 2
+    },
+    "ai-agents": {
+      "2026-W27": 1
+    },
+    "ways-of-working": {
+      "2026-W27": 2
     }
   },
   "keyword_freq": {
     "claude-code": {
-      "count": 3,
+      "count": 4,
       "weeks": [
         "2026-W27"
       ],
       "first_seen": "2026-W27"
     },
     "coding-agent": {
-      "count": 3,
+      "count": 4,
       "weeks": [
         "2026-W27"
       ],
       "first_seen": "2026-W27"
     },
-    "opus4.7": {
+    "llm": {
       "count": 1,
       "weeks": [
         "2026-W27"
       ],
       "first_seen": "2026-W27"
     },
-    "gpt-5.5": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "anthropic": {
+    "prompt": {
       "count": 2,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "openai": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "코덱스": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "코딩에이전트": {
-      "count": 3,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "코딩에이전트비교": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "코딩에이전트추천": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "ai코딩": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "ai코딩도구": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "바이브": {
-      "count": 1,
       "weeks": [
         "2026-W27"
       ],
@@ -108,105 +51,14 @@
       ],
       "first_seen": "2026-W27"
     },
-    "groq": {
-      "count": 1,
+    "ai-agent": {
+      "count": 2,
       "weeks": [
         "2026-W27"
       ],
       "first_seen": "2026-W27"
     },
-    "클로드": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "앤트로픽": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "오픈소스llm": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "로컬llm": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "오픈소스모": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "manus": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "genspark": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "antigravity": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "claudecowork": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "ai에이전트": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "자율에이전트": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "웹에이전트": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "컴퓨터유즈": {
-      "count": 1,
-      "weeks": [
-        "2026-W27"
-      ],
-      "first_seen": "2026-W27"
-    },
-    "바이브코": {
+    "productivity": {
       "count": 1,
       "weeks": [
         "2026-W27"
@@ -253,7 +105,7 @@
     ]
   },
   "view_timeseries": {
-    "2026-W27": 82367
+    "2026-W27": 116995
   },
   "ai_share_timeseries": {
     "2026-W27": 0.9
@@ -262,22 +114,22 @@
     "2026-W27": {
       "month_folder": "2026.06",
       "date_range_ko": "2026-06-29 ~ 2026-07-05",
-      "selected_count": 3,
+      "selected_count": 5,
       "pool_ai_share": 0.9,
-      "total_views": 82367,
+      "total_views": 116995,
       "top_tags": [
         "claude-code",
         "coding-agent",
-        "코딩에이전트",
-        "anthropic",
-        "ai에이전트"
+        "ai-agent",
+        "prompt",
+        "llm"
       ],
-      "headline_ko": "",
-      "analyzed": false
+      "headline_ko": "Claude Code 독주에 처음 균열 — 도구 이탈과 대안 모색이 이번 주 AI 코딩 논의를 지배하다",
+      "analyzed": true
     }
   },
   "totals": {
-    "selected": 3,
+    "selected": 5,
     "weeks": 1
   }
 }

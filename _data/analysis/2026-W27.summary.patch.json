@@ -1,0 +1,23 @@
+{
+  "week_id": "2026-W27",
+  "week_summary": {
+    "headline_ko": "Claude Code 독주에 처음 균열 — 도구 이탈과 대안 모색이 이번 주 AI 코딩 논의를 지배하다",
+    "clusters": [
+      {
+        "category": "ai-coding",
+        "article_ranks": [1, 2],
+        "theme_ko": "Claude Code의 토큰 부담·사용량 제한을 계기로 Codex, 오픈소스 모델(Ollama·DeepSeek·Qwen) 등 대안 도구로 눈을 돌리는 흐름"
+      },
+      {
+        "category": "ways-of-working",
+        "article_ranks": [4, 5],
+        "theme_ko": "AI 도구를 활용해 개인 컨텍스트(LLM 위키)와 업무 방식을 재설계하는 프로덕트 메이커·1인 빌더의 시도"
+      }
+    ],
+    "emerging_keywords": [],
+    "narrative_ko": "이번 주 요즘IT 인기 글 상위 20개 중 18개(90%)가 AI를 다뤘고, 그중 상위 5개를 선별한 결과 'claude-code'와 'coding-agent' 태그가 각각 4회로 가장 많이 등장했습니다. 조회수 1·2위 글이 나란히 Claude Code의 토큰 부담과 사용량 제한 문제, 그리고 Codex·오픈소스 모델로의 이탈을 다뤄, 코딩 에이전트 시장에서 한 도구의 독주 구도가 흔들리고 있다는 신호가 조회수로도 뒷받침됩니다. 동시에 에이전트 생태계 전반을 정리하는 콘텐츠(3786)와 개인 컨텍스트 관리·프로덕트 메이커 커리어를 다루는 콘텐츠(3792, 3776)가 뒤를 이어, 도구 선택 자체보다 'AI를 일상 워크플로에 어떻게 녹일 것인가'라는 실무 질문으로 관심이 넓어지는 모습입니다.",
+    "recent_trend_ko": "기준선 수립 중 — 비교 데이터 없음",
+    "ai_share_note": "이번 주 인기 20개 중 AI 18개(90%)",
+    "caveats_ko": "요즘IT 인기 목록의 AI 관련 상위 글 기준 · view_count는 누적 조회수(관심도)로 중요도와 다를 수 있음 · 표본 5개"
+  }
+}
