@@ -70,7 +70,7 @@ def fetch_json(url, retries=2, timeout=20):
             last_err = e
             if attempt < retries:
                 time.sleep(2 ** attempt)
-    print(f"FETCH_ERROR {type(last_err).__name__}: {last_err}", file=sys.stderr)
+    print(f"FETCH_ERROR: {type(last_err).__name__}: {last_err}", file=sys.stderr)
     sys.exit(2)
 
 
@@ -102,7 +102,15 @@ def display_category(cats):
     non_ai = next((c.get("name") for c in cats if c.get("flag") != "ai" and c.get("name")), None)
     if non_ai:
         return non_ai
-    return cats[0].get("name") if cats else ""
+    return (cats[0].get("name") or "") if cats else ""
+
+
+def build_pool_stats(popular_fetched, ai_in_pool):
+    return {
+        "popular_fetched": popular_fetched,
+        "ai_in_pool": ai_in_pool,
+        "pool_ai_share": round(ai_in_pool / popular_fetched, 3) if popular_fetched else 0,
+    }
 
 
 def flatten(item, detail, rank):
@@ -187,7 +195,7 @@ def main():
 
     pool_items = collect_pool(args.pages)
     ai_items = filter_ai(pool_items)
-    ranked = rank_by_view(ai_items)[:args.pool]
+    ranked = rank_by_view(ai_items)[:max(0, args.pool)]
 
     # 원본 박제(감사·재현용)
     with open(raw_path, "w", encoding="utf-8") as f:
@@ -210,11 +218,7 @@ def main():
         "month_folder": month_folder_for_week(week_id),
         "collected_at": now,
         "source": f"yozm articleListApi?category=popular (pages={args.pages}) + fetchContentsDetail",
-        "pool_stats": {
-            "popular_fetched": popular_fetched,
-            "ai_in_pool": ai_in_pool,
-            "pool_ai_share": round(ai_in_pool / popular_fetched, 3) if popular_fetched else 0,
-        },
+        "pool_stats": build_pool_stats(popular_fetched, ai_in_pool),
         "articles": articles,
         "week_summary": None,
     }

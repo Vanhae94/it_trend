@@ -21,6 +21,20 @@ def test_filter_ai_only_keeps_ai_flagged():
     for it in ai:
         assert any(c.get("flag") == "ai" for c in (it.get("category") or []))
 
+def test_pool_stats_zero_division():
+    assert ft.build_pool_stats(0, 0)["pool_ai_share"] == 0        # no ZeroDivisionError
+    assert ft.build_pool_stats(20, 18)["pool_ai_share"] == 0.9
+
+def test_filter_ai_excludes_non_ai_and_empty():
+    items = [
+        {"id": 1, "category": [{"flag": "develop"}]},
+        {"id": 2, "category": [{"flag": "ai"}]},
+        {"id": 3, "category": []},
+    ]
+    kept = ft.filter_ai(items)
+    assert [it["id"] for it in kept] == [2]
+    assert ft.filter_ai([]) == []
+
 def test_rank_by_view_desc():
     items = load("list_popular.json")["data"]["results"]
     ranked = ft.rank_by_view(items)
