@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "description": "요즘IT AI 트렌드 분석용 폐쇄형 분류 체계. 주차 간 비교를 위해 카테고리는 고정 목록만 사용한다. keyword_aliases는 신규 키워드 등장 시 누적 관리.",
+  "primary_categories": [
+    { "key": "ai-coding",        "label_ko": "AI 코딩·개발도구", "scope_ko": "바이브코딩, 코딩 에이전트, Copilot/Cursor/Claude Code, 코드 생성" },
+    { "key": "ai-agents",        "label_ko": "AI 에이전트·자동화", "scope_ko": "에이전트, 워크플로우, MCP, 툴 사용, 자동화" },
+    { "key": "models-llm",       "label_ko": "모델·LLM 동향", "scope_ko": "신모델 출시, 벤더 경쟁, 성능·벤치마크, 오픈소스 모델" },
+    { "key": "ai-product",       "label_ko": "AI 프로덕트·서비스", "scope_ko": "AI 기능 탑재 제품, SaaS, 기능 기획, AX" },
+    { "key": "ways-of-working",  "label_ko": "일하는 법·조직", "scope_ko": "팀 생산성, 프로세스, AI 도입, 협업" },
+    { "key": "career",           "label_ko": "커리어·직무", "scope_ko": "직무 변화, PM/개발/디자인 커리어, 생존 전략, 채용" },
+    { "key": "design-ux",        "label_ko": "디자인·UX", "scope_ko": "AI 시대 디자인, UX, 크리에이티브 도구" },
+    { "key": "data-infra",       "label_ko": "데이터·인프라", "scope_ko": "RAG, 벡터DB, 파인튜닝, 인프라, 데이터 파이프라인" },
+    { "key": "safety-risk",      "label_ko": "보안·리스크·윤리", "scope_ko": "AI 보안, 저작권, 규제, 신뢰성, 프라이버시" },
+    { "key": "business-market",  "label_ko": "비즈니스·시장", "scope_ko": "투자, 시장 동향, 전략, 수익화" }
+  ],
+  "category_rules": {
+    "max_categories_per_article": 2,
+    "primary_category_count": 1,
+    "note_ko": "기사당 categories는 최대 2개, primary_category는 정확히 1개. 무제한 허용 시 신호가 죽는다."
+  },
+  "article_type_axis": ["튜토리얼", "오피니언", "사례", "뉴스분석", "인터뷰"],
+  "keyword_aliases": {
+    "vibe-coding":     ["바이브코딩", "vibe coding", "바이브 코딩"],
+    "claude-code":     ["claudecode", "claude code", "클로드코드", "클로드 코드"],
+    "coding-agent":    ["코딩 에이전트", "coding agent", "code agent", "codex"],
+    "ai-agent":        ["에이전트", "agent", "agents", "ai agent", "멀티에이전트", "multi-agent", "multi agent"],
+    "mcp":             ["model context protocol", "엠씨피"],
+    "rag":             ["retrieval augmented generation", "retrieval-augmented", "검색 증강"],
+    "llm":             ["대규모 언어모델", "large language model", "언어모델"],
+    "prompt":          ["프롬프트", "prompting", "프롬프트 엔지니어링", "prompt engineering"],
+    "productivity":    ["생산성", "팀 생산성"],
+    "open-source-llm": ["오픈소스 모델", "오픈소스 llm", "open source llm", "ollama", "llama", "qwen", "deepseek"],
+    "security":        ["보안", "시큐리티"],
+    "fine-tuning":     ["파인튜닝", "fine tuning", "미세조정"]
+  }
+}

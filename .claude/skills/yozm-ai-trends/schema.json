@@ -1,0 +1,130 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "yozm-ai-trends/week.schema.json",
+  "title": "주차별 기사 분석 기록 (_data/weeks/YYYY-Wnn.json)",
+  "description": "fetch_trends.py가 raw + 골격을 생성하고, Claude가 selected/classify/analysis/learning/week_summary를 채운다. render.py가 이 파일로 HTML을 생성. raw는 절대 수정 금지(증거).",
+  "type": "object",
+  "required": ["schema_version", "week_id", "month_folder", "collected_at", "source", "articles"],
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "week_id": { "type": "string", "pattern": "^[0-9]{4}-W[0-9]{2}$" },
+    "date_range_ko": { "type": "string" },
+    "month_folder": { "type": "string", "pattern": "^[0-9]{4}\\.[0-9]{2}$" },
+    "collected_at": { "type": "string" },
+    "source": { "type": "string" },
+    "pool_stats": {
+      "type": "object",
+      "properties": {
+        "popular_fetched": { "type": "integer" },
+        "ai_in_pool": { "type": "integer" },
+        "pool_ai_share": { "type": "number" }
+      }
+    },
+    "articles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "url", "rank", "raw", "links"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "url": { "type": "string" },
+          "rank": { "type": "integer", "description": "pool 내 view_count 순위 1..N" },
+          "published_at": { "type": ["string", "null"] },
+          "category": { "type": "string", "description": "대표 카테고리 라벨(요즘IT)" },
+          "category_flags": { "type": "array", "items": { "type": "string" } },
+          "author": { "type": "string" },
+          "raw": {
+            "type": "object",
+            "description": "API 원본(평탄화). 불변.",
+            "properties": {
+              "summary": { "type": "string" },
+              "keywords": { "type": "array", "items": { "type": "string" } },
+              "body": { "type": "string", "description": "raw_content 평문 본문" },
+              "view_count": { "type": "integer" },
+              "read_time": { "type": "integer" },
+              "is_popular_news": { "type": "boolean" },
+              "category_flags": { "type": "array", "items": { "type": "string" } },
+              "date_published": { "type": ["string", "null"] }
+            }
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["rank", "label", "url"],
+              "properties": {
+                "rank": { "type": "integer" },
+                "label": { "type": "string" },
+                "url": { "type": "string" }
+              }
+            }
+          },
+          "selected": { "type": ["boolean", "null"], "description": "Claude가 이번 주 분석 대상(4~5개)에 true" },
+          "classify": {
+            "type": ["object", "null"],
+            "properties": {
+              "categories": { "type": "array", "maxItems": 2, "items": { "type": "string" } },
+              "primary_category": { "type": "string" },
+              "topic_tags": { "type": "array", "items": { "type": "string" } },
+              "article_type": { "type": "string" },
+              "confidence": { "type": "string", "enum": ["high", "medium", "low"] }
+            }
+          },
+          "analysis": {
+            "type": ["object", "null"],
+            "description": "1단계 분석(본문 기반, selected 전부).",
+            "properties": {
+              "one_liner": { "type": "string", "description": "40~70자 한 줄 핵심" },
+              "summary_ko": { "type": "string", "description": "2~3문장 요약" },
+              "key_points": { "type": "array", "items": { "type": "string" }, "description": "불릿 3~5" },
+              "why_now": { "type": "string", "description": "트렌드 관점 2~3문장" },
+              "so_what": { "type": "string", "description": "실무 시사점 2~3문장" },
+              "reader": { "type": "string" },
+              "field_tags": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "learning": {
+            "type": ["object", "null"],
+            "properties": {
+              "apply_points": { "type": "array", "items": { "type": "string" } },
+              "key_terms": {
+                "type": "array",
+                "items": { "type": "object", "properties": { "term": { "type": "string" }, "gloss": { "type": "string" } } }
+              },
+              "recall_quiz": { "type": "object", "properties": { "question": { "type": "string" }, "answer": { "type": "string" } } },
+              "spaced_review": { "type": "object", "properties": { "flag": { "type": "boolean" }, "review_due": { "type": ["string", "null"] } } }
+            }
+          },
+          "interest": {
+            "type": "object",
+            "properties": {
+              "view_count": { "type": "integer" },
+              "popular_rank": { "type": "integer" },
+              "weeks_on_popular": { "type": ["integer", "null"] }
+            }
+          }
+        }
+      }
+    },
+    "week_summary": {
+      "type": ["object", "null"],
+      "properties": {
+        "headline_ko": { "type": "string" },
+        "clusters": {
+          "type": "array",
+          "items": { "type": "object", "properties": {
+            "category": { "type": "string" },
+            "article_ranks": { "type": "array", "items": { "type": "integer" } },
+            "theme_ko": { "type": "string" }
+          } }
+        },
+        "emerging_keywords": { "type": "array", "items": { "type": "string" } },
+        "narrative_ko": { "type": "string" },
+        "recent_trend_ko": { "type": "string" },
+        "ai_share_note": { "type": "string" },
+        "caveats_ko": { "type": "string" }
+      }
+    }
+  }
+}
