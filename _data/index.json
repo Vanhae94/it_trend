@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-02T20:23:10+09:00",
+  "weeks_covered": [
+    "2026-W27"
+  ],
+  "category_timeseries": {
+    "(미분류)": {
+      "2026-W27": 3
+    }
+  },
+  "keyword_freq": {
+    "claude-code": {
+      "count": 3,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "coding-agent": {
+      "count": 3,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "opus4.7": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "gpt-5.5": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "anthropic": {
+      "count": 2,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "openai": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "코덱스": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "코딩에이전트": {
+      "count": 3,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "코딩에이전트비교": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "코딩에이전트추천": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "ai코딩": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "ai코딩도구": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "바이브": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "open-source-llm": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "groq": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "클로드": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "앤트로픽": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "오픈소스llm": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "로컬llm": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "오픈소스모": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "manus": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "genspark": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "antigravity": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "claudecowork": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "ai에이전트": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "자율에이전트": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "웹에이전트": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "컴퓨터유즈": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    },
+    "바이브코": {
+      "count": 1,
+      "weeks": [
+        "2026-W27"
+      ],
+      "first_seen": "2026-W27"
+    }
+  },
+  "article_weeks": {
+    "3771": [
+      "2026-W27"
+    ],
+    "3801": [
+      "2026-W27"
+    ],
+    "3786": [
+      "2026-W27"
+    ],
+    "3792": [
+      "2026-W27"
+    ],
+    "3776": [
+      "2026-W27"
+    ],
+    "3751": [
+      "2026-W27"
+    ],
+    "3756": [
+      "2026-W27"
+    ],
+    "3737": [
+      "2026-W27"
+    ],
+    "3758": [
+      "2026-W27"
+    ],
+    "3780": [
+      "2026-W27"
+    ],
+    "3767": [
+      "2026-W27"
+    ],
+    "3746": [
+      "2026-W27"
+    ]
+  },
+  "view_timeseries": {
+    "2026-W27": 82367
+  },
+  "ai_share_timeseries": {
+    "2026-W27": 0.9
+  },
+  "per_week": {
+    "2026-W27": {
+      "month_folder": "2026.06",
+      "date_range_ko": "2026-06-29 ~ 2026-07-05",
+      "selected_count": 3,
+      "pool_ai_share": 0.9,
+      "total_views": 82367,
+      "top_tags": [
+        "claude-code",
+        "coding-agent",
+        "코딩에이전트",
+        "anthropic",
+        "ai에이전트"
+      ],
+      "headline_ko": "",
+      "analyzed": false
+    }
+  },
+  "totals": {
+    "selected": 3,
+    "weeks": 1
+  }
+}
