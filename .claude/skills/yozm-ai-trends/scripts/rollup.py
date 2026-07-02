@@ -51,7 +51,7 @@ def article_tags(article, alias_map):
     if cls and cls.get("topic_tags"):
         tags = cls["topic_tags"]
     else:
-        tags = [normalize_kw(k, alias_map) for k in (article.get("raw", {}).get("keywords") or [])]
+        tags = [normalize_kw(k, alias_map) for k in ((article.get("raw") or {}).get("keywords") or [])]
     out, seen = [], set()
     for t in tags:
         if t and t not in seen:
@@ -78,9 +78,14 @@ def load_weeks(root):
             continue
         try:
             with open(p, encoding="utf-8") as f:
-                weeks.append(json.load(f))
+                w = json.load(f)
         except Exception as e:  # noqa: BLE001
             print(f"WARN: {p} 읽기 실패: {e}", file=sys.stderr)
+            continue
+        if not w.get("week_id"):
+            print(f"WARN: {p} week_id 없음 — 건너뜀", file=sys.stderr)
+            continue
+        weeks.append(w)
     weeks.sort(key=lambda w: w.get("week_id", ""))
     return weeks
 
@@ -115,7 +120,7 @@ def main():
             if not is_selected(a):
                 continue
             total_selected += 1
-            wk_views += int(a.get("raw", {}).get("view_count") or 0)
+            wk_views += int((a.get("raw") or {}).get("view_count") or 0)
             cat = primary_category(a)
             category_timeseries.setdefault(cat, {})
             category_timeseries[cat][wid] = category_timeseries[cat].get(wid, 0) + 1

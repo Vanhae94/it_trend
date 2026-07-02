@@ -55,7 +55,7 @@ def main():
         week = json.load(f)
 
     patch_articles = patch.get("articles") or {}
-    by_id = {a.get("id"): a for a in week.get("articles", [])}
+    by_id = {a.get("id"): a for a in week.get("articles", []) if a.get("id")}
     updated = 0
     unknown = []
     for aid, fields in patch_articles.items():
