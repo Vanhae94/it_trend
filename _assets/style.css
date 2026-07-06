@@ -13,9 +13,9 @@
    1. 토큰 / 테마
    ============================================================ */
 :root {
-  --ink:        #17130E;
-  --ink-2:      #1C1710;
-  --panel:      #201A13;
+  --ink:        #1E1B17;
+  --ink-2:      #242019;
+  --panel:      #29241D;
   --surface:    rgba(255,220,170,.04);
   --surface-2:  rgba(255,220,170,.07);
   --border:     #2E2619;
@@ -59,7 +59,7 @@
 }
 
 [data-theme="light"] {
-  --ink:        #FBF8F3;
+  --ink:        #F5EFE2;
   --ink-2:      #FFFFFF;
   --panel:      #FFFFFF;
   --surface:    rgba(120,80,20,.03);
@@ -112,9 +112,9 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(40% 55% at 18% 0%, rgba(61,220,151,.16), transparent 70%),
-    radial-gradient(38% 50% at 82% 6%, rgba(43,182,201,.14), transparent 72%),
-    radial-gradient(45% 60% at 55% -8%, rgba(110,99,230,.10), transparent 75%);
+    radial-gradient(40% 55% at 18% 0%, rgba(255,176,32,.10), transparent 70%),
+    radial-gradient(38% 50% at 82% 6%, rgba(255,122,69,.08), transparent 72%),
+    radial-gradient(45% 60% at 55% -8%, rgba(244,200,96,.07), transparent 75%);
   filter: blur(8px);
   animation: aurora-drift 22s ease-in-out infinite alternate;
 }
