@@ -135,55 +135,64 @@ def build_card(article, idx, cat_labels, streak=1):
     one = an.get("one_liner") or first_sentence(raw.get("summary")) or article.get("title")
     oneliner = esc(one)
 
-    body_html = f'<p>{esc(an.get("summary_ko") or raw.get("summary") or "")}</p>'
+    # 항상 보이는 요약(gist)
+    summary_txt = an.get("summary_ko") or raw.get("summary") or ""
+    summary_html = f'<p>{esc(summary_txt)}</p>' if summary_txt else ""
 
-    keypoints_html = ""
-    if an.get("key_points"):
-        lis = "".join(f"<li>{esc(x)}</li>" for x in an["key_points"])
-        keypoints_html = f'<ul class="pc-contrib">{lis}</ul>'
-
-    whynow_html = f'<div class="pc-body"><h4>왜 지금</h4><p>{esc(an["why_now"])}</p></div>' if an.get("why_now") else ""
-    sowhat_html = f'<div class="pc-body"><h4>실무 시사점</h4><p>{esc(an["so_what"])}</p></div>' if an.get("so_what") else ""
-
+    # 항상 보이는 메타 라인(유형·독자·발행일)
     meta_bits = []
     if cls.get("article_type"):
-        meta_bits.append(f'<span class="pc-diff">{esc(cls["article_type"])}</span>')
+        meta_bits.append(f'<span class="ac-tag">{esc(cls["article_type"])}</span>')
     if an.get("reader"):
         meta_bits.append(f'<span>{esc(an["reader"])}</span>')
     if pub:
         meta_bits.append(f'<span>📅 {esc(pub)}</span>')
     meta_html = " · ".join(meta_bits)
 
-    terms_html = ""
-    if learn.get("key_terms"):
-        terms_html = "".join(
-            f'<span class="term"><b>{esc(kt.get("term"))}</b> {esc(kt.get("gloss"))}</span>'
-            for kt in learn["key_terms"]
-        )
-
-    apply_html = ""
+    # 접이식 상세: 핵심 포인트 · 왜 지금 · 실무 시사점 · 실무 적용 · 핵심 용어 · 복습 퀴즈
+    sec = []
+    if an.get("key_points"):
+        lis = "".join(f"<li>{esc(x)}</li>" for x in an["key_points"])
+        sec.append(f'<div class="ac-sec"><h4>핵심 포인트</h4><ul class="ac-list">{lis}</ul></div>')
+    if an.get("why_now"):
+        sec.append(f'<div class="ac-sec"><h4>왜 지금</h4><p>{esc(an["why_now"])}</p></div>')
+    if an.get("so_what"):
+        sec.append(f'<div class="ac-sec"><h4>실무 시사점</h4><p>{esc(an["so_what"])}</p></div>')
     if learn.get("apply_points"):
         lis = "".join(f"<li>{esc(x)}</li>" for x in learn["apply_points"])
-        apply_html = f'<div class="pc-body"><h4>📌 실무 적용 포인트</h4><ul>{lis}</ul></div>'
+        sec.append(f'<div class="ac-sec"><h4>실무 적용 포인트</h4><ul class="ac-list">{lis}</ul></div>')
+    if learn.get("key_terms"):
+        terms = "".join(
+            f'<span class="term"><b>{esc(kt.get("term"))}</b> {esc(kt.get("gloss") or "")}</span>'
+            for kt in learn["key_terms"]
+        )
+        sec.append(f'<div class="ac-sec"><h4>핵심 용어</h4><div class="terms">{terms}</div></div>')
+    rq = learn.get("recall_quiz") or {}
+    if rq.get("question"):
+        sec.append(
+            '<div class="ac-sec"><div class="quiz">'
+            f'<p class="quiz__q"><b>RECALL ↺</b> {esc(rq["question"])}</p>'
+            f'<details><summary>정답 보기</summary><p class="quiz__a">{esc(rq.get("answer"))}</p></details>'
+            '</div></div>'
+        )
+    detail_html = ""
+    if sec:
+        detail_html = (
+            '<details class="ac-detail"><summary>'
+            '<span class="ac-detail-caret">▸</span>'
+            '<span class="ac-detail-label">자세히 보기</span>'
+            '<span class="ac-detail-hint">핵심 포인트 · 왜 지금 · 실무 시사점 · 용어 · 복습</span>'
+            f'</summary><div class="ac-detail-body">{"".join(sec)}</div></details>'
+        )
 
     btns = [f'<a class="btn btn--primary" href="{esc(l["url"])}" target="_blank" rel="noopener">{esc(l["label"])}</a>'
             for l in sorted(article.get("links", []), key=lambda x: x.get("rank", 99))]
     links_html = "".join(btns)
 
-    quiz_html = ""
-    rq = learn.get("recall_quiz") or {}
-    if rq.get("question"):
-        quiz_html = (
-            '<div class="quiz">'
-            f'<p class="quiz__q"><b>RECALL ↺</b> {esc(rq["question"])}</p>'
-            f'<details><summary>정답 보기</summary><p class="quiz__a">{esc(rq.get("answer"))}</p></details>'
-            '</div>'
-        )
-
     return fill(load_tpl("article_card.html"), {
         "STAGGER": str(idx),
         "TAGS": esc(" ".join((an.get("field_tags") or []) + chips)).lower(),
-        "RANK": str(article.get("rank", idx)),
+        "RANK": f"{int(article.get('rank', idx)):02d}",
         "CAT": esc(cat),
         "URL": esc(url),
         "TITLE": esc(article.get("title")),
@@ -191,15 +200,10 @@ def build_card(article, idx, cat_labels, streak=1):
         "BADGES": badges_html,
         "CHIPS": chips_html,
         "ONELINER": oneliner,
-        "BODY": body_html,
-        "KEYPOINTS": keypoints_html,
-        "WHYNOW": whynow_html,
-        "SOWHAT": sowhat_html,
+        "SUMMARY": summary_html,
         "META": meta_html,
-        "TERMS": terms_html,
-        "APPLY": apply_html,
+        "DETAIL": detail_html,
         "LINKS": links_html,
-        "QUIZ": quiz_html,
     })
 
 

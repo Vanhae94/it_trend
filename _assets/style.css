@@ -327,7 +327,7 @@ a { color: inherit; }
    ============================================================ */
 .paper-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--gap);
 }
 @media (max-width: 800px) { .paper-grid { grid-template-columns: 1fr; } }
@@ -677,3 +677,93 @@ a { color: inherit; }
 }
 .foot a { color: var(--text-dim); text-decoration: none; }
 .foot a:hover { color: var(--aurora); }
+
+/* ============================================================
+   10. 기사 카드 — Nightdesk 풀폭 넘버 패널 + 접이식 상세
+   (article-card 구조. 위 .paper-card 규칙은 미사용 잔재)
+   ============================================================ */
+.article-card {
+  position: relative;
+  background:
+    radial-gradient(130% 120% at 0% 0%, var(--surface), transparent 42%),
+    var(--panel);
+  border: 1px solid var(--border-2);
+  border-left: 3px solid var(--aurora);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.7rem 1.3rem;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .article-card {
+    opacity: 0; transform: translateY(14px);
+    animation: rise .55s cubic-bezier(.2,.75,.25,1) forwards;
+    animation-delay: calc(var(--i, 0) * 70ms);
+  }
+}
+.article-card:hover { border-color: var(--aurora); box-shadow: var(--shadow-lg); }
+
+.ac-head { display: flex; gap: 1rem; align-items: flex-start; }
+.ac-rank {
+  font-family: var(--font-display);
+  font-size: 2.4rem; font-weight: 900; font-style: italic; line-height: .92;
+  background: var(--grad-aurora); -webkit-background-clip: text; background-clip: text; color: transparent;
+  flex: none; min-width: 1.7ch; text-align: center;
+}
+.ac-headmain { flex: 1; min-width: 0; }
+.ac-metaline { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; margin-bottom: .4rem; }
+.ac-cat {
+  font-family: var(--font-mono); font-size: var(--fs-xs); letter-spacing: .03em;
+  color: var(--star);
+  background: color-mix(in srgb, var(--aurora) 15%, transparent);
+  border-radius: 999px; padding: .16rem .62rem;
+}
+.ac-title {
+  font-family: var(--font-display); font-weight: 600; font-size: var(--fs-h2);
+  line-height: 1.34; letter-spacing: -.01em; margin: 0;
+}
+.ac-title a { color: var(--text); text-decoration: none; }
+.ac-title a:hover { background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.ac-byline { font-size: var(--fs-xs); color: var(--text-faint); margin: .3rem 0 0; }
+
+.ac-oneliner {
+  font-size: 1rem; font-weight: 600; color: var(--text);
+  border-left: 2.5px solid var(--aurora); padding-left: .85rem;
+  margin: 1rem 0 .7rem;
+}
+.ac-summary { color: var(--text-dim); font-size: var(--fs-sm); }
+.ac-summary p { margin: 0; max-width: 74ch; line-height: 1.72; }
+.ac-subline {
+  display: flex; flex-wrap: wrap; gap: .4rem .9rem; align-items: center;
+  margin: .85rem 0 .2rem; font-size: var(--fs-xs); color: var(--text-faint); font-family: var(--font-mono);
+}
+.ac-tag { border: 1px solid var(--border-2); border-radius: 6px; padding: .1rem .45rem; color: var(--text-dim); }
+.ac-summary:empty, .ac-subline:empty, .article-card .chip-row:empty { display: none; }
+
+/* 접이식 상세 */
+.ac-detail { margin-top: 1rem; border-top: 1px solid var(--border); }
+.ac-detail > summary {
+  cursor: pointer; list-style: none; user-select: none;
+  display: flex; align-items: center; gap: .5rem; flex-wrap: wrap;
+  padding: .8rem 0 .3rem; font-size: var(--fs-sm);
+}
+.ac-detail > summary::-webkit-details-marker { display: none; }
+.ac-detail > summary:hover .ac-detail-label { text-decoration: underline; }
+.ac-detail-caret { color: var(--aurora); transition: transform .25s; display: inline-block; }
+.ac-detail[open] > summary .ac-detail-caret { transform: rotate(90deg); }
+.ac-detail-label { color: var(--aurora); font-weight: 700; }
+.ac-detail-hint { color: var(--text-faint); font-size: var(--fs-xs); font-family: var(--font-mono); }
+.ac-detail-body { margin: .3rem 0 .2rem; animation: rise .3s ease; }
+
+.ac-sec { margin: 1rem 0; }
+.ac-sec > h4 {
+  font-size: var(--fs-xs); letter-spacing: .06em; text-transform: uppercase;
+  color: var(--text-faint); margin: 0 0 .5rem; padding-bottom: .3rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: .45rem;
+}
+.ac-sec > h4::before { content: ""; width: 6px; height: 6px; border-radius: 2px; background: var(--aurora); flex: none; }
+.ac-sec p { font-size: var(--fs-sm); color: var(--text-dim); line-height: 1.72; margin: 0; max-width: 74ch; }
+.ac-list { margin: 0; padding-left: 1.15rem; }
+.ac-list li { font-size: var(--fs-sm); color: var(--text-dim); line-height: 1.62; margin: .32rem 0; }
+.ac-sec .terms { display: flex; flex-direction: column; gap: .4rem; }
