@@ -1,0 +1,210 @@
+{
+  "week_id": "2026-W28",
+  "articles": {
+    "3771": {
+      "selected": true,
+      "classify": {
+        "primary_category": "ai-coding",
+        "categories": ["ai-coding", "models-llm"],
+        "topic_tags": ["claude-code", "coding-agent", "llm", "prompt"],
+        "article_type": "뉴스분석",
+        "confidence": "high"
+      },
+      "analysis": {
+        "one_liner": "Opus 4.7 토큰 부담과 Codex의 기능 추격 속, Claude Code와 Codex는 우열이 아니라 용도로 갈린다",
+        "summary_ko": "Opus 4.7의 토크나이저 변경으로 토큰 소모가 늘고 Claude Code에 연이은 사고가 겹치면서, GPT-5.5를 얹은 Codex가 빈틈을 파고들었습니다. 성능·한도·컨텍스트·기업 철학까지 뜯어본 결과 어느 한쪽의 압도적 우위는 없고, 작업 성격에 따라 도구를 나눠 쓰는 것이 결론입니다.",
+        "key_points": [
+          "Opus 4.7 새 토크나이저는 외부 측정 기준 1.20~1.47배 더 많은 토큰을 쓰는 반면, GPT-5.5는 Codex 작업에서 약 40% 토큰 효율을 발표",
+          "AMD 스텔라 로렌조의 실측(6,852세션·234,760회 도구 호출)에서 Opus 4.7 이후 사고 깊이 중앙값이 67% 하락",
+          "SWE-bench Pro(64.3% 대 57.7%)·SWE-bench Verified(87.6% 대 74.9%)에서는 Opus 계열이 앞섬",
+          "Claude Code는 1M 컨텍스트를 추가 요금 없이 정식 지원, Codex는 400K이며 1M은 opt-in 단계",
+          "Anthropic은 '함께 가는 동료(companion)', OpenAI는 '위임받는 작업자(delegated worker)'라는 도구 철학 차이가 UX 설계에 그대로 반영"
+        ],
+        "why_now": "코딩 에이전트 시장의 무게중심이 처음으로 Claude Code 독주에서 Codex와의 양강 구도로 옮겨가는 시점을 정량 데이터로 포착했다는 점에서, 지난주에 이어 이번 주에도 최상위 인기를 지킨 대표 사례입니다.",
+        "so_what": "장기·다중 파일 리팩터링이나 UI 마감이 잦은 팀은 Claude Code를, 명확한 스펙 기반 일상 코딩과 토큰 효율이 중요한 팀은 Codex를 우선 검토하고, 여유가 있다면 두 도구를 작업 유형별로 병행하는 전략이 현실적입니다.",
+        "reader": "코딩 에이전트 도구 선택을 고민하는 개발자·엔지니어링 리드",
+        "field_tags": ["코딩에이전트", "Claude Code", "Codex", "도구비교", "토큰효율"]
+      },
+      "learning": {
+        "apply_points": [
+          "장기 리팩터링·1M 컨텍스트가 필요한 작업은 Claude Code, 스펙이 명확한 일상 코딩·토큰 절약이 중요하면 Codex로 작업을 나눠 배분해본다",
+          "팀 내 코딩 에이전트 토큰 소모량을 주기적으로 측정해, 모델 업데이트 이후 체감 성능 변화를 데이터로 확인하는 습관을 들인다"
+        ],
+        "key_terms": [
+          { "term": "토크나이저(tokenizer)", "gloss": "텍스트를 모델이 처리하는 토큰 단위로 쪼개는 방식으로, 바뀌면 같은 글도 토큰 소모량이 달라짐" },
+          { "term": "SWE-bench", "gloss": "실제 오픈소스 저장소의 버그 수정 능력을 측정하는 코딩 모델 벤치마크" },
+          { "term": "컨텍스트 윈도우", "gloss": "모델이 한 번에 참고할 수 있는 텍스트(코드·대화)의 최대 범위" }
+        ],
+        "recall_quiz": {
+          "question": "이 글에서 Claude Code와 Codex의 우위를 가르는 핵심 축으로 꼽은 것은 토큰 한도·컨텍스트, 그리고 무엇인가?",
+          "answer": "두 기업(Anthropic·OpenAI)의 정체성이 반영된 도구 철학 차이 — '함께 가는 동료' 대 '위임받는 작업자'"
+        },
+        "spaced_review": { "flag": true, "review_due": null }
+      }
+    },
+    "3801": {
+      "selected": true,
+      "classify": {
+        "primary_category": "ai-coding",
+        "categories": ["ai-coding", "models-llm"],
+        "topic_tags": ["claude-code", "coding-agent", "open-source-llm"],
+        "article_type": "사례",
+        "confidence": "high"
+      },
+      "analysis": {
+        "one_liner": "예측 불가능한 사용량 제한에 지친 개발자가 Ollama·DeepSeek·Qwen 조합으로 워크플로를 재설계한 실전기",
+        "summary_ko": "데모 직전 사용 한도 초과를 겪은 엔지니어가 불투명한 사용량 정책과 비용 부담을 이유로 클로드 코드를 떠나, 로컬·클라우드 오픈소스 모델로 대체하는 과정을 정리했습니다. 일상 작업의 80~90%는 오픈소스 모델로 충분하고, 정말 어려운 10~20%만 최상위 모델을 쓰는 하이브리드 전략을 제안합니다.",
+        "key_points": [
+          "Anthropic이 사용량 제한(rate limit)을 강화하며 Pro 플랜도 하루 2~4시간 만에 한도 초과에 도달하는 사례가 다수 보고됨",
+          "DeepSeek Coder V2·Qwen 3 Coder가 HumanEval 등 벤치마크에서 Claude 3.5 Sonnet과 대등한 수준까지 성능 격차를 좁힘",
+          "Ollama로 노트북에서 7B~14B 모델 구동 가능, 32GB RAM이면 양자화로 32B급까지 가능",
+          "Groq·Together AI 같은 오픈소스 모델 호스팅은 Claude API 대비 약 10분의 1 비용",
+          "저자의 실제 운영 방식: 일상 코딩은 로컬 Qwen 3 Coder, 복잡한 설계는 Groq의 DeepSeek V3, 정말 필요할 때만 Claude API 호출"
+        ],
+        "why_now": "Claude Code 독점 구도에 균열이 생기고 있다는 3771 기사와 같은 흐름에서, 이번엔 '가격·안정성' 관점의 실사용자 이탈 사례로 2주 연속 인기를 이어간 축입니다.",
+        "so_what": "고정 비용으로 예측 가능한 처리량이 필요한 팀은 오픈소스 모델을 메인으로, 클로드는 복잡한 아키텍처·대규모 리팩터링 등 고난도 작업에만 선택적으로 쓰는 비용 최적화 구조를 검토할 만합니다.",
+        "reader": "AI 코딩 비용·안정성 문제로 대안을 찾는 개발자·1인 엔지니어",
+        "field_tags": ["오픈소스LLM", "Claude Code", "로컬LLM", "비용최적화", "탈클로드"]
+      },
+      "learning": {
+        "apply_points": [
+          "복잡도가 낮은 반복 코딩 작업부터 로컬/오픈소스 모델로 전환해보고, 실패율이 허용 범위인지 직접 측정한다",
+          "Groq·Together AI 같은 저비용 호스팅으로 고난도 작업만 선택적으로 상위 모델(Claude 등)에 위임하는 계층적 워크플로를 설계한다"
+        ],
+        "key_terms": [
+          { "term": "양자화(quantization)", "gloss": "모델 가중치의 정밀도를 낮춰 메모리·연산량을 줄이는 기법으로, 로컬 환경 구동을 가능하게 함" },
+          { "term": "rate limit(사용량 제한)", "gloss": "일정 시간 동안 사용할 수 있는 요청·토큰량을 제한하는 서비스 정책" },
+          { "term": "Ollama", "gloss": "오픈소스 LLM을 로컬 컴퓨터에서 손쉽게 내려받아 구동할 수 있게 해주는 도구" }
+        ],
+        "recall_quiz": {
+          "question": "저자가 제시한 '일상 작업의 80~90%'를 처리하기에 충분하다고 본 오픈소스 모델은 어떤 모델과 비슷한 성능 수준인가?",
+          "answer": "Claude 3.5 Sonnet 수준 (DeepSeek Coder V2, Qwen 3 Coder 기준)"
+        },
+        "spaced_review": { "flag": true, "review_due": null }
+      }
+    },
+    "3780": {
+      "selected": true,
+      "classify": {
+        "primary_category": "models-llm",
+        "categories": ["models-llm", "ai-coding"],
+        "topic_tags": ["claude-code", "coding-agent", "llm", "ai-agent"],
+        "article_type": "뉴스분석",
+        "confidence": "high"
+      },
+      "analysis": {
+        "one_liner": "GPT-5.5·Codex에 밀린 42일 만의 반격 — Opus 4.8은 '정직성'과 동적 워크플로로 주도권 탈환을 노린다",
+        "summary_ko": "4.7 출시 42일 만의 이례적으로 빠른 업그레이드로, 가격은 그대로 둔 채 코딩·장기 에이전트 벤치마크를 끌어올렸습니다. 핵심 차별점은 '정직성'(결함을 감추지 않고, 모르는 걸 모른다고 말함)이며, 같은 날 클로드 코드는 수십~수백 개 서브에이전트를 스스로 지휘하는 동적 워크플로(Dynamic Workflows)를 함께 공개했습니다.",
+        "key_points": [
+          "4.7→4.8이 42일 — 기존 약 70일 주기를 30일가량 앞당긴 이례적 속도이며, 가격은 4.7과 동일한 '마이너 업데이트' 성격",
+          "'정직성' 강조: 자신이 쓴 코드의 결함을 지적 없이 통과시킬 확률이 직전 모델보다 약 4배 낮음(시스템 카드 기준 결함 미공개율 3.7%)",
+          "Terminal Bench 2.1을 8.5%p 끌어올려 GPT가 앞서던 영역을 추격(여전히 1위는 GPT-5.5), 지식·재무 벤치마크는 추월",
+          "effort 5단계(low·medium·high·xhigh·max)로 사고 깊이 조절 + 적응형 사고 도입 — 코딩·에이전트는 xhigh 이상 권장",
+          "동적 워크플로: 프롬프트에 'workflow'만 넣으면 클로드가 계획→하위작업 분해→수십~수백 subagent 병렬 실행·자체 검증까지 오케스트레이션"
+        ],
+        "why_now": "GPT-5.5·Codex에 한 달간 주도권을 내줬던 Anthropic의 반격 턴으로, 3771·3801에서 드러난 '코딩 도구 지형 변화'가 모델 세대 교체로 번지는 이번 주 최대 이벤트입니다.",
+        "so_what": "이미 Codex로 옮겼거나 옮길지 고민 중이라면, 벤치마크 회복만으로 되돌리기보다 실제 터미널·장기작업 체감을 직접 비교하고, 동적 워크플로가 자신의 반복 작업을 대체할 수 있는지 시험해볼 시점입니다.",
+        "reader": "코딩 에이전트 모델을 고르거나 전환을 저울질하는 개발자·엔지니어링 리드",
+        "field_tags": ["Opus 4.8", "Claude Code", "동적워크플로", "벤치마크", "정직성"]
+      },
+      "learning": {
+        "apply_points": [
+          "긴 코딩·에이전트 작업은 effort를 xhigh 이상으로 올려 품질을 확보하되, max 상시 사용은 토큰 소모가 급증하므로 비용을 함께 모니터링한다",
+          "반복적인 다단계 작업은 'workflow' 키워드로 동적 워크플로에 맡겨보고, /workflows로 단계·서브에이전트 배치를 확인하며 신뢰 범위를 넓혀간다"
+        ],
+        "key_terms": [
+          { "term": "Dynamic Workflows(동적 워크플로)", "gloss": "클로드가 목표를 스스로 하위작업으로 쪼개 수십~수백 개 서브에이전트를 병렬로 지휘하고 결과를 자체 검증하는 기능" },
+          { "term": "effort 설정", "gloss": "모델이 얼마나 깊이 사고할지 low·medium·high·xhigh·max 5단계로 고르는 제어 방식(기본값 high)" },
+          { "term": "정직성(honesty) 벤치마크", "gloss": "실패한 코딩 세션에 거짓 칭찬을 해도 모델이 결함을 가감 없이 짚어내는지 측정하는 평가" }
+        ],
+        "recall_quiz": {
+          "question": "Opus 4.8이 전면에 내세운 핵심 가치와, 같은 날 함께 공개된 클로드 코드의 새 기능은 각각 무엇인가?",
+          "answer": "핵심 가치는 '정직성(honesty)', 새 기능은 동적 워크플로(Dynamic Workflows) — 스스로 수십~수백 서브에이전트를 오케스트레이션"
+        },
+        "spaced_review": { "flag": true, "review_due": null }
+      }
+    },
+    "3803": {
+      "selected": true,
+      "classify": {
+        "primary_category": "career",
+        "categories": ["career", "ai-coding"],
+        "topic_tags": ["vibe-coding", "productivity"],
+        "article_type": "사례",
+        "confidence": "high"
+      },
+      "analysis": {
+        "one_liner": "40대 비개발자가 바이브 코딩 1년으로 외주 120건·매출 5천만원·책 출간까지 — 생산성은 개인의 무기가 된다",
+        "summary_ko": "ChatGPT 상담으로 시작해 VS Code에 코드를 붙여넣던 40대 직장인이, 1년간 외주 120여 건(누적 매출 5,000만원, 평점 5.0)과 카카오 AI TOP 100·해커톤 2회 대상·책 출간·본업 전환까지 이룬 기록입니다. 특별한 재능이 아니라 '일단 끝까지 해보는' 반복이 평범한 개인의 생산성을 끌어올렸다는 경험담입니다.",
+        "key_points": [
+          "2025년 4월 첫 자동화 프로그램(에러 메시지를 AI에 붙여넣으며 시작) → 1년간 외주 120여 건, 누적 매출 5,000만원, 평점 5.0 유지",
+          "요즘IT 기고 → 카카오 AI TOP 100 Finalist → 해커톤 2회 연속 대상 → 카카오 AI 앰배서더 → 책 출간으로 이어진 선순환",
+          "회사 밖 외주 성과가 사내 단독 프로젝트·이직 포트폴리오로 환류되는 '안팎 선순환' 구조",
+          "해커톤 성과의 비결은 코딩 실력이 아니라 '기획 의도·평가 기준 읽기'라는 기존 직무 역량 + 바이브 코딩의 결합 → AI 시대엔 나이가 강점이 될 수 있다는 관점",
+          "핵심 메시지: AI 생산성은 기업만의 것이 아니라 평범한 개인의 무기 — 거창한 목표 없이 '이번 주 안에 끝낼 작은 시도' 하나로 시작"
+        ],
+        "why_now": "3771·3801이 도구 경쟁을 다뤘다면, 이 글은 바이브 코딩이 '개발자 생산성'을 넘어 비개발 직군의 커리어 자체를 바꾸는 단계로 넘어갔음을 보여주는 이번 주 신규 대표 사례입니다.",
+        "so_what": "비개발 직군이라도 반복 업무 자동화 → 외부 검증(외주·대회) → 기록·공유로 이어지는 작은 루프를 돌리면 AI 생산성을 개인 커리어 자산으로 전환할 수 있습니다. 시작은 '이번 주 끝낼 수 있는 어설픈 시도' 하나면 충분합니다.",
+        "reader": "AI로 커리어를 확장하고 싶은 비개발 직군·40대 직장인",
+        "field_tags": ["바이브코딩", "비개발자", "커리어전환", "외주", "생산성"]
+      },
+      "learning": {
+        "apply_points": [
+          "매주 반복하는 업무 하나를 골라 AI로 자동화 도구를 만들어보고, 단돈 만원이라도 외부에서 값이 매겨지는지(외주 등)로 실효성을 검증한다",
+          "시행착오를 글로 기록·공유해 피드백과 기회(기고·대회·네트워크)로 연결하는 루프를 돌린다"
+        ],
+        "key_terms": [
+          { "term": "바이브 코딩(vibe coding)", "gloss": "코드를 직접 짜기보다 AI에게 자연어로 요청해 프로그램을 만들어내는 방식" },
+          { "term": "선순환(플라이휠)", "gloss": "작은 성과가 다음 기회를 만들고 그것이 또 다음 성과로 이어지는 자기강화 구조" },
+          { "term": "포트폴리오", "gloss": "자신의 결과물·경험을 정리해 역량을 증명하는 자료(여기선 외주·대회 기록이 이직에 활용됨)" }
+        ],
+        "recall_quiz": {
+          "question": "저자가 해커톤에서 연속 대상을 받은 핵심 비결로 꼽은 것은 코딩 실력 자체가 아니라 무엇인가?",
+          "answer": "기획 의도·주제·평가 기준을 읽어내는 기존 직무(기획) 역량과 빠른 구현(외주 경험)에 바이브 코딩을 결합한 것"
+        },
+        "spaced_review": { "flag": true, "review_due": null }
+      }
+    },
+    "3767": {
+      "selected": true,
+      "classify": {
+        "primary_category": "ways-of-working",
+        "categories": ["ways-of-working", "ai-agents"],
+        "topic_tags": ["ai-agent", "open-source-llm", "productivity", "claude-code"],
+        "article_type": "뉴스분석",
+        "confidence": "high"
+      },
+      "analysis": {
+        "one_liner": "요즘 프로덕트 메이커 3선 — 로컬 LLM 자동 추천(whichllm), MS 무료 에이전트 강좌, 'AI와 복리로 일하는 5원칙'",
+        "summary_ko": "매주 '써볼 것·참고할 것·적용해볼 것'을 골라 전하는 코너로, 이번엔 내 하드웨어에 맞는 로컬 LLM을 명령어 한 줄로 찾아주는 whichllm, 마이크로소프트가 깃허브에 공개한 무료 AI 에이전트 강좌, 그리고 Anthropic 엔지니어 유진 얀의 'AI와 일하며 결과를 복리로 쌓는 5가지 원칙'을 정리했습니다.",
+        "key_points": [
+          "whichllm: GPU·RAM을 감지해 돌아갈 로컬 LLM을 점수순 추천·설치·실행까지 CLI 한 줄로 처리(GPU 시뮬레이션으로 구매 전 검토도 가능)",
+          "MS 'AI Agents for Beginners': 깃허브 별 6만+, 12강 이상 무료 강좌(50개 언어 자동번역, 코드 실습엔 Azure 계정 필요)",
+          "유진 얀의 5원칙 ①맥락을 인프라처럼(디렉토리 정리·INDEX.md·CLAUDE.md) ②취향을 설정처럼(행동 계약서 CLAUDE.md·자주 하는 일은 스킬화)",
+          "③자율을 위한 검증(싸고 빠른 검증부터·AI 자가검증·다른 AI가 감시) ④위임으로 규모 확장(큰 단위 위임·3~6개 세션 병렬·git worktree)",
+          "⑤루프 닫기(작업을 공개적으로 기록·과거 대화에서 설정 업데이트 거리 찾기·주기적 정리) — 결국 'AI를 도구가 아니라 함께 키우는 동료로'"
+        ],
+        "why_now": "개별 도구 뉴스를 넘어 'AI와 어떻게 일할지'의 방법론이 부상하는 흐름으로, 3792(개인 LLM 위키)·3780(동적 워크플로)과 같은 '컨텍스트·검증·위임' 문제의식을 실천 원칙으로 체계화했다는 점에서 이번 주 흐름과 맞닿습니다.",
+        "so_what": "AI 사용량은 늘었는데 결과물 평균 수준이 안 오른다면, 맥락(파일)·취향(설정)·검증·위임·기록의 5축으로 반복 피드백을 '복리'로 누적시키는 개인 시스템을 세우는 것이 실질적 해법입니다.",
+        "reader": "AI를 매일 쓰지만 결과물 품질이 들쭉날쭉해 고민인 프로덕트 메이커·실무자",
+        "field_tags": ["프로덕트메이커", "AI워크플로", "로컬LLM", "CLAUDE.md", "생산성"]
+      },
+      "learning": {
+        "apply_points": [
+          "자주 반복하는 개인/프로젝트 맥락을 CLAUDE.md·INDEX.md로 정리해 매번 재설명하지 않도록 '맥락을 인프라화'한다",
+          "일주일에 한 번 이상 하는 작업은 스킬(마크다운)로 만들고, 큰 단위로 위임하되 싸고 빠른 자동 검증부터 사다리로 쌓는다"
+        ],
+        "key_terms": [
+          { "term": "복리(compound)", "gloss": "매 작업의 결과물·피드백이 어딘가에 누적되어 다음 작업이 더 적은 설명으로 더 좋은 결과를 내게 되는 것" },
+          { "term": "로컬 LLM", "gloss": "클라우드가 아니라 내 컴퓨터에서 직접 구동하는 AI 모델(비용·프라이버시 이점)" },
+          { "term": "CLAUDE.md", "gloss": "클로드 코드가 매 세션 시작 시 읽는 설정 파일로, 프로젝트 맥락·작업 선호(행동 계약)를 미리 적어둠" }
+        ],
+        "recall_quiz": {
+          "question": "유진 얀의 5원칙이 공통으로 가리키는 방향을 한 문장으로 말하면?",
+          "answer": "AI를 단순 도구가 아니라 맥락·설정·검증·위임·기록을 갖춰 '함께 키우는 동료'처럼 다루는 시스템을 만드는 것"
+        },
+        "spaced_review": { "flag": true, "review_due": null }
+      }
+    }
+  }
+}

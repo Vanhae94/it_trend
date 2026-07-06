@@ -143,6 +143,8 @@ def build_card(article, idx, cat_labels, streak=1):
     meta_bits = []
     if cls.get("article_type"):
         meta_bits.append(f'<span class="ac-tag">{esc(cls["article_type"])}</span>')
+    if interest.get("popular_rank"):
+        meta_bits.append(f'<span>인기 {interest["popular_rank"]}위</span>')
     if an.get("reader"):
         meta_bits.append(f'<span>{esc(an["reader"])}</span>')
     if pub:
@@ -192,7 +194,7 @@ def build_card(article, idx, cat_labels, streak=1):
     return fill(load_tpl("article_card.html"), {
         "STAGGER": str(idx),
         "TAGS": esc(" ".join((an.get("field_tags") or []) + chips)).lower(),
-        "RANK": f"{int(article.get('rank', idx)):02d}",
+        "RANK": f"{idx:02d}",
         "CAT": esc(cat),
         "URL": esc(url),
         "TITLE": esc(article.get("title")),
