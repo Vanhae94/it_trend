@@ -1,0 +1,724 @@
+{
+  "list": [
+    {
+      "id": 3838,
+      "title": "“이 정도면 직접 만들겠는데?” 바이브 코딩으로 유료 앱 대체하기",
+      "author": {
+        "id": 180,
+        "name": "개발자H",
+        "author_url_identifier": "developerh4807",
+        "tagline": "8년차 현업 스타트업 개발자입니다.",
+        "image_url": "https://cdn.wishket.com/profiles/258927_20230921_698b81741a1d7ef7.jpg"
+      },
+      "description": "평소 만족스럽게 쓰던 유료 루틴 앱에 아쉬움이 쌓이던 어느 날, '이 정도면 직접 만들 수 있겠는데?'라는 생각을 바로 테스트해봤습니다. Obsidian과 Claude Code, 몇 가지 플러그인으로 가중치 루틴 체크, 월간·연간 대시보드, 루틴 메모까지 붙인 개인용 도구를 만들었습니다. 가장 큰 난관이던 기존 데이터는 스크린샷을 생성형 AI에게 읽혀 옮겼죠. 루틴 관리가 쉬워진 건 물론, 만드는 게 쉬워진 시대에 직접 도구를 만들며 배운 점도 생겼습니다. 무엇을 왜 만들지에 대한 이야기를 함께 정리했습니다.",
+      "date_published": "2026-07-07T14:00:17+09:00",
+      "repr_date_published": "2026.07.07.",
+      "featured": 0,
+      "view_count": 19165,
+      "read_time": 14,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "개발",
+          "flag": "develop",
+          "order": 1,
+          "og_title": "IT 개발 이야기들 | 요즘IT",
+          "og_description": "개발을 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_develop.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3838/image3.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3833,
+      "title": "구글이 공개한 AI 에이전트 제작 노하우를 가져다 쓰는 법",
+      "author": {
+        "id": 307,
+        "name": "요즘 프로덕트 메이커",
+        "author_url_identifier": "FinalCatti",
+        "tagline": "프로덕트 메이커들의 영감이 될 콘텐츠",
+        "image_url": "https://cdn.wishket.com/news_profiles/325770_20260121_44cd5935b35e908a.jpg"
+      },
+      "description": "일주일 동안 다시 열린 앤트로픽의 최신 모델 Claude Fable 5, AI가 만든 디자인 화면이 다 비슷해지는 이유와 그 해법을 실제로 써본 아틀라시안의 DESIGN.md 실험기, 그리고 에이전트는 만들기보다 평가와 배포가 진짜 일이라는 구글의 google/agents-cli까지. 이번 주 프로덕트 메이커가 주목할 세 가지를 정리했습니다.",
+      "date_published": "2026-07-03T09:00:17+09:00",
+      "repr_date_published": "2026.07.03.",
+      "featured": 0,
+      "view_count": 8017,
+      "read_time": 9,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "프로덕트",
+          "flag": "product",
+          "order": 7,
+          "og_title": "IT 프로덕트 이야기들 | 요즘IT",
+          "og_description": "프로덕트를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_product.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3833/333.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3826,
+      "title": "15살의 진로를 완전히 바꿔버린 바이브 코딩 경험기",
+      "author": {
+        "id": 73,
+        "name": "요즘IT",
+        "author_url_identifier": "yozm_it",
+        "tagline": "작가",
+        "image_url": "https://cdn.wishket.com/news_profiles/278363_20240116_5c2efa336003f792.png"
+      },
+      "description": "우연히 보게 된 AI 도구 광고 한 편에 이끌려 무작정 ‘바이브 코딩’에 뛰어든 중학생이 있습니다. 개발 언어도, 서버도, API도 전혀 몰랐지만, 오직 AI만을 통해 비즈니스 협업 툴 ‘Wayver’를 직접 만든 윤여준 님입니다. 그렇게 만든 앱을 글로벌 커뮤니티 ‘레딧(Reddit)’에 올려 피드백을 받았는데요. SaaS 업계 고수들의 조언을 통해 중요한 깨달음을 얻기도 했습니다. AI는 코딩을 대신해 줄 수는 있어도, 냉혹한 시장의 검증까지 대신해 주지는 않는다는 사실이었죠. 오늘은 윤여준 님과의 이야기를 통해, 다가올 미래 세대의 ‘바이브 코더’들은 과연 어떤 모습일지 함께 상상해 보고자 합니다.",
+      "date_published": "2026-06-30T09:00:17+09:00",
+      "repr_date_published": "2026.06.30.",
+      "featured": 0,
+      "view_count": 6178,
+      "read_time": 10,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "프로덕트",
+          "flag": "product",
+          "order": 7,
+          "og_title": "IT 프로덕트 이야기들 | 요즘IT",
+          "og_description": "프로덕트를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_product.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3826/Modern_Redesign__Same_Content_.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3825,
+      "title": "GPT-5.6 ‘제한 공개’ 사건의 전말",
+      "author": {
+        "id": 317,
+        "name": "미어캣",
+        "author_url_identifier": "vision_jmin",
+        "tagline": "AI 사바나 망보기 담당",
+        "image_url": "https://cdn.wishket.com/news_profiles/325769_20260521_4855bdf4ca82e715.jpg"
+      },
+      "description": "‘역대급’ 모델 GPT-5.6이 나왔습니다. Sol·Terra·Luna로 이어지는 3단 라인업에 새로운 추론 방식까지 갖췄죠. 그렇지만 정작 쓸 수 있는 사람은 거의 없습니다. 미국 정부가 오픈AI에 단계적 출시를 요청하면서, 약 20개 승인 파트너만 접근하는 '제한 공개'로 시작했죠. 2주 전 앤트로픽 페이블5 차단에 이은 두 번째 정부 개입입니다. 사건과 타임라인, 보안·지정학·IPO가 얽힌 관전 포인트, 그리고 최신 모델을 못 쓰게 될 한국 실무자가 지금 점검할 것까지 정리했습니다.",
+      "date_published": "2026-06-29T14:00:17+09:00",
+      "repr_date_published": "2026.06.29.",
+      "featured": 0,
+      "view_count": 8927,
+      "read_time": 9,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        },
+        {
+          "name": "트렌드",
+          "flag": "trend",
+          "order": 9,
+          "og_title": "IT 트렌드 이야기들 | 요즘IT",
+          "og_description": "트렌드에 관한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_trend.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3825/gpt-5_6-limited-preview.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3819,
+      "title": "손 코딩은 죽었는가?",
+      "author": {
+        "id": 153,
+        "name": "유영모",
+        "author_url_identifier": "slack2beck",
+        "tagline": "실수투성이 개발자의 성장 이야기",
+        "image_url": "https://cdn.wishket.com/news_profiles/238210_20260112_38386d50f37318ff.png"
+      },
+      "description": "코딩 에이전트의 성능이 폭발적으로 좋아지며, 이제는 코드를 몰라도 자연어로 말만 하면 인공지능이 코드를 만들어 주는 시대가 왔다. 이제는 바이브 코딩을 넘어 AI가 능동적인 주체로 팀을 구성하고 스스로 목표를 설정해 계획을 세우며 코딩, 테스트, 디버깅까지 수행하는 에이전틱 코딩이 성행하고 있다. 그런 만큼 우스갯소리로 코딩 에이전트에 장애가 나면 퇴근해야 한다는 말이 있을 정도로 AI 기반 개발 방식이 대중화됐다. 사람이 직접 코드를 작성하지 않는 시대, 누군가는 손 코딩의 종말을 이야기한다. 정말로 손 코딩은 죽었는가?",
+      "date_published": "2026-06-25T09:00:17+09:00",
+      "repr_date_published": "2026.06.25.",
+      "featured": 0,
+      "view_count": 7856,
+      "read_time": 9,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "개발",
+          "flag": "develop",
+          "order": 1,
+          "og_title": "IT 개발 이야기들 | 요즘IT",
+          "og_description": "개발을 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_develop.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3819/image1.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3816,
+      "title": "제가 정말 루프 엔지니어링까지 알아야 할까요?",
+      "author": {
+        "id": 278,
+        "name": "덕파",
+        "author_url_identifier": "minnote33",
+        "tagline": "얼렁뚱땅 빙글빙글 돌아가는 머릿속",
+        "image_url": "https://cdn.wishket.com/news_profiles/325767_20250116_80d2e01bebe2bbcc.png"
+      },
+      "description": "컨텍스트 엔지니어링이란 말에 겨우 익숙해졌더니 하네스가 나오고, 이번엔 루프엔지니어링이 트렌드라고 합니다. 1년 새 유행어가 세 번 바뀐 거죠. 그래서 프롬프트·컨텍스트·하네스·루프 엔지니어링 네 단어를 직접 정리했습니다. 사람이 만지는 단위가 프롬프트 한 줄에서 맥락으로, 다시 모델을 둘러싼 구조로, 그 구조에서 도는 루프로 한 칸씩 올라갔을 뿐, 사라진 건 없고 줌아웃됐을 뿐입니다. 그래서 정말 루프까지 알아야 하는지, 끝까지 사람 몫으로 남는 능력은 무엇인지까지 짚었습니다.",
+      "date_published": "2026-06-23T14:30:17+09:00",
+      "repr_date_published": "2026.06.23.",
+      "featured": 0,
+      "view_count": 9411,
+      "read_time": 10,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3816/image1.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3813,
+      "title": "개발자는 여전히 수학을 잘해야 할까요?",
+      "author": {
+        "id": 287,
+        "name": "김동혁",
+        "author_url_identifier": "donghyuk65",
+        "tagline": "일본에서 활동하는 웹개발자",
+        "image_url": "https://cdn.wishket.com/news_profiles/339279_20250317_ad8af2b93287b10e.jpg"
+      },
+      "description": "개발 공부를 시작하려는 분들에게 자주 받는 질문이 있습니다.“수학을 잘하지 못하는데 개발자가 될 수 있을까요?”, “문과 출신인데 프로그래밍을 배워도 괜찮을까요?”, “알고리즘 문제를 풀 때마다 막히는데, 계속 공부해도 될까요?” 저 역시 컴퓨터공학과를 다니면서 비슷한 고민을 했습니다. 그런데 한국과 일본에서 실제로 개발자로 일해보니, 학교에서 상상했던 개발자의 모습과 현장에서 필요한 능력은 조금 달랐습니다. 현업에서 제가 더 자주 마주친 것은 미적분 공식이 아니라 모호한 요구사항이었습니다. 이번 글에서는 과거에는 왜 수학이 중요했는지, 지금의 개발 환경은 어떻게 달라졌는지, 그리고 수학이 약한 개발자는 무엇부터 준비하면 좋을지 현실적인 관점에서 이야기해 보겠습니다.",
+      "date_published": "2026-06-22T09:00:17+09:00",
+      "repr_date_published": "2026.06.22.",
+      "featured": 0,
+      "view_count": 6024,
+      "read_time": 11,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "개발",
+          "flag": "develop",
+          "order": 1,
+          "og_title": "IT 개발 이야기들 | 요즘IT",
+          "og_description": "개발을 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_develop.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3813/image5.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3803,
+      "title": "바이브 코딩을 만난 1년, 40대 비개발자에게 일어난 일들",
+      "author": {
+        "id": 303,
+        "name": "불혹의바이브코딩",
+        "author_url_identifier": "40vibecoding",
+        "tagline": "바이브 코딩으로 외주개발",
+        "image_url": "https://cdn.wishket.com/news_profiles/363319_20251021_8e2a75ed0492f5b2.jpg"
+      },
+      "description": "2025년 4월의 어느 평일 밤이었습니다. 육아를 마치고 책상에 앉아, 처음 맡은 외주 작업의 에러 메시지를 한참 동안 멍하니 보고 있었습니다. 영어로 길게 늘어선 그 메시지를 그대로 AI에 붙여 넣고, 한 줄씩 다시 물어보며 새벽을 보냈습니다. 그때 마음 한편에는 ‘이게 정말 될까?’ 하는 의심이 있었지만, 다른 한편에는 ‘죽이 되든 밥이 되든 일단 끝까지 한번 해보자’는 생각이 더 컸습니다. 솔직히 말하면, 저도 이 목록을 다시 읽을 때마다 좀 얼떨떨합니다. 그래서 이 글은 자랑이 아니라, 평범한 40대 직장인이 AI를 만나서 겪게 된 1년 동안의 변화를 기록으로 적어 보려고 합니다. 평범한 누구나 AI를 통해 많은 것들을 이룰 수 있다는 경험을 나누고자 합니다.  ",
+      "date_published": "2026-06-16T09:00:17+09:00",
+      "repr_date_published": "2026.06.16.",
+      "featured": 0,
+      "view_count": 17449,
+      "read_time": 8,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        },
+        {
+          "name": "커리어",
+          "flag": "career",
+          "order": 8,
+          "og_title": "IT 커리어 이야기들 | 요즘IT",
+          "og_description": "커리어 발전을 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_career.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3803/image4.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3805,
+      "title": "앤트로픽 페이블 5(Fable 5) 차단 사건의 전말",
+      "author": {
+        "id": 317,
+        "name": "미어캣",
+        "author_url_identifier": "vision_jmin",
+        "tagline": "AI 사바나 망보기 담당",
+        "image_url": "https://cdn.wishket.com/news_profiles/325769_20260521_4855bdf4ca82e715.jpg"
+      },
+      "description": "출시 사흘 만에, 미국 정부의 편지 한 장으로 최고 수준 LLM의 사용이 중단됐습니다. 앤트로픽의 최신 모델, 페이블 5(Fable 5)에 벌어진 사건입니다. 나흘이 지난 지금, 6월 15일에도 모델에는 접근할 수 없죠. 정부는 보안 우회를, 앤트로픽은 '좁고 보편적이지 않은 우회일 뿐'이라 맞섰고, 방아쇠는 최대 투자자 아마존의 제보였습니다. 사건의 전말과 법적 근거, 오픈소스·소버린 AI로 번진 파장과 함께 지금 우리가 알아야 할 것을 정리했습니다.",
+      "date_published": "2026-06-15T14:00:17+09:00",
+      "repr_date_published": "2026.06.15.",
+      "featured": 0,
+      "view_count": 11665,
+      "read_time": 8,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        },
+        {
+          "name": "트렌드",
+          "flag": "trend",
+          "order": 9,
+          "og_title": "IT 트렌드 이야기들 | 요즘IT",
+          "og_description": "트렌드에 관한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_trend.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3805/Gemini_Generated_Image_c1gdfvc1gdfvc1gd_70y3VPP.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3801,
+      "title": "클로드 코드를 떠나 오픈소스로 돌아간 이유",
+      "author": {
+        "id": 227,
+        "name": "반기황",
+        "author_url_identifier": "harry0917",
+        "tagline": "생성형 AI 엔지니어",
+        "image_url": "https://cdn.wishket.com/news_profiles/296661_20240622_b27d3bfd9e1d5d16.png"
+      },
+      "description": "데모 마감 2시간 전, 치명적인 버그 앞에서 클로드 코드가 멈췄습니다. 사용 한도 초과, 4시간 후에 다시 시도하라는 메시지가 떴죠. 생계가 걸린 도구가 가장 필요한 순간에 작동하지 않는다면, 과연 그 도구를 믿을 수 있을까요? 예측하기 어려운 사용량 제한과 공지 없는 정책 변경에 지쳐 탈클로드를 결심한 엔지니어가, Ollama·DeepSeek·Qwen 3 Coder 같은 오픈소스 모델로 워크플로우를 다시 짜며 느낀 점을 썼습니다. 심상치 않은 탈클로드 코드 움직임과, 그 해결책으로 떠오르는 오픈소스 코딩 에이전트 활용법을 제 경험 기반으로 소개해보려 합니다.",
+      "date_published": "2026-06-15T09:00:17+09:00",
+      "repr_date_published": "2026.06.15.",
+      "featured": 0,
+      "view_count": 25908,
+      "read_time": 12,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "개발",
+          "flag": "develop",
+          "order": 1,
+          "og_title": "IT 개발 이야기들 | 요즘IT",
+          "og_description": "개발을 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_develop.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3801/image6.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3800,
+      "title": "지금 진짜 쓸 만한 AI 에이전트 10가지 총정리(2) : 자율 에이전트 ",
+      "author": {
+        "id": 299,
+        "name": "프로덕트 밸리",
+        "author_url_identifier": "kimmoveit5",
+        "tagline": "IT 프로덕트 다 비교해 드림",
+        "image_url": "https://cdn.wishket.com/news_profiles/325765_20250828_9e6500f0c93510da.jpg"
+      },
+      "description": "코딩 에이전트까지는 무언가 손댈 때마다 사람에게 물었습니다. 자율 에이전트는 한 번 '여기까지는 알아서 해'라고 정해두면, 내가 자는 동안에도 24시간 혼자 돕니다. 가장 강력하고, 그래서 가장 위험한 단계죠. 메신저에 띄워두는 OpenClaw, 쓸수록 똑똑해지는 Hermes, 기억을 내 컴퓨터에만 쌓는 OpenHuman, 구글 워크스페이스 속 Gemini Spark까지 네 가지를 정리했습니다. 편리함과 위험은 같은 버튼에서 나오니, 진짜 실력은 '어디까지 맡기고 어디부터 막을지'를 정하는 감각입니다.",
+      "date_published": "2026-06-12T17:00:17+09:00",
+      "repr_date_published": "2026.06.12.",
+      "featured": 0,
+      "view_count": 9752,
+      "read_time": 9,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "프로덕트",
+          "flag": "product",
+          "order": 7,
+          "og_title": "IT 프로덕트 이야기들 | 요즘IT",
+          "og_description": "프로덕트를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_product.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3800/image9_YYS19NO.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3798,
+      "title": "클로드 페이블 5, 출시 하루 만에 너무 막힌다는 반응이 쏟아졌다 + 차단 소식 업데이트",
+      "author": {
+        "id": 307,
+        "name": "요즘 프로덕트 메이커",
+        "author_url_identifier": "FinalCatti",
+        "tagline": "프로덕트 메이커들의 영감이 될 콘텐츠",
+        "image_url": "https://cdn.wishket.com/news_profiles/325770_20260121_44cd5935b35e908a.jpg"
+      },
+      "description": "AI한테 매번 처음부터 다시 설명하기 지치셨다면. 모델은 그대로 두고 기억만 따로 붙여주는 오픈소스 도구 supermemory, 출시 하루 만에 너무 막혀서 못 쓰겠다는 반응이 쏟아졌다는 앤트로픽 Fable 5, 그리고 1~2년이면 AI가 차원이 달라진다며 정부 검증을 요구한 앤트로픽 CEO의 제안까지. 이번 주 프로덕트 메이커가 주목할 세 가지를 정리했습니다.",
+      "date_published": "2026-06-12T09:00:17+09:00",
+      "repr_date_published": "2026.06.12.",
+      "featured": 0,
+      "view_count": 8632,
+      "read_time": 12,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "프로덕트",
+          "flag": "product",
+          "order": 7,
+          "og_title": "IT 프로덕트 이야기들 | 요즘IT",
+          "og_description": "프로덕트를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_product.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3798/%EC%A0%9C%EB%AA%A9_%EC%97%86%EB%8A%94_%EB%94%94%EC%9E%90%EC%9D%B8__1_.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3792,
+      "title": "나만의 세컨 브레인: 옵시디언 기반 LLM 위키 구축기",
+      "author": {
+        "id": 100,
+        "name": "곰씨네 IT 블로그",
+        "author_url_identifier": "wisizkai",
+        "tagline": "Developer, Blogger",
+        "image_url": "https://cdn.wishket.com/news_profiles/15499_20230719_44deaa45cdc4138b.jpg"
+      },
+      "description": "앞서 기고한 “오늘 뭐부터 하지?” AI 비서 에이전트 만들어봤습니다에서는 흩어진 프로젝트 정보를 한곳에 모아, AI 비서가 매일 아침 프로젝트 현황과 Todo 우선 순위를 브리핑해 주는 시스템을 공유했습니다. 이러한 시스템으로 제 업무에 대한 맥락을 정리했지만, 정작 그 일을 수행하는 '나 자신'에 대한 맥락은 어떻게 효율적으로 정리할지가 고민이었죠. 때마침 안드레 카파시(Andrej Karpathy)가 ‘LLM 위키’라는 아이디어를 제시했고, 그 개념을 저의 컨텍스트 정리에 적용해 보고자 했습니다. 그래서 옵시디언(Obsidian), 깃허브(GitHub), 클로드 코드(Claude Code)의 조합으로 나만의 세컨드 브레인인 LLM 위키를 구축했는데요. 이번 글에서는 그 과정과 LLM 위키 구축 경험에서 얻은 인사이트를 정리해 봤습니다.",
+      "date_published": "2026-06-10T09:00:17+09:00",
+      "repr_date_published": "2026.06.10.",
+      "featured": 0,
+      "view_count": 20729,
+      "read_time": 12,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "개발",
+          "flag": "develop",
+          "order": 1,
+          "og_title": "IT 개발 이야기들 | 요즘IT",
+          "og_description": "개발을 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_develop.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3792/1__%EC%9D%BC%EA%B4%80%EB%90%9C_%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8_%EA%B4%80%EB%A6%AC%EC%9D%98_%EC%96%B4%EB%A0%A4%EC%9B%80.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3786,
+      "title": "지금 진짜 쓸 만한 AI 에이전트 10가지 총정리(1) : 웹·코딩 에이전트",
+      "author": {
+        "id": 299,
+        "name": "프로덕트 밸리",
+        "author_url_identifier": "kimmoveit5",
+        "tagline": "IT 프로덕트 다 비교해 드림",
+        "image_url": "https://cdn.wishket.com/news_profiles/325765_20250828_9e6500f0c93510da.jpg"
+      },
+      "description": "Claude Code를 받아놓고도 뭘 하는 물건인지 감이 안 오고, OpenClaw는 또 뭐가 다른지 모르겠다면, 그 혼란은 당연합니다. 지금 시장에선 AI와 자동화가 조금만 얹혀도 죄다 에이전트라고 부르거든요. 그래서 진짜 에이전트라 부를 만한 서비스를 무엇을 알고(컨텍스트) 무엇으로 일하고(도구) 어디까지 맡겨도 되고(권한) 언제 켜지는지(트리거)로 갈라봤습니다. 1편은 가볍게 맡기는 웹 에이전트 Manus·Genspark와, 컴퓨터를 통째로 맡기되 매번 허락을 구하는 코딩 에이전트 Claude Code·Codex·Antigravity·Cowork까지 다룹니다.",
+      "date_published": "2026-06-05T14:00:17+09:00",
+      "repr_date_published": "2026.06.05.",
+      "featured": 0,
+      "view_count": 22365,
+      "read_time": 12,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "프로덕트",
+          "flag": "product",
+          "order": 7,
+          "og_title": "IT 프로덕트 이야기들 | 요즘IT",
+          "og_description": "프로덕트를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_product.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3786/image5.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3784,
+      "title": "PM은 LLM을 어디까지 이해해야 할까?",
+      "author": {
+        "id": 4,
+        "name": "김영욱",
+        "author_url_identifier": "ywkim36",
+        "tagline": "작가",
+        "image_url": "https://cdn.wishket.com/news_profiles/247921_20230718_26e3bff89a0af288.jpg"
+      },
+      "description": "LLM은 신비로운 마법 상자가 아니라 '다음 단어를 확률로 예측하는' 기계입니다. 이러한 특징은 제품의 설계와 운영에 다양한 영향을 끼칩니다. 그래서 엔지니어만큼 깊이 알 필요는 없지만, PM이라면 의사결정을 위한 최소한의 지식은 알아야 합니다. <AI 프로덕트 매니지먼트> 시리즈 두 번째 글은 토큰·컨텍스트·추론·RAG·에이전트, 다섯 개의 단어로 그 직관을 줄 지식을 정리했습니다. 한국어 서비스의 비용이 더 나오는 이유, 챗봇이 자신만만하게 틀리는 이유, '우리 회사 문서를 아는 AI'에 RAG가 필요한 이유 등을 짚었습니다.",
+      "date_published": "2026-06-04T14:00:17+09:00",
+      "repr_date_published": "2026.06.04.",
+      "featured": 0,
+      "view_count": 7012,
+      "read_time": 12,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "기획",
+          "flag": "plan",
+          "order": 4,
+          "og_title": "IT 기획 이야기들 | 요즘IT",
+          "og_description": "기획을 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_plan.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3784/image4.jpg",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3781,
+      "title": "AX의 어려움은 전 직원이 AI를 쓴 이후부터 시작된다",
+      "author": {
+        "id": 68,
+        "name": "강남언니",
+        "author_url_identifier": "a21855da08cb102d",
+        "tagline": "작가",
+        "image_url": "/media/news/author/%EA%B0%95%EB%82%A8%EC%96%B8%EB%8B%88_P1Taclq.png"
+      },
+      "description": "요즘 어딜 가나 AI와 AX 이야기를 합니다. 그런데 막상 \"전사가 AI를 잘 쓰게 만든다\"는 건, 들여다볼수록 쉽지 않은 일이었습니다. 저는 AI 전문가는 아니지만, 기술자였다가 조직문화와 일하는 법을 담당하게 된 사람으로서 최근에는 전사 AX라는, 정해진 답이 없는 영역을 맡게 되었습니다. 이 글에서는 AI라는 바다를 향해 수많은 구성원들이 배를 띄우고 잘 나아가게 만드는 여정을 정리해 봤습니다. 멋있는 프레임이 아니라, 실제로 우리에게 일어난 일과 일어날 일을 4개 페이즈로 알아보겠습니다.",
+      "date_published": "2026-06-01T14:00:17+09:00",
+      "repr_date_published": "2026.06.01.",
+      "featured": 0,
+      "view_count": 10925,
+      "read_time": 9,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3781/5f86c967-4700-4cef-b085-54e3a5d84536_png-1200w.jpg",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3780,
+      "title": "Opus 4.8 등장: 클로드는 빼앗긴 주도권을 찾아올까?",
+      "author": {
+        "id": 317,
+        "name": "미어캣",
+        "author_url_identifier": "vision_jmin",
+        "tagline": "AI 사바나 망보기 담당",
+        "image_url": "https://cdn.wishket.com/news_profiles/325769_20260521_4855bdf4ca82e715.jpg"
+      },
+      "description": "Opus 4.8이 나왔습니다. 4.7이 나온지 42일만이죠. 전에 없던 빠른 업그레이드입니다. GPT-5.5와 Codex에 주도권을 내준 한 달, 클로드의 반격 턴이죠. 가격은 그대로 둔 채 코딩·장기 에이전트 벤치마크를 끌어올렸고, 핵심으로 내세운 건 '정직성'입니다. 같은 날 클로드 코드는 스스로 수십~수백 개 에이전트를 지휘하는 workflow를 공개했고요. 공식 문서와 커뮤니티 반응을 따라가며, 마지막으로 미토스(Mythos) 현황까지 정리했습니다.",
+      "date_published": "2026-05-29T14:00:17+09:00",
+      "repr_date_published": "2026.05.29.",
+      "featured": 0,
+      "view_count": 13884,
+      "read_time": 9,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        },
+        {
+          "name": "트렌드",
+          "flag": "trend",
+          "order": 9,
+          "og_title": "IT 트렌드 이야기들 | 요즘IT",
+          "og_description": "트렌드에 관한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_trend.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3780/www-cdn_anthropic__1_.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3776,
+      "title": "1년 전 클로드 코드가 뜰 거라고 예측했던 Dan Shipper의 새 예측",
+      "author": {
+        "id": 307,
+        "name": "요즘 프로덕트 메이커",
+        "author_url_identifier": "FinalCatti",
+        "tagline": "프로덕트 메이커들의 영감이 될 콘텐츠",
+        "image_url": "https://cdn.wishket.com/news_profiles/325770_20260121_44cd5935b35e908a.jpg"
+      },
+      "description": "도구 118개를 한 번에 연결하는 오픈소스 개인 AI 에이전트 OpenHuman, 1년 전 클로드 코드의 부상을 적중시킨 Dan Shipper의 새 AI 예측 12가지, 코딩 도구를 넘어 PM·디자인·재무·영업까지 확장된 오픈AI 코덱스 활용 사례 52선. 이번 주 프로덕트 메이커가 알아야 할 세 가지를 정리했습니다.",
+      "date_published": "2026-05-29T09:00:17+09:00",
+      "repr_date_published": "2026.05.29.",
+      "featured": 0,
+      "view_count": 16363,
+      "read_time": 13,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "프로덕트",
+          "flag": "product",
+          "order": 7,
+          "og_title": "IT 프로덕트 이야기들 | 요즘IT",
+          "og_description": "프로덕트를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_product.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3776/2_2.jpg",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3774,
+      "title": "바이브 코딩으로 7일간 900커밋, 디자이너의 앱 출시기",
+      "author": {
+        "id": 314,
+        "name": "이키",
+        "author_url_identifier": "ikiminutes",
+        "tagline": "기록하는 디자이너 이키입니다.",
+        "image_url": "https://cdn.wishket.com/news_profiles/387799_20260511_e4ba3d2128c11f05.jpg"
+      },
+      "description": "지난 3월 9일, 저는 클로드(Claude)에게 “뭔가 새로운 아이디어 없니?”라고 물었습니다. 그리고 3월 16일, 앱스토어(App Store)에 심사를 넣었습니다. 앱스토어에 업로드하기 전까지 7일 동안 커밋(Commit)을 900개 달성한 것이죠. 저는 업무를 마친 뒤, 남은 주말과 출근 전 오전, 퇴근 후 밤 시간을 투자해 ‘문채(문장 채집 앱)’을 만들었습니다. 이번 글에서는 제가 바이브 코딩으로 문채를 만들며 겪은 기획과 문제 정의 과정, 3,800줄 코드와 42개 파일 동시 수정, 로그인 오류 같은 시행착오, 그리고 앱스토어·구글 플레이·크롬 확장 프로그램 출시까지의 과정을 소개하려고 합니다.",
+      "date_published": "2026-05-28T09:00:17+09:00",
+      "repr_date_published": "2026.05.28.",
+      "featured": 0,
+      "view_count": 10736,
+      "read_time": 10,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "프로덕트",
+          "flag": "product",
+          "order": 7,
+          "og_title": "IT 프로덕트 이야기들 | 요즘IT",
+          "og_description": "프로덕트를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_product.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3774/9_.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3771,
+      "title": "정말로 지금은 Codex가 Claude Code보다 나을까?",
+      "author": {
+        "id": 278,
+        "name": "덕파",
+        "author_url_identifier": "minnote33",
+        "tagline": "얼렁뚱땅 빙글빙글 돌아가는 머릿속",
+        "image_url": "https://cdn.wishket.com/news_profiles/325767_20250116_80d2e01bebe2bbcc.png"
+      },
+      "description": "비교 글은 이미 충분히 나왔어요. 다만 공식 발표·외부 측정·1인 분석가 후기가 같은 무게로 섞여 판단이 쉽지 않더라고요. 그래서 1차로 공식 자료를 먼저 깔고 외부 측정과 분석을 그 위에 얹었습니다. Opus 4.7과 GPT-5.5의 모델 자체 변화, 같은 모델을 다른 가정으로 쓰는 Claude Code와 Codex의 도구 차이를 두 축으로 그동안 일어난 일도 정리했죠. Codex와 Claude Code. 도대체 뭘 써야 할까요?",
+      "date_published": "2026-05-26T14:00:17+09:00",
+      "repr_date_published": "2026.05.26.",
+      "featured": 0,
+      "view_count": 40347,
+      "read_time": 12,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3771/image4.png",
+      "is_news_scrapped": false
+    }
+  ]
+}
