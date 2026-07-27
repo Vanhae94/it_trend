@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026-W31 요즘IT AI 트렌드 리포트</title>
+<script>try{var t=localStorage.getItem('aipw-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<link rel="stylesheet" href="../_assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../_assets/icon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../_assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../_assets/apple-touch-icon.png">
+<link rel="manifest" href="../_assets/manifest.json">
+<meta name="theme-color" content="#2A2621">
+<meta name="apple-mobile-web-app-title" content="요즘IT AI">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="../index.html"><span class="dot"></span>요즘IT AI 트렌드 <small>Observatory Log</small></a>
+  <nav class="topnav">
+    <a href="index.html">2026.07</a>
+    <a href="../index.html">전체</a>
+    <button id="themeToggle" class="icon-btn" aria-label="다크/라이트 테마 전환" title="테마 전환">◐</button>
+  </nav>
+</div>
+
+<header class="hero wrap">
+  <span class="eyebrow">2026-W31 · 2026-07-27 ~ 2026-08-02</span>
+  <h1 class="hero__title">이번 주 가장 주목받은 <em>요즘IT AI 글 5건</em></h1>
+  <p class="hero__lede">이번 주 한 줄 트렌드: <b>&#x27;만들기&#x27;에서 &#x27;왜·어떻게 운영하느냐&#x27;로 — 200만 줄의 교훈과 1인 다중운영이 이번 주 화두, 코딩 에이전트는 5주째 지속</b></p>
+  <div class="hero__stats"><div class="stat"><span class="stat__num">5</span><span class="stat__label">선정 글</span></div><div class="stat"><span class="stat__num">90%</span><span class="stat__label">인기 중 AI</span></div><div class="stat"><span class="stat__num">6</span><span class="stat__label">키워드</span></div></div>
+</header>
+
+<main class="wrap">
+
+  <section class="section">
+    <h2 class="section-title"><span class="ix">01</span> 이번 주 주목 AI 글 5선</h2>
+    <div class="paper-grid">
+      <article class="article-card" style="--i:1" data-tags="오픈소스llm claude code 로컬llm 비용최적화 탈클로드 claude-code coding-agent open-source-llm">
+  <div class="ac-head">
+    <span class="ac-rank">01</span>
+    <div class="ac-headmain">
+      <div class="ac-metaline"><span class="ac-cat">AI 코딩·개발도구</span><span class="badge badge--streak">🔁 5주 연속 인기</span><span class="badge badge--up">👁 26.1k</span><span class="badge badge--cm">⏱ 12분</span></div>
+      <h3 class="ac-title"><a href="https://yozm.wishket.com/magazine/detail/3801" target="_blank" rel="noopener">클로드 코드를 떠나 오픈소스로 돌아간 이유</a></h3>
+      <p class="ac-byline">반기황</p>
+    </div>
+  </div>
+  <p class="ac-oneliner">예측 불가능한 사용량 제한에 지친 개발자가 Ollama·DeepSeek·Qwen 조합으로 워크플로를 재설계한 실전기</p>
+  <div class="ac-summary"><p>데모 직전 사용 한도 초과를 겪은 엔지니어가 불투명한 사용량 정책과 비용 부담을 이유로 클로드 코드를 떠나, 로컬·클라우드 오픈소스 모델로 대체하는 과정을 정리했습니다. 일상 작업의 80~90%는 오픈소스 모델로 충분하고, 정말 어려운 10~20%만 최상위 모델을 쓰는 하이브리드 전략을 제안합니다.</p></div>
+  <div class="ac-subline"><span class="ac-tag">사례</span> · <span>인기 1위</span> · <span>AI 코딩 비용·안정성 문제로 대안을 찾는 개발자·1인 엔지니어</span> · <span>📅 2026-06-15</span></div>
+  <div class="chip-row"><span class="chip">claude-code</span><span class="chip">coding-agent</span><span class="chip">open-source-llm</span></div>
+  <details class="ac-detail"><summary><span class="ac-detail-caret">▸</span><span class="ac-detail-label">자세히 보기</span><span class="ac-detail-hint">핵심 포인트 · 왜 지금 · 실무 시사점 · 용어 · 복습</span></summary><div class="ac-detail-body"><div class="ac-sec"><h4>핵심 포인트</h4><ul class="ac-list"><li>Anthropic이 사용량 제한(rate limit)을 강화하며 Pro 플랜도 하루 2~4시간 만에 한도 초과에 도달하는 사례가 다수 보고됨</li><li>DeepSeek Coder V2·Qwen 3 Coder가 HumanEval 등 벤치마크에서 Claude 3.5 Sonnet과 대등한 수준까지 성능 격차를 좁힘</li><li>Ollama로 노트북에서 7B~14B 모델 구동 가능, 32GB RAM이면 양자화로 32B급까지 가능</li><li>Groq·Together AI 같은 오픈소스 모델 호스팅은 Claude API 대비 약 10분의 1 비용</li><li>저자의 실제 운영 방식: 일상 코딩은 로컬 Qwen 3 Coder, 복잡한 설계는 Groq의 DeepSeek V3, 정말 필요할 때만 Claude API 호출</li></ul></div><div class="ac-sec"><h4>왜 지금</h4><p>4주 내리 1위였던 3771이 이번 주 인기권에서 빠지며 이 글이 인기 1위로 올라선 가운데, &#x27;가격·안정성&#x27; 관점의 탈클로드 실사용 사례로 5주 연속 상위를 지킵니다.</p></div><div class="ac-sec"><h4>실무 시사점</h4><p>고정 비용으로 예측 가능한 처리량이 필요한 팀은 오픈소스 모델을 메인으로, 클로드는 복잡한 아키텍처·대규모 리팩터링 등 고난도 작업에만 선택적으로 쓰는 비용 최적화 구조를 검토할 만합니다.</p></div><div class="ac-sec"><h4>실무 적용 포인트</h4><ul class="ac-list"><li>복잡도가 낮은 반복 코딩 작업부터 로컬/오픈소스 모델로 전환해보고, 실패율이 허용 범위인지 직접 측정한다</li><li>Groq·Together AI 같은 저비용 호스팅으로 고난도 작업만 선택적으로 상위 모델(Claude 등)에 위임하는 계층적 워크플로를 설계한다</li></ul></div><div class="ac-sec"><h4>핵심 용어</h4><div class="terms"><span class="term"><b>양자화(quantization)</b> 모델 가중치의 정밀도를 낮춰 메모리·연산량을 줄이는 기법으로, 로컬 환경 구동을 가능하게 함</span><span class="term"><b>rate limit(사용량 제한)</b> 일정 시간 동안 사용할 수 있는 요청·토큰량을 제한하는 서비스 정책</span><span class="term"><b>Ollama</b> 오픈소스 LLM을 로컬 컴퓨터에서 손쉽게 내려받아 구동할 수 있게 해주는 도구</span></div></div><div class="ac-sec"><div class="quiz"><p class="quiz__q"><b>RECALL ↺</b> 저자가 제시한 &#x27;일상 작업의 80~90%&#x27;를 처리하기에 충분하다고 본 오픈소스 모델은 어떤 모델과 비슷한 성능 수준인가?</p><details><summary>정답 보기</summary><p class="quiz__a">Claude 3.5 Sonnet 수준 (DeepSeek Coder V2, Qwen 3 Coder 기준)</p></details></div></div></div></details>
+  <div class="link-group"><a class="btn btn--primary" href="https://yozm.wishket.com/magazine/detail/3801" target="_blank" rel="noopener">원문</a></div>
+</article>
+
+<article class="article-card" style="--i:2" data-tags="에이전트시어터 맥락엔지니어링 왜(why) chp 프로덕션 claude-code ai-agent productivity">
+  <div class="ac-head">
+    <span class="ac-rank">02</span>
+    <div class="ac-headmain">
+      <div class="ac-metaline"><span class="ac-cat">일하는 법·조직</span><span class="badge badge--up">👁 23.2k</span><span class="badge badge--cm">⏱ 12분</span></div>
+      <h3 class="ac-title"><a href="https://yozm.wishket.com/magazine/detail/3852" target="_blank" rel="noopener">AI와 200만 줄의 코드를 작성하며 깨달은 것들</a></h3>
+      <p class="ac-byline">이정훈</p>
+    </div>
+  </div>
+  <p class="ac-oneliner">AI와 200만 줄을 짠 25년차 아키텍트의 결론 — 껍데기를 진짜로 만드는 건 더 좋은 모델이 아니라 &#x27;왜(why)&#x27;</p>
+  <div class="ac-summary"><p>스타트업 CTO가 AI와 단둘이 200만 줄을 짜며 겪은 기록입니다. 코드는 그럴듯한데 5분도 자율 작동 못 하는 &#x27;에이전트 시어터(껍데기)&#x27; 문제의 원인은 AI에 &#x27;무엇을·어떻게&#x27;만 주고 &#x27;왜&#x27;를 빠뜨린 데 있었고, 규칙을 늘리면 환각과 함께 창의성까지 죽었습니다. 모델·가중치를 바꾸지 않고 &#x27;왜&#x27;를 담은 맥락 문서만 물렸더니 같은 AI가 전혀 다른 품질을 냈다고 말합니다.</p></div>
+  <div class="ac-subline"><span class="ac-tag">오피니언</span> · <span>인기 2위</span> · <span>AI로 실제 제품을 만들고 운영·의사결정하는 CTO·시니어 엔지니어·빌더</span> · <span>📅 2026-07-16</span></div>
+  <div class="chip-row"><span class="chip">claude-code</span><span class="chip">ai-agent</span><span class="chip">productivity</span></div>
+  <details class="ac-detail"><summary><span class="ac-detail-caret">▸</span><span class="ac-detail-label">자세히 보기</span><span class="ac-detail-hint">핵심 포인트 · 왜 지금 · 실무 시사점 · 용어 · 복습</span></summary><div class="ac-detail-body"><div class="ac-sec"><h4>핵심 포인트</h4><ul class="ac-list"><li>&#x27;에이전트 시어터&#x27;: 컴파일·리뷰는 통과하지만 런타임엔 아무 일도 안 일어나는 껍데기 — 가트너도 &#x27;2027년까지 에이전트 프로젝트 40%+ 폐기&#x27;·&#x27;agent washing&#x27; 경고(원인은 모델이 아니라 사람의 결정)</li><li>빠진 변수는 &#x27;왜(why)&#x27; — &#x27;무엇(what)·어떻게(how)&#x27;만 주면 문법상 완벽하나 기능적으로 텅 빈 코드가 나옴(멱등성이 왜 필요한지까지 말해줘야 진짜가 됨)</li><li>규칙을 늘리면 환각은 줄지만 창의성도 함께 죽음 — 환각과 창의성은 같은 생성 메커니즘의 양면(규칙은 대칭적)</li><li>돌파구는 모델 교체가 아니라 &#x27;왜&#x27;를 담은 판단기준 문서를 추론 시점 맥락에 상시 주입(&#x27;소프트 파인튜닝&#x27;) — 가중치 0 변경, 품질만 상승</li><li>CHP(창의성·환각·원칙) 삼각 트레이드오프 — 영역마다 다이얼을 다시 맞추는 것이 1인+AI 개발의 진짜 병목(유능한 AI일수록 분별 노동↑)</li></ul></div><div class="ac-sec"><h4>왜 지금</h4><p>바이브 코딩으로 &#x27;만드는 건 쉬워진&#x27; 흐름(3838·3840) 다음 단계로, &#x27;왜 대부분의 결과물이 껍데기가 되는가&#x27;라는 성숙·비판 담론이 이번 주 최상위로 떠오른 대표 글입니다.</p></div><div class="ac-sec"><h4>실무 시사점</h4><p>AI 도입 성패는 더 좋은 모델·예산이 아니라 &#x27;나는 이것을 왜 만드는가, 이 실패가 왜 용납 안 되는가&#x27;에 답할 수 있느냐에 달려 있습니다. 코딩 컨벤션 대신 &#x27;작동의 의미·금지사항&#x27; 같은 판단기준을 문서로 맥락에 물리면 같은 모델의 결과 품질이 달라집니다.</p></div><div class="ac-sec"><h4>실무 적용 포인트</h4><ul class="ac-list"><li>코딩 규칙 대신 &#x27;이 영역에서 작동한다는 것의 의미·절대 금지사항&#x27; 같은 판단기준(why) 문서를 만들어 AI 맥락에 상시 물린다</li><li>영역별로 창의성↔원칙 다이얼을 다르게 설정한다(프론트=창의성↑, 프로토콜·메시지브로커=원칙↑)</li></ul></div><div class="ac-sec"><h4>핵심 용어</h4><div class="terms"><span class="term"><b>에이전트 시어터(agent theater)</b> 시연은 완벽하나 실제 운영에선 작동하지 않는, 껍데기뿐인 AI 결과물</span><span class="term"><b>멱등성(idempotency)</b> 같은 요청이 여러 번 들어와도 결과가 한 번 실행한 것과 같도록 보장하는 성질</span><span class="term"><b>맥락 엔지니어링(&#x27;왜&#x27;)</b> 모델을 바꾸지 않고 추론 시점 맥락에 판단기준(왜)을 주입해 결과 품질을 끌어올리는 접근</span></div></div><div class="ac-sec"><div class="quiz"><p class="quiz__q"><b>RECALL ↺</b> 저자가 &#x27;껍데기 코드&#x27;를 &#x27;진짜&#x27;로 바꾼 방법은 더 좋은 모델도 규칙 강화도 아니었다. 무엇인가?</p><details><summary>정답 보기</summary><p class="quiz__a">코드 없이 &#x27;왜(작동의 의미·금지사항 등 판단기준)&#x27;만 담은 문서를 추론 시점 맥락에 상시 주입한 것(&#x27;소프트 파인튜닝&#x27;)</p></details></div></div></div></details>
+  <div class="link-group"><a class="btn btn--primary" href="https://yozm.wishket.com/magazine/detail/3852" target="_blank" rel="noopener">원문</a></div>
+</article>
+
+<article class="article-card" style="--i:3" data-tags="ai에이전트 코딩에이전트 claude code codex 도구비교 ai-agent coding-agent claude-code">
+  <div class="ac-head">
+    <span class="ac-rank">03</span>
+    <div class="ac-headmain">
+      <div class="ac-metaline"><span class="ac-cat">AI 에이전트·자동화</span><span class="badge badge--streak">🔁 5주 연속 인기</span><span class="badge badge--up">👁 23.1k</span><span class="badge badge--cm">⏱ 12분</span></div>
+      <h3 class="ac-title"><a href="https://yozm.wishket.com/magazine/detail/3786" target="_blank" rel="noopener">지금 진짜 쓸 만한 AI 에이전트 10가지 총정리(1) : 웹·코딩 에이전트</a></h3>
+      <p class="ac-byline">프로덕트 밸리</p>
+    </div>
+  </div>
+  <p class="ac-oneliner">컨텍스트·도구·권한·트리거 4가지 기준으로 Manus부터 Claude Cowork까지 6개 에이전트 시장을 정리</p>
+  <div class="ac-summary"><p>&#x27;에이전트&#x27;라는 이름이 남발되는 혼란 속에서, 무엇을 알고(컨텍스트)·무엇으로 일하고(도구)·어디까지 맡기고(권한)·언제 켜지는지(트리거)라는 네 축으로 서비스를 분류했습니다. 1편에서는 가볍게 맡기는 웹 에이전트(Manus·Genspark)와 매번 승인이 필요한 코딩 에이전트(Claude Code·Codex·Antigravity·Cowork) 6개를 비교합니다.</p></div>
+  <div class="ac-subline"><span class="ac-tag">뉴스분석</span> · <span>인기 3위</span> · <span>AI 에이전트 도구 지형을 처음 정리하고 싶은 프로덕트 매니저·팀 리더</span> · <span>📅 2026-06-05</span></div>
+  <div class="chip-row"><span class="chip">ai-agent</span><span class="chip">coding-agent</span><span class="chip">claude-code</span></div>
+  <details class="ac-detail"><summary><span class="ac-detail-caret">▸</span><span class="ac-detail-label">자세히 보기</span><span class="ac-detail-hint">핵심 포인트 · 왜 지금 · 실무 시사점 · 용어 · 복습</span></summary><div class="ac-detail-body"><div class="ac-sec"><h4>핵심 포인트</h4><ul class="ac-list"><li>에이전트를 가르는 결정적 축은 &#x27;권한(어디까지 알아서 하게 둘 것인가)&#x27;이며, 웹 에이전트 &lt; 코딩 에이전트/컴퓨터 유즈 &lt; 자율 에이전트 순으로 자유도가 커짐</li><li>Claude Code는 2025년부터 운영된 기준점 도구로, Sonnet 4.6·Opus 4.8 기반이며 1M 컨텍스트를 정식 지원</li><li>Codex는 GPT-5.5 기반으로 가볍고 오픈소스이며, 권한 질문을 덜 하는 목적지향적 특성이 강점</li><li>Claude Cowork는 비개발자용 GUI 버전으로, &#x27;Ask before acting&#x27; 방식으로 실행 전 계획을 보여주고 승인을 기다림</li><li>코딩 에이전트는 이제 코드뿐 아니라 파일 정리·문서 자동화·앱 실행 등 컴퓨터의 거의 모든 작업으로 영역이 확장됨</li></ul></div><div class="ac-sec"><h4>왜 지금</h4><p>코딩 에이전트가 &#x27;신기하다&#x27;와 &#x27;매일 쓴다&#x27;의 경계를 이미 넘어섰다는 진단과 함께, 시장에 난립한 에이전트 제품군을 구조적으로 정리해주는 콘텐츠가 필요해진 시점을 반영합니다.</p></div><div class="ac-sec"><h4>실무 시사점</h4><p>팀에 에이전트 도구를 도입할 때 &#x27;웹/코딩/자율&#x27; 중 어느 단계의 권한이 필요한 업무인지 먼저 구분하면, 과도한 자율성으로 인한 리스크나 반대로 불필요한 승인 병목을 피하는 데 도움이 됩니다.</p></div><div class="ac-sec"><h4>실무 적용 포인트</h4><ul class="ac-list"><li>새 AI 도구를 검토할 때 컨텍스트·도구·권한·트리거 4가지 기준으로 먼저 분류해 업무 적합도를 판단한다</li><li>비개발자 조직이라면 코딩 에이전트 대신 Claude Cowork 같은 GUI 기반 대안부터 시범 도입한다</li></ul></div><div class="ac-sec"><h4>핵심 용어</h4><div class="terms"><span class="term"><b>컴퓨터 유즈(computer use)</b> AI 에이전트가 코드를 넘어 파일·앱·데스크톱 등 컴퓨터 전반을 조작하는 능력</span><span class="term"><b>자율 에이전트</b> 한 번 권한을 위임하면 이후 매번 승인 없이 스스로 계속 작업을 수행하는 에이전트 유형</span><span class="term"><b>트리거(trigger)</b> 에이전트가 작업을 시작하는 계기 — 사람의 직접 호출인지, 조건 충족 시 자동 실행인지</span></div></div><div class="ac-sec"><div class="quiz"><p class="quiz__q"><b>RECALL ↺</b> 이 글이 에이전트 서비스를 구분하는 4가지 기준은 무엇인가?</p><details><summary>정답 보기</summary><p class="quiz__a">컨텍스트(무엇을 아는지), 도구(무엇으로 일하는지), 권한(어디까지 맡기는지), 트리거(언제 시작하는지)</p></details></div></div></div></details>
+  <div class="link-group"><a class="btn btn--primary" href="https://yozm.wishket.com/magazine/detail/3786" target="_blank" rel="noopener">원문</a></div>
+</article>
+
+<article class="article-card" style="--i:4" data-tags="바이브코딩 비개발자 커리어전환 외주 생산성 vibe-coding productivity">
+  <div class="ac-head">
+    <span class="ac-rank">04</span>
+    <div class="ac-headmain">
+      <div class="ac-metaline"><span class="ac-cat">커리어·직무</span><span class="badge badge--streak">🔁 4주 연속 인기</span><span class="badge badge--up">👁 17.5k</span><span class="badge badge--cm">⏱ 8분</span></div>
+      <h3 class="ac-title"><a href="https://yozm.wishket.com/magazine/detail/3803" target="_blank" rel="noopener">바이브 코딩을 만난 1년, 40대 비개발자에게 일어난 일들</a></h3>
+      <p class="ac-byline">불혹의바이브코딩</p>
+    </div>
+  </div>
+  <p class="ac-oneliner">40대 비개발자가 바이브 코딩 1년으로 외주 120건·매출 5천만원·책 출간까지 — 생산성은 개인의 무기가 된다</p>
+  <div class="ac-summary"><p>ChatGPT 상담으로 시작해 VS Code에 코드를 붙여넣던 40대 직장인이, 1년간 외주 120여 건(누적 매출 5,000만원, 평점 5.0)과 카카오 AI TOP 100·해커톤 2회 대상·책 출간·본업 전환까지 이룬 기록입니다. 특별한 재능이 아니라 &#x27;일단 끝까지 해보는&#x27; 반복이 평범한 개인의 생산성을 끌어올렸다는 경험담입니다.</p></div>
+  <div class="ac-subline"><span class="ac-tag">사례</span> · <span>인기 6위</span> · <span>AI로 커리어를 확장하고 싶은 비개발 직군·40대 직장인</span> · <span>📅 2026-06-16</span></div>
+  <div class="chip-row"><span class="chip">vibe-coding</span><span class="chip">productivity</span></div>
+  <details class="ac-detail"><summary><span class="ac-detail-caret">▸</span><span class="ac-detail-label">자세히 보기</span><span class="ac-detail-hint">핵심 포인트 · 왜 지금 · 실무 시사점 · 용어 · 복습</span></summary><div class="ac-detail-body"><div class="ac-sec"><h4>핵심 포인트</h4><ul class="ac-list"><li>2025년 4월 첫 자동화 프로그램(에러 메시지를 AI에 붙여넣으며 시작) → 1년간 외주 120여 건, 누적 매출 5,000만원, 평점 5.0 유지</li><li>요즘IT 기고 → 카카오 AI TOP 100 Finalist → 해커톤 2회 연속 대상 → 카카오 AI 앰배서더 → 책 출간으로 이어진 선순환</li><li>회사 밖 외주 성과가 사내 단독 프로젝트·이직 포트폴리오로 환류되는 &#x27;안팎 선순환&#x27; 구조</li><li>해커톤 성과의 비결은 코딩 실력이 아니라 &#x27;기획 의도·평가 기준 읽기&#x27;라는 기존 직무 역량 + 바이브 코딩의 결합 → AI 시대엔 나이가 강점이 될 수 있다는 관점</li><li>핵심 메시지: AI 생산성은 기업만의 것이 아니라 평범한 개인의 무기 — 거창한 목표 없이 &#x27;이번 주 안에 끝낼 작은 시도&#x27; 하나로 시작</li></ul></div><div class="ac-sec"><h4>왜 지금</h4><p>3838·3840처럼 바이브 코딩이 &#x27;개인이 직접 만들어 쓰는&#x27; 단계로 확산되는 흐름의 인간적 원형 사례로, 여러 주째 커리어 관점에서 꾸준히 인기를 이어갑니다.</p></div><div class="ac-sec"><h4>실무 시사점</h4><p>비개발 직군이라도 반복 업무 자동화 → 외부 검증(외주·대회) → 기록·공유로 이어지는 작은 루프를 돌리면 AI 생산성을 개인 커리어 자산으로 전환할 수 있습니다. 시작은 &#x27;이번 주 끝낼 수 있는 어설픈 시도&#x27; 하나면 충분합니다.</p></div><div class="ac-sec"><h4>실무 적용 포인트</h4><ul class="ac-list"><li>매주 반복하는 업무 하나를 골라 AI로 자동화 도구를 만들어보고, 단돈 만원이라도 외부에서 값이 매겨지는지(외주 등)로 실효성을 검증한다</li><li>시행착오를 글로 기록·공유해 피드백과 기회(기고·대회·네트워크)로 연결하는 루프를 돌린다</li></ul></div><div class="ac-sec"><h4>핵심 용어</h4><div class="terms"><span class="term"><b>바이브 코딩(vibe coding)</b> 코드를 직접 짜기보다 AI에게 자연어로 요청해 프로그램을 만들어내는 방식</span><span class="term"><b>선순환(플라이휠)</b> 작은 성과가 다음 기회를 만들고 그것이 또 다음 성과로 이어지는 자기강화 구조</span><span class="term"><b>포트폴리오</b> 자신의 결과물·경험을 정리해 역량을 증명하는 자료(여기선 외주·대회 기록이 이직에 활용됨)</span></div></div><div class="ac-sec"><div class="quiz"><p class="quiz__q"><b>RECALL ↺</b> 저자가 해커톤에서 연속 대상을 받은 핵심 비결로 꼽은 것은 코딩 실력 자체가 아니라 무엇인가?</p><details><summary>정답 보기</summary><p class="quiz__a">기획 의도·주제·평가 기준을 읽어내는 기존 직무(기획) 역량과 빠른 구현(외주 경험)에 바이브 코딩을 결합한 것</p></details></div></div></div></details>
+  <div class="link-group"><a class="btn btn--primary" href="https://yozm.wishket.com/magazine/detail/3803" target="_blank" rel="noopener">원문</a></div>
+</article>
+
+<article class="article-card" style="--i:5" data-tags="1인빌더 claude code 핸드오프 스킬 운영시스템 claude-code productivity">
+  <div class="ac-head">
+    <span class="ac-rank">05</span>
+    <div class="ac-headmain">
+      <div class="ac-metaline"><span class="ac-cat">일하는 법·조직</span><span class="badge badge--up">👁 10.5k</span><span class="badge badge--cm">⏱ 9분</span></div>
+      <h3 class="ac-title"><a href="https://yozm.wishket.com/magazine/detail/3840" target="_blank" rel="noopener">1인 빌더, 클로드 코드로 프로젝트 9개 동시 운영한 방법</a></h3>
+      <p class="ac-byline">요즘 세미나</p>
+    </div>
+  </div>
+  <p class="ac-oneliner">1인 빌더가 클로드 코드로 프로젝트 9→13개 동시 운영 — 비결은 도구가 아니라 &#x27;동료처럼 다루기&#x27;</p>
+  <div class="ac-summary"><p>클코나잇2 웨비나 발표 정리로, 해고 후 클로드 코드로 MVP를 몇 시간 만에 찍어내다 &#x27;9개의 폐허&#x27;(운영 붕괴)를 겪은 1인 빌더가 5가지 시스템(중앙 허브 CLAUDE.md·핸드오프·병렬·스킬·메모리)으로 동시 운영을 정착시킨 이야기입니다. 결론은 &#x27;만드는 건 쉬워졌지만 운영·판매는 다른 일&#x27;이며, 주당 2개만 집중하고 AI를 &#x27;동료&#x27;처럼 다루라는 것.</p></div>
+  <div class="ac-subline"><span class="ac-tag">사례</span> · <span>인기 10위</span> · <span>AI로 사이드·1인 프로젝트를 여러 개 굴리려는 빌더·개발자</span> · <span>📅 2026-07-08</span></div>
+  <div class="chip-row"><span class="chip">claude-code</span><span class="chip">productivity</span></div>
+  <details class="ac-detail"><summary><span class="ac-detail-caret">▸</span><span class="ac-detail-label">자세히 보기</span><span class="ac-detail-hint">핵심 포인트 · 왜 지금 · 실무 시사점 · 용어 · 복습</span></summary><div class="ac-detail-body"><div class="ac-sec"><h4>핵심 포인트</h4><ul class="ac-list"><li>MVP가 몇 시간 만에 나오자 프로젝트가 9개로 불어났지만, 운영 시작 후 &#x27;어디까지 했더라·같은 지시 반복·같은 실수 반복&#x27; 3대 통증 폭발</li><li>5장치: ①home/CLAUDE.md 중앙 허브 ②핸드오프(HANDOFF.md로 세션 전환비용 0) ③병렬(이젠 한 세션 백그라운드) ④스킬(만들고 받아 쓰기) ⑤메모리(같은 실수 방지)</li><li>&#x27;만드는 건 쉬운데 파는 건 다른 일&#x27; — 톡비서는 계약까지 갔지만 9개를 동시에 영업할 수 없어 접음</li><li>지금은 주당 집중 프로젝트 2개로 제한(9개 동시엔 어느 것도 진전 없음), /schedule 크론으로 백로그 자동 정리</li><li>진짜 비결은 장치가 아니라 &#x27;클로드를 동료처럼&#x27; — 정답을 주지 말고 고민·컨텍스트를 다 풀어놓고 함께 답을 찾기</li></ul></div><div class="ac-sec"><h4>왜 지금</h4><p>3852(&#x27;왜&#x27;가 핵심)와 같은 맥락에서, 바이브 코딩의 초점이 &#x27;만들기&#x27;에서 &#x27;운영·맥락·협업 방식&#x27;으로 이동하는 이번 주 흐름을 보여주는 실전 사례입니다.</p></div><div class="ac-sec"><h4>실무 시사점</h4><p>AI로 여러 프로젝트를 굴리려면 도구보다 운영 시스템(중앙 컨텍스트·세션 핸드오프·스킬·메모리)을 먼저 세우고, 동시 진행을 소수(예: 2개)로 제한하며, AI에 정답 대신 맥락을 주고 함께 답을 찾는 협업 습관이 핵심입니다.</p></div><div class="ac-sec"><h4>실무 적용 포인트</h4><ul class="ac-list"><li>세션 종료 시 &#x27;핸드오프&#x27;로 진행상황·다음 할 일을 파일에 남겨 다음 세션이 바로 이어가게 하고, 반복 지시는 스킬로, 반복 실수는 메모리로 고정한다</li><li>동시 진행 프로젝트를 소수(예: 주당 2개)로 제한하고 나머지는 동결해 &#x27;전부 정체&#x27;를 막는다</li></ul></div><div class="ac-sec"><h4>핵심 용어</h4><div class="terms"><span class="term"><b>핸드오프(Handoff)</b> 세션 종료 시 오늘 한 일·상태·다음 할 일을 파일로 남겨 다음 세션이 즉시 이어받게 하는 방식</span><span class="term"><b>중앙 허브(CLAUDE.md)</b> 모든 프로젝트 목차·공용 워크플로를 담아 매 세션 먼저 읽히는 설정 문서</span><span class="term"><b>스킬(Skill)</b> 반복 작업 절차를 저장해 필요할 때 불러 쓰는 마크다운 기반 재사용 단위</span></div></div><div class="ac-sec"><div class="quiz"><p class="quiz__q"><b>RECALL ↺</b> 저자가 &#x27;9개의 폐허&#x27;를 겪고 세운, 세션을 바꿀 때 &#x27;어디까지 했더라&#x27; 문제를 없앤 장치는?</p><details><summary>정답 보기</summary><p class="quiz__a">핸드오프(HANDOFF.md) — 종료 시 상태·다음 할 일을 기록하고 다음 세션이 자동으로 읽어 이어감</p></details></div></div></div></details>
+  <div class="link-group"><a class="btn btn--primary" href="https://yozm.wishket.com/magazine/detail/3840" target="_blank" rel="noopener">원문</a></div>
+</article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title"><span class="ix">02</span> 이번 주 동향 인사이트</h2>
+    <div class="insight"><div class="insight__grid"><div><div class="insight__note"><h3>📋 이번 주 요약</h3><p>5주 누적 상위 키워드는 claude-code(18회)·coding-agent(12회)·ai-agent(9회)로 모두 5주 연속 등장하며 코딩 에이전트가 관측 내내 중심입니다. 이번 주 변화는 4주 내리 1위였던 3771이 인기권에서 빠지고 &#x27;탈클로드·오픈소스 회귀&#x27;(3801)가 1위로 올라선 점, 그리고 ways-of-working 카테고리가 2건으로 늘며 &#x27;만드는 것&#x27;을 넘어 &#x27;왜 만드는가·어떻게 운영하는가&#x27;로 논의가 이동한 점입니다. 200만 줄을 짠 아키텍트의 &#x27;왜(why)&#x27;론(3852)과 1인 13프로젝트 운영기(3840)가 그 신호입니다. AI 점유율은 90%로 5주째 유지됐습니다.</p></div><div class="insight__note"><h3>🌊 최근 동향</h3><p>5주차 관측 — 지속: 코딩 에이전트·오픈소스 LLM·바이브 코딩(claude-code·coding-agent 5주, vibe-coding 4주 연속). 부상: &#x27;AI로 어떻게 잘 만들고 운영하느냐&#x27;(맥락·운영 시스템) 담론으로 ways-of-working 카테고리 재상승. 식어감: 4주 내리 1위였던 특정 글(Codex vs Claude Code, 3771)의 인기권 이탈. 표본 5건·조회수 편향 caveat 유지.</p></div><div class="insight__note"><h3>📊 AI 점유율</h3><p>이번 주 인기 20개 중 AI 18개(90%) — 5주 내내 90% 안팎 유지</p></div><div class="insight__note"><h3>✨ 새로 부상 <span class="tag tag--emerging">EMERGING</span></h3><div class="chip-row" style="margin-top:.5rem"><span class="chip">productivity</span></div></div></div><aside class="kwbar"><h4>이번 주 키워드 빈도</h4><div class="kwbar__row"><span title="claude-code">claude-code</span><div class="kwbar__track"><i style="--v:100%;--d:0.15s"></i></div><b>4</b></div><div class="kwbar__row"><span title="productivity">productivity</span><div class="kwbar__track"><i style="--v:75%;--d:0.23s"></i></div><b>3</b></div><div class="kwbar__row"><span title="ai-agent">ai-agent</span><div class="kwbar__track"><i style="--v:50%;--d:0.31s"></i></div><b>2</b></div><div class="kwbar__row"><span title="coding-agent">coding-agent</span><div class="kwbar__track"><i style="--v:50%;--d:0.39s"></i></div><b>2</b></div><div class="kwbar__row"><span title="open-source-llm">open-source-llm</span><div class="kwbar__track"><i style="--v:25%;--d:0.47s"></i></div><b>1</b></div><div class="kwbar__row"><span title="vibe-coding">vibe-coding</span><div class="kwbar__track"><i style="--v:25%;--d:0.55s"></i></div><b>1</b></div><h4 style="margin-top:1.4rem">주차별 관심도(조회수) 추이</h4><svg class="trend-svg" viewBox="0 0 300 90" role="img" aria-label="주차별 관심도(조회수) 추이"><defs><linearGradient id="auroraStroke" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFB020"/><stop offset="1" stop-color="#FF7A45"/></linearGradient><linearGradient id="auroraFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFB020"/><stop offset="1" stop-color="#FFB020" stop-opacity="0"/></linearGradient></defs><path class="area" d="M 14.0,76 L 14.0,14.0 L 82.0,49.2 L 150.0,76.0 L 218.0,72.3 L 286.0,73.5 L 286.0,76 Z"/><polyline class="line" points="14.0,14.0 82.0,49.2 150.0,76.0 218.0,72.3 286.0,73.5"/><circle class="dot" cx="14.0" cy="14.0" r="2.6"/><circle class="dot" cx="82.0" cy="49.2" r="2.6"/><circle class="dot" cx="150.0" cy="76.0" r="2.6"/><circle class="dot" cx="218.0" cy="72.3" r="2.6"/><circle class="dot" cx="286.0" cy="73.5" r="2.6"/><text x="14.0" y="88" text-anchor="start">W27</text><text x="82.0" y="88" text-anchor="middle">W28</text><text x="150.0" y="88" text-anchor="middle">W29</text><text x="218.0" y="88" text-anchor="middle">W30</text><text x="286.0" y="88" text-anchor="end">W31</text></svg></aside></div></div>
+    <div class="caveat"><span>⚠️</span><p>요즘IT 인기 목록의 AI 관련 상위 글 기준이며, view_count는 누적 조회수(관심도)로 중요도·최신성과 다를 수 있습니다. 인기 목록이 롤링이라 지난주 글이 이어질 수 있고, 표본은 주 5건입니다.</p></div>
+  </section>
+
+  <footer class="foot">
+    <span>생성: 2026-07-27 09:07</span>
+    <span>출처: 요즘IT 인기 글 (AI 관련) · 개인 학습용</span>
+  </footer>
+
+</main>
+<script src="../_assets/app.js"></script>
+</body>
+</html>
