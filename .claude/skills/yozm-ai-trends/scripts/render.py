@@ -344,17 +344,17 @@ def render_week(root, week_id, taxonomy, index_data):
              + stat_block(f"{share_pct}%", "인기 중 AI")
              + stat_block(distinct_tags, "키워드"))
 
-    headline = ws.get("headline_ko") or "이번 주 요즘IT 인기 AI 글을 수집·분석했습니다."
+    headline = ws.get("headline_ko") or "이번 주 요즘IT 인기 소식을 수집·분석했습니다."
     lede = f'이번 주 한 줄 트렌드: <b>{esc(headline)}</b>' if ws.get("headline_ko") else esc(headline)
-    caveat = ws.get("caveats_ko") or "요즘IT 인기 목록의 AI 관련 상위 글 기준이며, view_count는 누적 조회수(관심도)로 최신·중요도와 다를 수 있습니다."
+    caveat = ws.get("caveats_ko") or "요즘IT 인기 목록 상위 글 기준이며, view_count는 누적 조회수(관심도)로 최신·중요도와 다를 수 있습니다."
 
     out = fill(load_tpl("report.html"), {
-        "TITLE": f"{week_id} 요즘IT AI 트렌드 리포트",
+        "TITLE": f"{week_id} 요즘IT 위클리 리포트",
         "ASSETS": "../_assets",
         "ROOT": "..",
         "MONTH_LABEL": esc(week.get("month_folder", "")),
         "EYEBROW": esc(f'{week_id} · {week.get("date_range_ko","")}'),
-        "HERO_TITLE": f'이번 주 가장 주목받은 <em>요즘IT AI 글 {len(articles)}건</em>',
+        "HERO_TITLE": f'이번 주 가장 주목받은 <em>요즘IT 인기 소식 {len(articles)}선</em>',
         "LEDE": lede,
         "STATS": stats,
         "COUNT": str(len(articles)),
@@ -413,12 +413,12 @@ def render_indexes(root, taxonomy, index_data):
         y, mm = month.split(".") if "." in month else (month, "")
         synthesis = build_monthly_synthesis(root, month, mweeks, index_data)
         out = fill(load_tpl("monthly.html"), {
-            "TITLE": f"{month} 월간 요즘IT AI 트렌드",
+            "TITLE": f"{month} 월간 요즘IT 위클리",
             "ASSETS": "../_assets",
             "ROOT": "..",
             "EYEBROW": esc(f"{month} · 월간 관측 일지"),
-            "HERO_TITLE": f"{esc(y)}년 {esc(mm)}월 <em>요즘IT AI 글 흐름</em>",
-            "LEDE": f"이 달 {len(mweeks)}개 주차, 총 {m_articles}건의 요즘IT AI 글을 정리했습니다.",
+            "HERO_TITLE": f"{esc(y)}년 {esc(mm)}월 <em>요즘IT 인기 소식 흐름</em>",
+            "LEDE": f"이 달 {len(mweeks)}개 주차, 총 {m_articles}건의 요즘IT 인기 소식을 정리했습니다.",
             "STATS": stats,
             "SYNTHESIS": synthesis,
             "WEEK_CARDS": cards,

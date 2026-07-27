@@ -1,7 +1,8 @@
-# 📰 요즘IT AI 트렌드 주간 관측기
+# 📰 요즘IT 위클리 — IT 트렌드 주간 관측기
 
-매주(사용자 요청 시) [요즘IT](https://yozm.wishket.com/) 인기 글 중 AI 관련 상위 4~5개를 수집·분석·요약하고,
-누적 데이터로 최근 AI 트렌드를 도출해 **예쁜 한국어 HTML 리포트**로 정리하는 개인 학습용 시스템.
+매주(사용자 요청 시) [요즘IT](https://yozm.wishket.com/) 인기 글 상위 4~5개를 수집·분석·요약하고,
+누적 데이터로 최근 IT 트렌드를 도출해 **예쁜 한국어 HTML 리포트**로 정리하는 개인 학습용 시스템.
+(전반 IT 소식을 다루되, 인기글 중 AI 비중은 부가 지표로 함께 관측한다.)
 
 > **핵심 철학:** 결정론적 작업(수집·집계·렌더)은 Python 스크립트가, 판단·서술(선별·분석·트렌드 인사이트)은 Claude가 맡는다.
 > Python 표준 라이브러리만 사용 — **추가 설치(pip) 없음**.
@@ -13,11 +14,11 @@
 Claude Code에서 이 폴더를 열고:
 
 ```
-이번 주 요즘IT AI 트렌드 정리해줘
+이번 주 요즘IT 위클리 정리해줘
 ```
 
 그러면 Claude가 `.claude/skills/yozm-ai-trends/SKILL.md` 절차를 따라 자동으로:
-1. **수집** — 요즘IT 인기 글 API에서 AI 관련 후보 pool을 가져옴
+1. **수집** — 요즘IT 인기 글 API에서 상위 후보 pool을 가져옴
 2. **선별 + 1차 분석** — 본문 기반으로 상위 4~5개를 골라 한국어 요약·분류
 3. **트렌드 인사이트** — 누적 데이터(`index.json`)로 "최근 동향" 도출
 4. **HTML 생성** — 주간 리포트 + 월간/마스터 인덱스 갱신
@@ -29,9 +30,9 @@ Claude Code에서 이 폴더를 열고:
 ## 🧭 동작 원리 (파이프라인)
 
 ```
-사용자: "이번 주 요즘IT AI 트렌드 정리해줘"  ─▶  Claude가 SKILL.md 절차를 오케스트레이션
+사용자: "이번 주 요즘IT 위클리 정리해줘"  ─▶  Claude가 SKILL.md 절차를 오케스트레이션
   │
-  ├─ ① fetch_trends.py   요즘IT JSON API 호출 → AI 필터·평탄화 → _data/weeks/<주차>.json 저장 (멱등)
+  ├─ ① fetch_trends.py   요즘IT JSON API 호출 → 인기 상위 평탄화(+AI 비중 집계) → _data/weeks/<주차>.json 저장 (멱등)
   ├─ ② [Claude]          본문(raw_content) 기반 선별(4~5개) + 분석 → 패치 JSON 작성
   │                       → merge_analysis.py로 weeks 기록에 병합
   ├─ ③ rollup.py         전 주차 집계 → _data/index.json (정량 신호 단일 출처)
@@ -51,7 +52,7 @@ Claude Code에서 이 폴더를 열고:
 | 인기 목록 | `GET /api/articleListApi/?category=popular&page=N&ordering=new` | `id`, `title`, `description`, `view_count`, `category[].flag`, `date_published`, `read_time` |
 | 본문 상세 | `GET /api/fetchContentsDetail/?id=ID&affectView=false` | `raw_content`(본문 평문), `hash_tags` |
 
-- **AI 필터**: 목록 응답의 `category[].flag == 'ai'` 인 글만 후보로 남긴다.
+- **수집 범위**: 기본은 **전반 IT 인기글**. 목록 응답의 `category[].flag == 'ai'` 비율은 "AI 비중" 부가 지표로만 함께 기록한다. (`--ai-only` 플래그로 과거처럼 AI 글만 수집도 가능)
 - **인기 신호**: `view_count`(누적 조회수) 내림차순으로 pool을 정렬해 상위 N개만 상세 조회한다.
 - **`affectView=false` 필수**: 상세 조회가 실제 사용자 조회수를 올리지 않도록(조회수 오염 방지) 항상 이 값으로 호출한다.
 

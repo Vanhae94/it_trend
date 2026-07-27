@@ -1,7 +1,7 @@
 {
-  "name": "요즘IT AI 트렌드",
-  "short_name": "요즘IT AI",
-  "description": "매주 요즘IT 인기 AI 글을 수집·분석하는 트렌드 관측 일지",
+  "name": "요즘IT 위클리",
+  "short_name": "요즘IT 위클리",
+  "description": "매주 요즘IT 인기 IT 소식을 수집·분석하는 트렌드 관측 일지",
   "lang": "ko",
   "start_url": "../index.html",
   "scope": "../",

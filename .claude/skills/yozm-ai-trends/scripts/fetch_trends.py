@@ -167,12 +167,13 @@ def collect_pool(pages):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="요즘IT 인기 AI 글 수집 (멱등)")
+    ap = argparse.ArgumentParser(description="요즘IT 인기 IT 글 수집 (전반 IT, 멱등)")
     ap.add_argument("--root", required=True)
     ap.add_argument("--week", default="auto", help="auto 또는 YYYY-Wnn")
     ap.add_argument("--date", default=None, help="기준 날짜 YYYY-MM-DD (week=auto)")
-    ap.add_argument("--pool", type=int, default=12, help="저장할 AI 후보 최대 수")
+    ap.add_argument("--pool", type=int, default=12, help="저장할 후보 최대 수")
     ap.add_argument("--pages", type=int, default=2, help="popular 목록 페이지 수")
+    ap.add_argument("--ai-only", action="store_true", help="AI 관련 글만 수집(구 동작). 기본: 전반 IT")
     ap.add_argument("--force", action="store_true")
     args = ap.parse_args()
 
@@ -194,8 +195,9 @@ def main():
         return
 
     pool_items = collect_pool(args.pages)
-    ai_items = filter_ai(pool_items)
-    ranked = rank_by_view(ai_items)[:max(0, args.pool)]
+    ai_items = filter_ai(pool_items)                    # AI 비중 지표용(부가)
+    cand = ai_items if args.ai_only else pool_items     # 기본: 전반 IT 인기글
+    ranked = rank_by_view(cand)[:max(0, args.pool)]
 
     # 원본 박제(감사·재현용)
     with open(raw_path, "w", encoding="utf-8") as f:
@@ -217,7 +219,7 @@ def main():
         "date_range_ko": date_range_ko(week_id),
         "month_folder": month_folder_for_week(week_id),
         "collected_at": now,
-        "source": f"yozm articleListApi?category=popular (pages={args.pages}) + fetchContentsDetail",
+        "source": f"yozm articleListApi?category=popular (pages={args.pages}, {'ai-only' if args.ai_only else 'all'}) + fetchContentsDetail",
         "pool_stats": build_pool_stats(popular_fetched, ai_in_pool),
         "articles": articles,
         "week_summary": None,
@@ -225,7 +227,7 @@ def main():
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(record, f, ensure_ascii=False, indent=2)
 
-    print(f"STATUS=ok week={week_id} ai_articles={len(articles)} "
+    print(f"STATUS=ok week={week_id} articles={len(articles)} "
           f"(인기 {popular_fetched}개 중 AI {ai_in_pool}개) month={record['month_folder']}")
     print(f"path={out_path}")
     print(f"기간: {record['date_range_ko']}")

@@ -1,14 +1,15 @@
 ---
 name: yozm-ai-trends
 description: >-
-  요즘IT 매거진 인기 글 중 AI를 실질적으로 다루는 상위 4~5개를 매주 수집·분석·요약하고,
-  누적 데이터로 최근 AI 트렌드 인사이트를 도출해 예쁜 한국어 HTML 리포트로 정리한다.
-  "이번 주 요즘IT 정리", "요즘IT AI 트렌드", "주간 AI 트렌드", "월간 종합 트렌드" 요청에 사용. 개인 학습용.
+  요즘IT 매거진 인기 글 상위 4~5개를 매주 수집·분석·요약하고,
+  누적 데이터로 최근 IT 트렌드 인사이트를 도출해 예쁜 한국어 HTML 리포트로 정리한다.
+  전반 IT 소식을 다루되 인기글 중 AI 비중은 부가 지표로 관측.
+  "이번 주 요즘IT 위클리", "요즘IT 주간 정리", "주간 IT 트렌드", "월간 종합 트렌드" 요청에 사용. 개인 학습용.
 ---
 
-# 요즘IT AI 트렌드 분석 (yozm-ai-trends)
+# 요즘IT 위클리 — 주간 IT 트렌드 (yozm-ai-trends)
 
-매주 요즘IT 인기 AI 글 상위 4~5개를 수집→분석→요약하고 누적 트렌드를 HTML 리포트로 만든다.
+매주 요즘IT 인기 글 상위 4~5개를 수집→분석→요약하고 누적 트렌드를 HTML 리포트로 만든다.
 **결정론적 작업은 스크립트, 판단·서술은 너(Claude)** 가 맡는다.
 
 ## 핵심 경로
@@ -29,13 +30,13 @@ py "<ROOT>\.claude\skills\yozm-ai-trends\scripts\fetch_trends.py" --root "<ROOT>
 - stdout 요약(순위·제목·👁조회수·카테고리·키워드)만 읽는다. 거대 JSON 통독 금지.
 - `STATUS=exists`면 이미 수집됨 → 재수집 필요 시 `--force`.
 - `FETCH_ERROR`면 네트워크 문제 → 사용자에게 알리고 잠시 후 재시도. **부분 산출물 금지.**
-- AI 글이 4개 미만이면 받은 만큼 진행하고 리포트에 명시.
+- 후보가 4개 미만이면 받은 만큼 진행하고 리포트에 명시.
 
 ### ② 선별 + 1차 분석 (너 — 본문 기반)
-`<ROOT>\_data\weeks\<week>.json`의 `articles[]`(view_count 상위 AI 후보 pool)를 읽는다.
+`<ROOT>\_data\weeks\<week>.json`의 `articles[]`(view_count 상위 인기 후보 pool)를 읽는다.
 각 기사의 `raw.summary`+`raw.body`(raw_content 평문)+`raw.keywords`로 판단한다.
 
-1. **선별**: AI 관련성을 확인해 이번 주 다룰 상위 **4~5개**에 `selected: true`. (딥러닝 무관·광고성은 제외)
+1. **선별**: 인기·화제성·학습가치를 기준으로 이번 주 다룰 상위 **4~5개**에 `selected: true`. (단순 광고성·홍보성은 제외). 주제 편중이 심하면 카테고리 다양성도 고려.
 2. 선별한 각 기사에 schema.json 형식대로 채운다:
    - `classify`: taxonomy.json의 **폐쇄형 10 카테고리**에서 `primary_category` 1개 + `categories` ≤2개.
      `topic_tags`는 `raw.keywords`(hash_tags)를 `keyword_aliases`로 정규화. `article_type`, `confidence`.

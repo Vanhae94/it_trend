@@ -1,22 +1,33 @@
 {
-  "schema_version": 1,
-  "description": "요즘IT AI 트렌드 분석용 폐쇄형 분류 체계. 주차 간 비교를 위해 카테고리는 고정 목록만 사용한다. keyword_aliases는 신규 키워드 등장 시 누적 관리.",
+  "schema_version": 2,
+  "description": "요즘IT 위클리 분류 체계. 전반 IT 인기글을 요즘IT 실제 카테고리로 분류한다. canonical_category_keys가 현행 표준(10개)이며, 하단 legacy 항목은 과거 AI-트렌드 주차(W27~W31) 라벨 호환용으로만 보존한다.",
+  "canonical_category_keys": ["develop", "ai", "itservice", "plan", "design", "product", "business", "career", "trend", "startup"],
   "primary_categories": [
-    { "key": "ai-coding",        "label_ko": "AI 코딩·개발도구", "scope_ko": "바이브코딩, 코딩 에이전트, Copilot/Cursor/Claude Code, 코드 생성" },
-    { "key": "ai-agents",        "label_ko": "AI 에이전트·자동화", "scope_ko": "에이전트, 워크플로우, MCP, 툴 사용, 자동화" },
-    { "key": "models-llm",       "label_ko": "모델·LLM 동향", "scope_ko": "신모델 출시, 벤더 경쟁, 성능·벤치마크, 오픈소스 모델" },
-    { "key": "ai-product",       "label_ko": "AI 프로덕트·서비스", "scope_ko": "AI 기능 탑재 제품, SaaS, 기능 기획, AX" },
-    { "key": "ways-of-working",  "label_ko": "일하는 법·조직", "scope_ko": "팀 생산성, 프로세스, AI 도입, 협업" },
-    { "key": "career",           "label_ko": "커리어·직무", "scope_ko": "직무 변화, PM/개발/디자인 커리어, 생존 전략, 채용" },
-    { "key": "design-ux",        "label_ko": "디자인·UX", "scope_ko": "AI 시대 디자인, UX, 크리에이티브 도구" },
-    { "key": "data-infra",       "label_ko": "데이터·인프라", "scope_ko": "RAG, 벡터DB, 파인튜닝, 인프라, 데이터 파이프라인" },
-    { "key": "safety-risk",      "label_ko": "보안·리스크·윤리", "scope_ko": "AI 보안, 저작권, 규제, 신뢰성, 프라이버시" },
-    { "key": "business-market",  "label_ko": "비즈니스·시장", "scope_ko": "투자, 시장 동향, 전략, 수익화" }
+    { "key": "develop",   "label_ko": "개발",      "scope_ko": "프로그래밍, 언어·프레임워크, 코딩 에이전트·바이브 코딩, 인프라, DevOps" },
+    { "key": "ai",        "label_ko": "AI",        "scope_ko": "AI 모델·LLM, AI 에이전트, AI 도구·활용, AX" },
+    { "key": "itservice", "label_ko": "IT서비스",  "scope_ko": "웹·앱 서비스, 플랫폼, 서비스 운영·사례" },
+    { "key": "plan",      "label_ko": "기획",      "scope_ko": "서비스 기획, PM/PO, 요구사항·문서, 데이터 기반 의사결정" },
+    { "key": "design",    "label_ko": "디자인",    "scope_ko": "UX/UI, 디자인 시스템, 리서치, 크리에이티브 도구" },
+    { "key": "product",   "label_ko": "프로덕트",  "scope_ko": "프로덕트 메이킹, 그로스, 지표, 프로덕트 메이커 소식" },
+    { "key": "business",  "label_ko": "비즈니스",  "scope_ko": "시장·전략, 투자, 수익화, 조직·경영" },
+    { "key": "career",    "label_ko": "커리어",    "scope_ko": "직무·성장, 이직·채용, 일하는 법, 개인 경험담" },
+    { "key": "trend",     "label_ko": "트렌드",    "scope_ko": "업계 동향, 신기술·이슈, 규제, 전망" },
+    { "key": "startup",   "label_ko": "스타트업",  "scope_ko": "창업, 1인 빌더, 사이드 프로젝트, 스타트업 운영" },
+
+    { "key": "ai-coding",       "label_ko": "AI 코딩·개발도구",  "scope_ko": "(legacy) 과거 AI 주차 호환" },
+    { "key": "ai-agents",       "label_ko": "AI 에이전트·자동화", "scope_ko": "(legacy)" },
+    { "key": "models-llm",      "label_ko": "모델·LLM 동향",     "scope_ko": "(legacy)" },
+    { "key": "ai-product",      "label_ko": "AI 프로덕트·서비스", "scope_ko": "(legacy)" },
+    { "key": "ways-of-working", "label_ko": "일하는 법·조직",     "scope_ko": "(legacy)" },
+    { "key": "data-infra",      "label_ko": "데이터·인프라",     "scope_ko": "(legacy)" },
+    { "key": "safety-risk",     "label_ko": "보안·리스크·윤리",   "scope_ko": "(legacy)" },
+    { "key": "design-ux",       "label_ko": "디자인·UX",        "scope_ko": "(legacy)" },
+    { "key": "business-market", "label_ko": "비즈니스·시장",     "scope_ko": "(legacy)" }
   ],
   "category_rules": {
     "max_categories_per_article": 2,
     "primary_category_count": 1,
-    "note_ko": "기사당 categories는 최대 2개, primary_category는 정확히 1개. 무제한 허용 시 신호가 죽는다."
+    "note_ko": "기사당 categories는 최대 2개, primary_category는 정확히 1개. 신규 주차는 canonical_category_keys(요즘IT 10개)에서만 고른다. 기사의 raw.category_flags(요즘IT 원본 카테고리)를 우선 참고."
   },
   "article_type_axis": ["튜토리얼", "오피니언", "사례", "뉴스분석", "인터뷰"],
   "keyword_aliases": {
@@ -31,6 +42,9 @@
     "productivity":    ["생산성", "팀 생산성"],
     "open-source-llm": ["오픈소스 모델", "오픈소스 llm", "open source llm", "ollama", "llama", "qwen", "deepseek"],
     "security":        ["보안", "시큐리티"],
-    "fine-tuning":     ["파인튜닝", "fine tuning", "미세조정"]
+    "fine-tuning":     ["파인튜닝", "fine tuning", "미세조정"],
+    "design-system":   ["디자인시스템", "design system", "디자인 시스템"],
+    "ux":              ["유엑스", "user experience", "사용자 경험"],
+    "product-management": ["프로덕트 매니지먼트", "pm", "po", "제품 관리"]
   }
 }
