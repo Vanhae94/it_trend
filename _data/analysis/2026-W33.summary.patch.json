@@ -1,0 +1,12 @@
+{
+  "week_id": "2026-W33",
+  "week_summary": {
+    "headline_ko": "지난주 보류했던 신규 키 6종이 2주 연속 등장해 첫 '부상' 판정 — 대신 6주 연속이던 coding-agent가 처음 결번, 둘 다 인기 상위 재분석 글을 뺀 선별의 양면",
+    "clusters": [],
+    "emerging_keywords": ["workflow-automation", "ax", "mvp", "ai-regulation", "export-control", "sovereign-ai"],
+    "narrative_ko": "7주차 관측입니다. 인기 목록이 롤링이라 이번 주는 상위 12건 중 11건이 이미 분석한 글이어서, 한 번도 다루지 않은 9건 가운데 주제가 겹치지 않는 5건(인기 2·14·15·18·19위)을 골랐습니다. 그 결과 대표 카테고리가 AI·기획·트렌드·개발·프로덕트로 2주 연속 모두 달라 클러스터가 형성되지 않았고, 누적 35건 만에 처음으로 인터뷰(15세 바이브 코더)가 들어와 글 유형도 4종으로 늘었습니다. 지난주에 '서로 다른 2주 이상 등장해야 부상으로 판정한다'며 보류했던 W32 신규 키 6종(workflow-automation·ax·mvp·ai-regulation·export-control·sovereign-ai)은 이번 주 모두 재등장해 첫 부상 판정을 받았습니다. 반면 claude-code 23회·ai-agent 12회·open-source-llm 9회가 7주 연속 상위를 지키는 사이 6주 연속이던 coding-agent가 처음 빠졌는데, 이는 관심 감소가 아니라 코딩 에이전트 글이 몰려 있는 인기 상위 12건을 재분석 대상이라 제외한 선별의 결과입니다.",
+    "recent_trend_ko": "7주차 관측 — 지속: claude-code(23회)·ai-agent(12회)·open-source-llm(9회)이 7주 연속 등장. 부상(첫 판정): W32에 처음 나온 workflow-automation(3회)·ax(2회)·mvp(2회)·ai-regulation(2회)·export-control(2회)·sovereign-ai(2회)가 2주 연속 등장해 기준을 충족했습니다. 다만 ax와 ai-regulation은 이번 주 태그를 기존 키로 정규화(팀AX→ax, AI거버넌스→ai-regulation)해 이어진 것이라, 자연 재등장인 workflow-automation·mvp·export-control과는 구분해서 봐야 합니다. 결번: coding-agent가 6주 연속 뒤 처음 빠졌고, productivity는 W31 이후 2주째, security도 이번 주 빠졌습니다. 복귀: vibe-coding(7회)과 prompt(7회)가 W32 결번 뒤 돌아왔지만, 이 역시 상위 재분석 글을 빼고 14~19위를 고른 선정 방식의 부산물이라 관심 회복으로 읽으면 안 됩니다.",
+    "ai_share_note": "이번 주 인기 20개 중 AI 18개(90%) — 7주 내내 90~95%로 유지. 요즘IT 원본 분류에서 AI 플래그가 없는 글은 풀 20건 중 2건뿐이었고, 그 2건('손 코딩은 죽었는가?', '15살의 바이브 코딩 경험기')이 모두 이번 주 선정작입니다. 즉 '전반 IT'로 범위를 넓혀도 고를 수 있는 비AI 글의 폭 자체는 요즘IT 인기 목록의 구성에 묶여 있습니다.",
+    "caveats_ko": "요즘IT 인기 목록(2페이지·20건) 상위 글 기준이며, view_count는 누적 조회수(관심도)여서 중요도·최신성과 다를 수 있습니다. 이번 주는 인기 상위 12건 중 11건이 이미 분석한 글이어서 미분석 9건 중 5건만 골랐고, 그 결과 조회수 합(59,089)이 직전 주(67,452)보다 낮아진 것과 coding-agent 결번·vibe-coding 복귀는 모두 이 선별 방식의 결과이지 관심도 변화가 아닙니다. 카테고리 시계열은 W31까지 legacy 키, W32부터 요즘IT canonical 10개 키라 두 구간을 직접 비교할 수 없습니다. 표본은 주 5건입니다."
+  }
+}
