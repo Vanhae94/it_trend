@@ -33,7 +33,8 @@ Claude Code에서 이 폴더를 열고:
 사용자: "이번 주 요즘IT 위클리 정리해줘"  ─▶  Claude가 SKILL.md 절차를 오케스트레이션
   │
   ├─ ① fetch_trends.py   요즘IT JSON API 호출 → 인기 상위 평탄화(+AI 비중 집계) → _data/weeks/<주차>.json 저장 (멱등)
-  ├─ ② [Claude]          본문(raw_content) 기반 선별(4~5개) + 분석 → 패치 JSON 작성
+  ├─ ①-2 candidates.py   후보를 신규/재조명 두 트랙으로 분류해 출력 (선별 근거)
+  ├─ ② [Claude]          본문(raw_content) 기반 2트랙 선별(신규 3 + 재조명 2) + 분석 → 패치 JSON 작성
   │                       → merge_analysis.py로 weeks 기록에 병합
   ├─ ③ rollup.py         전 주차 집계 → _data/index.json (정량 신호 단일 출처)
   │     [Claude]          누적 신호 근거로 week_summary(동향) 작성 → 재머지
@@ -113,7 +114,8 @@ Claude Code에서 이 폴더를 열고:
 
 | 스크립트 | 역할 | 주요 인자 |
 |---|---|---|
-| `fetch_trends.py` | 요즘IT 인기 목록+본문 API 수집·AI 필터·평탄화·멱등 저장 | `--root` `--week auto\|YYYY-Wnn` `--pool 12` `--pages 2` `--force` `--date YYYY-MM-DD` |
+| `fetch_trends.py` | 요즘IT 인기 목록+본문 API 수집·평탄화·멱등 저장 | `--root` `--week auto\|YYYY-Wnn` `--pool 20` `--pages 2` `--force` `--ai-only` `--date YYYY-MM-DD` |
+| `candidates.py` | 후보를 **신규/재조명** 2트랙으로 분류(분석 이력·연속 등장 표시) | `--root` `--week` `--fresh 3` `--revisit 2` |
 | `merge_analysis.py` | Claude의 분석 패치를 주차 기록에 병합(`raw` 보존) | `--root` `--patch <경로>` |
 | `rollup.py` | 전 주차 정량 롤업(`index.json`) 재생성 | `--root` |
 | `render.py` | 분석 JSON → HTML 렌더 + 인덱스 재생성 | `--root` `--week YYYY-Wnn`(생략 시 인덱스만) |
@@ -130,6 +132,10 @@ Claude Code에서 이 폴더를 열고:
   - 1주차 → "기준선 수립 중"(비교 데이터 없음)
   - 2주차 → 직전 주 대비 단순 등장/소멸만 (성급한 "부상/지속" 단정 금지)
   - 3주차+ → 지속(최근 3~4주 중 3주+) / 부상(서로 다른 2주+ 등장) / 식어감(3주+ 데이터 시) 판정
+- **2트랙 선별(W34~)**: 요즘IT 인기 목록은 롤링이라 상위권 글이 여러 주 눌러앉는다. 매주 '아직 안 다룬 글'만 좇으면
+  선정작이 계속 하위권으로 내려가므로(조회수 합 100k→67k→59k), **신규 3건 + 재조명 2건**으로 나눠 고른다.
+  재조명은 이전 분석과 겹치지 않는 새 각도여야 하며 카드에 **"🔎 재조명 N회차"** 배지가 붙는다.
+  단, 재조명은 같은 기사의 태그를 다시 집계하므로 누적 키워드 카운트를 부풀린다는 점을 리포트에 명시한다.
 - **연속 등장(streak)**: 같은 글이 여러 주 연속으로 인기 풀에 오르면 카드에 **"🔁 N주 연속 인기"** 배지가 자동으로 붙는다.
   `rollup.py`가 기사별 등장 주차를 `index.json`의 `article_weeks`에 기록하고, `render.py`가 렌더 대상 주차에서
   거슬러 올라가며 연속 등장 주차 수를 계산한다.

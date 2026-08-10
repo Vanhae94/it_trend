@@ -75,6 +75,7 @@
   --aurora-2:   #B8600F;
   --aurora-3:   #9A6A2A;
   --ember:      #E8590C;
+  --rose:       #C2405A;
   --star:       #B98A12;
 
   --grad-text:  linear-gradient(100deg, #C2761A 0%, #E8590C 100%);
@@ -425,6 +426,13 @@ a { color: inherit; }
   color: var(--aurora);
   background: color-mix(in srgb, var(--aurora) 14%, transparent);
   border-color: color-mix(in srgb, var(--aurora) 40%, transparent);
+  font-weight: 700;
+}
+/* 2트랙 중 '재조명' 트랙 표시 — 연속 인기(앰버)와 한눈에 구분되도록 로즈 계열 */
+.badge--revisit {
+  color: var(--rose);
+  background: color-mix(in srgb, var(--rose) 14%, transparent);
+  border-color: color-mix(in srgb, var(--rose) 40%, transparent);
   font-weight: 700;
 }
 

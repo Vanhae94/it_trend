@@ -171,7 +171,7 @@ def main():
     ap.add_argument("--root", required=True)
     ap.add_argument("--week", default="auto", help="auto 또는 YYYY-Wnn")
     ap.add_argument("--date", default=None, help="기준 날짜 YYYY-MM-DD (week=auto)")
-    ap.add_argument("--pool", type=int, default=12, help="저장할 후보 최대 수")
+    ap.add_argument("--pool", type=int, default=20, help="저장할 후보 최대 수(2트랙 선별용으로 목록 전체 권장)")
     ap.add_argument("--pages", type=int, default=2, help="popular 목록 페이지 수")
     ap.add_argument("--ai-only", action="store_true", help="AI 관련 글만 수집(구 동작). 기본: 전반 IT")
     ap.add_argument("--force", action="store_true")

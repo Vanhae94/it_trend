@@ -32,11 +32,27 @@ py "<ROOT>\.claude\skills\yozm-ai-trends\scripts\fetch_trends.py" --root "<ROOT>
 - `FETCH_ERROR`면 네트워크 문제 → 사용자에게 알리고 잠시 후 재시도. **부분 산출물 금지.**
 - 후보가 4개 미만이면 받은 만큼 진행하고 리포트에 명시.
 
+### ①-2 후보 정리 (스크립트)
+```
+py "<ROOT>\.claude\skills\yozm-ai-trends\scripts\candidates.py" --root "<ROOT>" --week <week>
+```
+- 인기 목록이 **롤링**이라 상위권 글이 여러 주 눌러앉는다. 후보를 **신규/재조명**으로 갈라 보여준다.
+- `⚠본문없음`이 뜨면 `fetch_trends.py --pool 20 --force`로 재수집(집계 기준 `--pages 2`는 유지 — AI 비중 시계열 보존).
+
 ### ② 선별 + 1차 분석 (너 — 본문 기반)
 `<ROOT>\_data\weeks\<week>.json`의 `articles[]`(view_count 상위 인기 후보 pool)를 읽는다.
 각 기사의 `raw.summary`+`raw.body`(raw_content 평문)+`raw.keywords`로 판단한다.
 
-1. **선별**: 인기·화제성·학습가치를 기준으로 이번 주 다룰 상위 **4~5개**에 `selected: true`. (단순 광고성·홍보성은 제외). 주제 편중이 심하면 카테고리 다양성도 고려.
+1. **선별 — 2트랙으로 5건**에 `selected: true` (단순 광고성·홍보성 제외):
+   - **신규 3건**: 한 번도 분석하지 않은 글 중 인기 상위부터.
+   - **재조명 2건**: 이미 분석했으나 인기 풀에 계속 살아남은 글. 연속 등장이 길수록 우선.
+     재조명은 **반드시 새 각도**여야 한다 — 직전 분석의 `one_liner`/`key_points`/`key_terms`를
+     `_data/analysis/<이전주차>.patch.json`에서 확인하고 겹치면 다른 관점(누적 관점, 후속 사건,
+     반대 사례, 실무 적용 각도)으로 다시 쓴다. `why_now`에 **몇 번째 재조명인지와 이전 주차**를 밝힌다.
+   - 두 트랙 합쳐 `primary_category` 5개가 **서로 겹치지 않게** 조합한다.
+   - 신규가 3건에 못 미치면 재조명을 늘리고(그 반대도 가능), 그 사실을 `week_summary`에 적는다.
+   - 선정 근거는 사실대로 쓴다. "미분석 글만 골랐다"처럼 **후보 수를 감추는 표현 금지**
+     (예: "미분석 9건 중 주제가 겹치지 않도록 3건" + "재조명 2건").
 2. 선별한 각 기사에 schema.json 형식대로 채운다:
    - `classify`: taxonomy.json의 **폐쇄형 10 카테고리**에서 `primary_category` 1개 + `categories` ≤2개.
      `topic_tags`는 `raw.keywords`(hash_tags)를 `keyword_aliases`로 정규화. `article_type`, `confidence`.
@@ -58,13 +74,22 @@ py "<ROOT>\.claude\skills\yozm-ai-trends\scripts\rollup.py" --root "<ROOT>"
 - `headline_ko`, `clusters`(primary_category로 묶어 ≥2건이면 클러스터), `narrative_ko`(3~5문장, **정량 근거 인용**),
   `recent_trend_ko`, `ai_share_note`("인기 N개 중 AI M개(P%)"), `caveats_ko`.
 - **콜드스타트 분기**(`totals.weeks`): 1주=기준선 수립 중 / 2주=단순 등장·소멸 / 3주+=지속·부상·식어감.
+- **부상 판정 기준**: 서로 다른 **2주 이상** 등장한 키만 "부상". 1주만 나온 키는 판정을 다음 주로 미루고
+  그 사실을 `recent_trend_ko`에 남긴다(다음 주에 실제로 재등장했는지 확인해 결론낸다).
+- **선별이 만든 착시를 반드시 분리**: 조회수 합·키워드 결번/복귀는 트렌드가 아니라 **선별 결과**일 때가 많다.
+  재조명 트랙은 같은 기사의 태그를 다시 집계하므로 누적 카운트를 부풀린다. 신규 트랙만 고르면 조회수 합이 내려간다.
+  이런 변화는 `caveats_ko`에 "관심도 변화가 아니라 선별 방식의 결과"라고 명시한다.
+- **태그 키는 기존 사전 우선**: 새 키를 만들기 전에 `index.json`의 `keyword_freq`와 taxonomy `keyword_aliases`를
+  먼저 확인한다(예: `팀AX`→기존 `ax`, `AI거버넌스`→기존 `ai-regulation`). 동의어가 갈리면 시계열이 쪼개진다.
+  단 **hash_tags에 근거 없는 태그는 지표를 위해서라도 붙이지 않는다.**
 - **과적합 방지**: 정성 문장은 index.json 숫자 근거. view_count는 "관심도"(중요도 아님). 표본 4~5개 caveat 상시.
 
 ### ④ HTML 렌더 (스크립트)
 ```
 py "<ROOT>\.claude\skills\yozm-ai-trends\scripts\render.py" --root "<ROOT>" --week <week>
 ```
-- 주간 리포트 + 월간 index + 마스터 index 멱등 재생성. 연속 등장 글은 "🔁 N주 연속 인기" 자동 표시.
+- 주간 리포트 + 월간 index + 마스터 index 멱등 재생성. 연속 등장 글은 "🔁 N주 연속 인기",
+  재조명 트랙은 "🔎 재조명 N회차" 배지가 `index.json`의 `analyzed_weeks` 기준으로 자동 표시된다.
 - 끝나면 산출물 경로와 기사 원문 링크를 대화에 남긴다.
 
 ## 월간 종합 (월말 또는 요청 시)

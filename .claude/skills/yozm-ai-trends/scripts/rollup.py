@@ -103,6 +103,7 @@ def main():
     category_timeseries = {}   # cat -> {week: count}  (selected)
     keyword_freq = {}          # tag -> {weeks:set, count:int, first_seen:str}  (selected)
     article_weeks = {}         # id -> [등장 주차]  (pool 전체 — streak)
+    analyzed_weeks = {}        # id -> [분석(selected) 주차]  (2트랙 선별·재조명 표기)
     view_timeseries = {}       # week -> selected view_count 합
     ai_share_timeseries = {}   # week -> pool_ai_share
     per_week = {}
@@ -119,6 +120,8 @@ def main():
                 article_weeks.setdefault(aid, []).append(wid)  # pool 전체
             if not is_selected(a):
                 continue
+            if aid:
+                analyzed_weeks.setdefault(aid, []).append(wid)
             total_selected += 1
             wk_views += int((a.get("raw") or {}).get("view_count") or 0)
             cat = primary_category(a)
@@ -157,6 +160,7 @@ def main():
         "category_timeseries": category_timeseries,
         "keyword_freq": keyword_freq_out,
         "article_weeks": article_weeks,
+        "analyzed_weeks": analyzed_weeks,
         "view_timeseries": view_timeseries,
         "ai_share_timeseries": ai_share_timeseries,
         "per_week": per_week,

@@ -103,7 +103,7 @@ def paper_tags(paper):
 
 
 # ----------------------------- 카드 -----------------------------
-def build_card(article, idx, cat_labels, streak=1):
+def build_card(article, idx, cat_labels, streak=1, revisit=0):
     raw = article.get("raw", {})
     an = article.get("analysis") or {}
     learn = article.get("learning") or {}
@@ -121,12 +121,15 @@ def build_card(article, idx, cat_labels, streak=1):
     author = article.get("author") or "요즘IT"
     pub = str(article.get("published_at") or "")[:10]
 
-    # 배지: 조회수 · 읽기시간 · 연속 인기
+    # 배지: 재조명 · 조회수 · 읽기시간 · 연속 인기
     badges = [f'<span class="badge badge--up">👁 {short(interest.get("view_count") or raw.get("view_count"))}</span>']
     if raw.get("read_time"):
         badges.append(f'<span class="badge badge--cm">⏱ {raw["read_time"]}분</span>')
     if streak and streak >= 2:
         badges.insert(0, f'<span class="badge badge--streak">🔁 {streak}주 연속 인기</span>')
+    if revisit and revisit >= 1:
+        # 2트랙 중 '재조명' 트랙: 이전 주차에 이미 분석한 글을 다른 각도로 다시 다룸
+        badges.insert(0, f'<span class="badge badge--revisit">🔎 재조명 {revisit + 1}회차</span>')
     badges_html = "".join(badges)
 
     chips = paper_tags(article)[:6]
@@ -335,7 +338,16 @@ def render_week(root, week_id, taxonomy, index_data):
             i -= 1
         return s
 
-    cards = "\n".join(build_card(a, i + 1, cat_labels, streak_for(a.get("id"))) for i, a in enumerate(articles))
+    # 재조명 횟수: 이번 주 이전에 분석(selected)된 주차 수
+    analyzed_weeks = (index_data or {}).get("analyzed_weeks") or {}
+
+    def revisit_for(pid):
+        return len([w for w in analyzed_weeks.get(pid, []) if w < week_id])
+
+    cards = "\n".join(
+        build_card(a, i + 1, cat_labels, streak_for(a.get("id")), revisit_for(a.get("id")))
+        for i, a in enumerate(articles)
+    )
 
     pool = week.get("pool_stats") or {}
     share_pct = round((pool.get("pool_ai_share") or 0) * 100)
