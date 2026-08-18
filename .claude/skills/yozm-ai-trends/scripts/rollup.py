@@ -128,9 +128,11 @@ def main():
             category_timeseries.setdefault(cat, {})
             category_timeseries[cat][wid] = category_timeseries[cat].get(wid, 0) + 1
             for t in article_tags(a, alias_map):
-                rec = keyword_freq.setdefault(t, {"weeks": set(), "count": 0, "first_seen": wid})
+                rec = keyword_freq.setdefault(t, {"weeks": set(), "count": 0, "first_seen": wid, "articles": set()})
                 rec["count"] += 1
                 rec["weeks"].add(wid)
+                if aid:
+                    rec["articles"].add(aid)
                 if wid < rec["first_seen"]:
                     rec["first_seen"] = wid
                 wk_tag_count[t] = wk_tag_count.get(t, 0) + 1
@@ -150,7 +152,10 @@ def main():
             "analyzed": bool(ws),
         }
 
-    keyword_freq_out = {t: {"count": r["count"], "weeks": sorted(r["weeks"]), "first_seen": r["first_seen"]}
+    # count는 연인원(재조명 재집계 포함), unique_articles는 실제 고유 기사 수.
+    # 2트랙 도입 후 같은 기사를 여러 주 분석하므로 둘을 반드시 분리해 읽는다.
+    keyword_freq_out = {t: {"count": r["count"], "unique_articles": len(r["articles"]),
+                            "weeks": sorted(r["weeks"]), "first_seen": r["first_seen"]}
                         for t, r in keyword_freq.items()}
 
     index = {
@@ -177,7 +182,8 @@ def main():
         top = sorted(keyword_freq_out.items(), key=lambda kv: (-kv[1]["count"], kv[0]))[:8]
         print("상위 키워드(누적):")
         for t, r in top:
-            print(f"  - {t}: {r['count']}회, {len(r['weeks'])}주 등장, 최초 {r['first_seen']}")
+            dup = "" if r["count"] == r["unique_articles"] else f" (고유 기사 {r['unique_articles']}건)"
+            print(f"  - {t}: {r['count']}회{dup}, {len(r['weeks'])}주 등장, 최초 {r['first_seen']}")
 
 
 if __name__ == "__main__":
