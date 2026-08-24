@@ -1,28 +1,114 @@
 {
   "schema_version": 2,
   "description": "요즘IT 위클리 분류 체계. 전반 IT 인기글을 요즘IT 실제 카테고리로 분류한다. canonical_category_keys가 현행 표준(10개)이며, 하단 legacy 항목은 과거 AI-트렌드 주차(W27~W31) 라벨 호환용으로만 보존한다.",
-  "canonical_category_keys": ["develop", "ai", "itservice", "plan", "design", "product", "business", "career", "trend", "startup"],
+  "canonical_category_keys": [
+    "develop",
+    "ai",
+    "itservice",
+    "plan",
+    "design",
+    "product",
+    "business",
+    "career",
+    "trend",
+    "startup"
+  ],
   "primary_categories": [
-    { "key": "develop",   "label_ko": "개발",      "scope_ko": "프로그래밍, 언어·프레임워크, 코딩 에이전트·바이브 코딩, 인프라, DevOps" },
-    { "key": "ai",        "label_ko": "AI",        "scope_ko": "AI 모델·LLM, AI 에이전트, AI 도구·활용, AX" },
-    { "key": "itservice", "label_ko": "IT서비스",  "scope_ko": "웹·앱 서비스, 플랫폼, 서비스 운영·사례" },
-    { "key": "plan",      "label_ko": "기획",      "scope_ko": "서비스 기획, PM/PO, 요구사항·문서, 데이터 기반 의사결정" },
-    { "key": "design",    "label_ko": "디자인",    "scope_ko": "UX/UI, 디자인 시스템, 리서치, 크리에이티브 도구" },
-    { "key": "product",   "label_ko": "프로덕트",  "scope_ko": "프로덕트 메이킹, 그로스, 지표, 프로덕트 메이커 소식" },
-    { "key": "business",  "label_ko": "비즈니스",  "scope_ko": "시장·전략, 투자, 수익화, 조직·경영" },
-    { "key": "career",    "label_ko": "커리어",    "scope_ko": "직무·성장, 이직·채용, 일하는 법, 개인 경험담" },
-    { "key": "trend",     "label_ko": "트렌드",    "scope_ko": "업계 동향, 신기술·이슈, 규제, 전망" },
-    { "key": "startup",   "label_ko": "스타트업",  "scope_ko": "창업, 1인 빌더, 사이드 프로젝트, 스타트업 운영" },
-
-    { "key": "ai-coding",       "label_ko": "AI 코딩·개발도구",  "scope_ko": "(legacy) 과거 AI 주차 호환" },
-    { "key": "ai-agents",       "label_ko": "AI 에이전트·자동화", "scope_ko": "(legacy)" },
-    { "key": "models-llm",      "label_ko": "모델·LLM 동향",     "scope_ko": "(legacy)" },
-    { "key": "ai-product",      "label_ko": "AI 프로덕트·서비스", "scope_ko": "(legacy)" },
-    { "key": "ways-of-working", "label_ko": "일하는 법·조직",     "scope_ko": "(legacy)" },
-    { "key": "data-infra",      "label_ko": "데이터·인프라",     "scope_ko": "(legacy)" },
-    { "key": "safety-risk",     "label_ko": "보안·리스크·윤리",   "scope_ko": "(legacy)" },
-    { "key": "design-ux",       "label_ko": "디자인·UX",        "scope_ko": "(legacy)" },
-    { "key": "business-market", "label_ko": "비즈니스·시장",     "scope_ko": "(legacy)" }
+    {
+      "key": "develop",
+      "label_ko": "개발",
+      "scope_ko": "프로그래밍, 언어·프레임워크, 코딩 에이전트·바이브 코딩, 인프라, DevOps"
+    },
+    {
+      "key": "ai",
+      "label_ko": "AI",
+      "scope_ko": "AI 모델·LLM, AI 에이전트, AI 도구·활용, AX"
+    },
+    {
+      "key": "itservice",
+      "label_ko": "IT서비스",
+      "scope_ko": "웹·앱 서비스, 플랫폼, 서비스 운영·사례"
+    },
+    {
+      "key": "plan",
+      "label_ko": "기획",
+      "scope_ko": "서비스 기획, PM/PO, 요구사항·문서, 데이터 기반 의사결정"
+    },
+    {
+      "key": "design",
+      "label_ko": "디자인",
+      "scope_ko": "UX/UI, 디자인 시스템, 리서치, 크리에이티브 도구"
+    },
+    {
+      "key": "product",
+      "label_ko": "프로덕트",
+      "scope_ko": "프로덕트 메이킹, 그로스, 지표, 프로덕트 메이커 소식"
+    },
+    {
+      "key": "business",
+      "label_ko": "비즈니스",
+      "scope_ko": "시장·전략, 투자, 수익화, 조직·경영"
+    },
+    {
+      "key": "career",
+      "label_ko": "커리어",
+      "scope_ko": "직무·성장, 이직·채용, 일하는 법, 개인 경험담"
+    },
+    {
+      "key": "trend",
+      "label_ko": "트렌드",
+      "scope_ko": "업계 동향, 신기술·이슈, 규제, 전망"
+    },
+    {
+      "key": "startup",
+      "label_ko": "스타트업",
+      "scope_ko": "창업, 1인 빌더, 사이드 프로젝트, 스타트업 운영"
+    },
+    {
+      "key": "ai-coding",
+      "label_ko": "AI 코딩·개발도구",
+      "scope_ko": "(legacy) 과거 AI 주차 호환"
+    },
+    {
+      "key": "ai-agents",
+      "label_ko": "AI 에이전트·자동화",
+      "scope_ko": "(legacy)"
+    },
+    {
+      "key": "models-llm",
+      "label_ko": "모델·LLM 동향",
+      "scope_ko": "(legacy)"
+    },
+    {
+      "key": "ai-product",
+      "label_ko": "AI 프로덕트·서비스",
+      "scope_ko": "(legacy)"
+    },
+    {
+      "key": "ways-of-working",
+      "label_ko": "일하는 법·조직",
+      "scope_ko": "(legacy)"
+    },
+    {
+      "key": "data-infra",
+      "label_ko": "데이터·인프라",
+      "scope_ko": "(legacy)"
+    },
+    {
+      "key": "safety-risk",
+      "label_ko": "보안·리스크·윤리",
+      "scope_ko": "(legacy)"
+    },
+    {
+      "key": "design-ux",
+      "label_ko": "디자인·UX",
+      "scope_ko": "(legacy)"
+    },
+    {
+      "key": "business-market",
+      "label_ko": "비즈니스·시장",
+      "scope_ko": "(legacy)"
+    }
   ],
   "category_rules": {
     "max_categories_per_article": 2,
@@ -35,41 +121,272 @@
       "같은 주에 선정한 5건의 primary_category는 서로 겹치지 않게 조합한다."
     ]
   },
-  "article_type_axis": ["튜토리얼", "오피니언", "사례", "뉴스분석", "인터뷰"],
+  "article_type_axis": [
+    "튜토리얼",
+    "오피니언",
+    "사례",
+    "뉴스분석",
+    "인터뷰"
+  ],
   "keyword_aliases": {
-    "vibe-coding":     ["바이브코딩", "vibe coding", "바이브 코딩"],
-    "claude-code":     ["claudecode", "claude code", "클로드코드", "클로드 코드"],
-    "coding-agent":    ["코딩 에이전트", "coding agent", "code agent", "codex"],
-    "ai-agent":        ["에이전트", "agent", "agents", "ai agent", "멀티에이전트", "multi-agent", "multi agent"],
-    "mcp":             ["model context protocol", "엠씨피"],
-    "rag":             ["retrieval augmented generation", "retrieval-augmented", "검색 증강"],
-    "llm":             ["대규모 언어모델", "large language model", "언어모델"],
-    "prompt":          ["프롬프트", "prompting", "프롬프트 엔지니어링", "prompt engineering"],
-    "productivity":    ["생산성", "팀 생산성"],
-    "open-source-llm": ["오픈소스 모델", "오픈소스 llm", "open source llm", "ollama", "llama", "qwen", "deepseek"],
-    "security":        ["보안", "시큐리티"],
-    "fine-tuning":     ["파인튜닝", "fine tuning", "미세조정"],
-    "design-system":   ["디자인시스템", "design system", "디자인 시스템"],
-    "ux":              ["유엑스", "user experience", "사용자 경험"],
-    "product-management": ["프로덕트 매니지먼트", "pm", "po", "제품 관리", "프로덕트매니저", "프로덕트 매니저"],
-
-    "ax":                  ["팀ax", "팀 ax", "개인ax", "ai 전환", "에이엑스"],
-    "workflow-automation": ["자동화", "워크플로우 자동화", "워크플로우자동화", "업무 자동화"],
-    "mvp":                 ["최소기능제품", "minimum viable product"],
-    "prd":                 ["제품 요구사항 문서", "product requirements document"],
-    "problem-definition":  ["문제정의", "문제 정의"],
-    "ai-regulation":       ["ai규제", "ai 규제", "ai거버넌스", "ai 거버넌스", "ai governance", "ai정책"],
-    "export-control":      ["수출통제", "수출 통제"],
-    "sovereign-ai":        ["소버린ai", "소버린 ai", "sovereign ai"],
-    "frontier-model":      ["프론티어모델", "프론티어 모델", "covered frontier model"],
-    "context-engineering": ["컨텍스트엔지니어링", "컨텍스트 엔지니어링", "context engineering"],
-    "agentic-coding":      ["에이전틱코딩", "에이전틱 코딩", "agenticcoding", "agentic coding"],
-    "hand-coding":         ["손코딩", "손 코딩"],
-    "cognitive-debt":      ["인지부채", "인지 부채"],
-    "deskilling":          ["탈숙련화", "탈숙련"],
-    "model-selection":     ["ai모델선택", "모델선택", "모델 선택"],
-    "no-code":             ["노코드", "노 코드", "nocode"],
-    "pmf":                 ["제품시장적합성", "product market fit", "product-market fit"],
-    "gemini":              ["제미나이", "구글ai스튜디오", "google ai studio"]
+    "vibe-coding": [
+      "바이브코딩",
+      "vibe coding",
+      "바이브 코딩"
+    ],
+    "claude-code": [
+      "claudecode",
+      "claude code",
+      "클로드코드",
+      "클로드 코드"
+    ],
+    "coding-agent": [
+      "코딩 에이전트",
+      "coding agent",
+      "code agent",
+      "codex"
+    ],
+    "ai-agent": [
+      "에이전트",
+      "agent",
+      "agents",
+      "ai agent",
+      "멀티에이전트",
+      "multi-agent",
+      "multi agent"
+    ],
+    "mcp": [
+      "model context protocol",
+      "엠씨피"
+    ],
+    "rag": [
+      "retrieval augmented generation",
+      "retrieval-augmented",
+      "검색 증강"
+    ],
+    "llm": [
+      "대규모 언어모델",
+      "large language model",
+      "언어모델"
+    ],
+    "prompt": [
+      "프롬프트",
+      "prompting",
+      "프롬프트 엔지니어링",
+      "prompt engineering"
+    ],
+    "productivity": [
+      "생산성",
+      "팀 생산성"
+    ],
+    "open-source-llm": [
+      "오픈소스 모델",
+      "오픈소스 llm",
+      "open source llm",
+      "ollama",
+      "llama",
+      "qwen",
+      "deepseek"
+    ],
+    "security": [
+      "보안",
+      "시큐리티"
+    ],
+    "fine-tuning": [
+      "파인튜닝",
+      "fine tuning",
+      "미세조정"
+    ],
+    "design-system": [
+      "디자인시스템",
+      "design system",
+      "디자인 시스템"
+    ],
+    "ux": [
+      "유엑스",
+      "user experience",
+      "사용자 경험"
+    ],
+    "product-management": [
+      "프로덕트 매니지먼트",
+      "pm",
+      "po",
+      "제품 관리",
+      "프로덕트매니저",
+      "프로덕트 매니저"
+    ],
+    "ax": [
+      "팀ax",
+      "팀 ax",
+      "개인ax",
+      "ai 전환",
+      "에이엑스"
+    ],
+    "workflow-automation": [
+      "자동화",
+      "워크플로우 자동화",
+      "워크플로우자동화",
+      "업무 자동화"
+    ],
+    "mvp": [
+      "최소기능제품",
+      "minimum viable product"
+    ],
+    "prd": [
+      "제품 요구사항 문서",
+      "product requirements document"
+    ],
+    "problem-definition": [
+      "문제정의",
+      "문제 정의"
+    ],
+    "ai-regulation": [
+      "ai규제",
+      "ai 규제",
+      "ai거버넌스",
+      "ai 거버넌스",
+      "ai governance",
+      "ai정책"
+    ],
+    "export-control": [
+      "수출통제",
+      "수출 통제"
+    ],
+    "sovereign-ai": [
+      "소버린ai",
+      "소버린 ai",
+      "sovereign ai"
+    ],
+    "frontier-model": [
+      "프론티어모델",
+      "프론티어 모델",
+      "covered frontier model"
+    ],
+    "context-engineering": [
+      "컨텍스트엔지니어링",
+      "컨텍스트 엔지니어링",
+      "context engineering"
+    ],
+    "agentic-coding": [
+      "에이전틱코딩",
+      "에이전틱 코딩",
+      "agenticcoding",
+      "agentic coding"
+    ],
+    "hand-coding": [
+      "손코딩",
+      "손 코딩"
+    ],
+    "cognitive-debt": [
+      "인지부채",
+      "인지 부채"
+    ],
+    "deskilling": [
+      "탈숙련화",
+      "탈숙련"
+    ],
+    "model-selection": [
+      "ai모델선택",
+      "모델선택",
+      "모델 선택"
+    ],
+    "no-code": [
+      "노코드",
+      "노 코드",
+      "nocode"
+    ],
+    "pmf": [
+      "제품시장적합성",
+      "product market fit",
+      "product-market fit"
+    ],
+    "gemini": [
+      "제미나이",
+      "구글ai스튜디오",
+      "google ai studio"
+    ],
+    "career-transition": [
+      "커리어전환",
+      "커리어 전환",
+      "직무전환",
+      "직무 전환"
+    ],
+    "junior-developer": [
+      "주니어개발자",
+      "주니어 개발자",
+      "주니어"
+    ],
+    "developer-role": [
+      "개발자역할",
+      "개발자 역할"
+    ],
+    "fundamentals": [
+      "기본기"
+    ],
+    "math": [
+      "수학"
+    ],
+    "algorithm": [
+      "알고리즘"
+    ],
+    "data-structure": [
+      "자료구조",
+      "자료 구조"
+    ],
+    "harness-engineering": [
+      "하네스엔지니어링",
+      "하네스 엔지니어링",
+      "harness engineering",
+      "하네스"
+    ],
+    "loop-engineering": [
+      "루프엔지니어링",
+      "루프 엔지니어링",
+      "loop engineering"
+    ],
+    "ai-memory": [
+      "ai메모리",
+      "ai 메모리",
+      "에이전트 기억"
+    ],
+    "cold-start": [
+      "콜드스타트",
+      "콜드 스타트",
+      "cold start"
+    ],
+    "local-ai": [
+      "로컬ai",
+      "로컬 ai",
+      "로컬llm",
+      "로컬 llm"
+    ],
+    "agents-md": [
+      "agents.md",
+      "컨텍스트파일",
+      "컨텍스트 파일"
+    ],
+    "obsidian": [
+      "옵시디언",
+      "옵시디언플러그인"
+    ],
+    "personal-tool": [
+      "개인용도구",
+      "개인 도구",
+      "루틴앱"
+    ],
+    "ai-slop": [
+      "ai슬롭",
+      "ai 슬롭",
+      "슬롭"
+    ],
+    "ai-skill": [
+      "ai스킬",
+      "ai 스킬",
+      "스킬"
+    ],
+    "problem-solving": [
+      "문제해결",
+      "문제 해결"
+    ]
   }
 }

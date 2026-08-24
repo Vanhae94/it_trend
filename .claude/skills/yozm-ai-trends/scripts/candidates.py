@@ -74,6 +74,14 @@ def main():
         print(f"ERROR: {week_id}.json 없음 — fetch_trends.py 를 먼저 실행하세요.", file=sys.stderr)
         sys.exit(2)
     idx = load_json(os.path.join(root, "_data", "index.json"), {}) or {}
+    # 직전 주차 조회수 → 주간 증가분(Δ). 재조명 우선순위 판단 근거(SKILL.md ②).
+    prev_views = {}
+    covered = [w for w in (idx.get("weeks_covered") or []) if w < week_id]
+    if covered:
+        prev = load_json(os.path.join(root, "_data", "weeks", f"{max(covered)}.json"))
+        if prev:
+            prev_views = {a.get("id"): (a.get("raw") or {}).get("view_count") or 0
+                          for a in (prev.get("articles") or [])}
     analyzed = idx.get("analyzed_weeks") or {}
     article_weeks = idx.get("article_weeks") or {}
     weeks_covered = [w for w in (idx.get("weeks_covered") or []) if w < week_id]
@@ -94,6 +102,8 @@ def main():
             "hist": hist,
             "streak": streak_of(aid, week_id, weeks_covered, article_weeks),
             "has_body": bool(((a.get("raw") or {}).get("body") or "").strip()),
+            "delta": (((a.get("raw") or {}).get("view_count") or 0) - prev_views[aid]) if aid in prev_views else None,
+            "stale": (len(covered) - covered.index(max(hist))) if hist and max(hist) in covered else None,
         }
         (revisit if hist else fresh).append(row)
 
@@ -111,13 +121,19 @@ def main():
         for r in rows:
             hist = ("분석 " + "·".join(w.replace("2026-", "") for w in r["hist"])) if r["hist"] else "미분석"
             body = "" if r["has_body"] else "  ⚠본문없음(--pool 확대 필요)"
-            print(f'   {r["rank"]:>2}위 {short(r["views"]):>6} [{r["cat"]}] {hist}'
+            dt = "  Δ신규" if r["delta"] is None else f'  Δ{r["delta"]:+,}'
+            if r["delta"] is not None and r["delta"] < 50:
+                dt += "(식음)"
+            stale = f' · 분석후 {r["stale"]}주 경과' if r["stale"] else ""
+            print(f'   {r["rank"]:>2}위 {short(r["views"]):>6}{dt} [{r["cat"]}] {hist}{stale}'
                   f' · 인기 {r["streak"]}주 연속 · {r["read"]}분 · id:{r["id"]}{body}')
             print(f'        {r["title"][:60]}')
         print()
 
     show(fresh, "① 신규 트랙 — 한 번도 분석하지 않은 글", args.fresh)
-    show(revisit, "② 재조명 트랙 — 이미 분석했으나 인기 풀에 남은 글", args.revisit)
+    # 재조명은 '조회수 × 마지막 분석 이후 경과 주차'로 정렬(SKILL.md ②). Δ<50은 식은 글로 후순위.
+    revisit.sort(key=lambda r: -(r["views"] * max(1, r["stale"] or 1) * (0.2 if (r["delta"] or 0) < 50 else 1)))
+    show(revisit, "② 재조명 트랙 — 이미 분석했으나 인기 풀에 남은 글 (우선순위 정렬)", args.revisit)
 
     nonai = [r for r in arts if "ai" not in [f.lower() for f in ((r.get("raw") or {}).get("category_flags") or [])]]
     print(f"참고: 요즘IT 원본 분류에 AI 플래그가 없는 글 {len(nonai)}건"
