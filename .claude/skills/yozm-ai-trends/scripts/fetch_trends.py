@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-fetch_trends.py — 요즘IT 인기 AI 글 주간 수집기 (멱등)
+fetch_trends.py — 요즘IT 인기 글 주간 수집기 (멱등)
 
-요즘IT 공개 JSON API에서 인기 목록을 받아 category flag로 AI 글만 필터하고,
+요즘IT 공개 JSON API에서 인기 목록을 받아 전반 IT 글을 수집하고,
 view_count 상위 pool을 골라 각 글 본문(raw_content)까지 보강해
 주차별 불변 기록(_data/weeks/YYYY-Wnn.json)으로 저장한다.
 분석 필드(selected/classify/analysis/learning/week_summary)는 골격(null)만 만들고 Claude가 채운다.

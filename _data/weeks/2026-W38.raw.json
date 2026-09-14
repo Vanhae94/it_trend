@@ -1,0 +1,676 @@
+{
+  "list": [
+    {
+      "id": 3914,
+      "title": "리더는 \"AI 왜 안 쓰냐\" VS 실무자는 \"사고 나면요?\"",
+      "author": {
+        "id": 325,
+        "name": "수께끼수",
+        "author_url_identifier": "isbg2005",
+        "tagline": "11년차 현업 게임기획자",
+        "image_url": "https://cdn.wishket.com/news_profiles/390690_20260609_bc96c6c1bc706f88.png"
+      },
+      "description": "라이브 서비스는 멈출 수 없다. 그런데 지금 대부분의 회사가 쓰라고 하는 AI만큼은 유독 이 조직에서 더디다. 몰라서도 아니고, 하기 싫어서도 아니다. 데이터 테이블과 오래된 코드가 스파게티처럼 얽혀 있어 AI에게 한 부분만 맡길 수 없고, 사람이 감각으로 깎아야 하는 폴리싱 작업도 섞여 있고, 검증할 여유도 없다. 위에서는 왜 안 쓰냐고 묻고, 아래에서는 사고 나면 누가 책임지냐고 답한다. 어느 쪽도 틀린 말을 하고 있지 않다. 그 조건과 그럼에도 시도해 볼 수 있는 것을 라이브 서비스 게임 조직의 경험으로 정리했다.",
+      "date_published": "2026-08-26T09:00:17+09:00",
+      "repr_date_published": "2026.08.26.",
+      "featured": 0,
+      "view_count": 7140,
+      "read_time": 14,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3914/edit__3_.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3912,
+      "title": "충원이 거절되자 \"이거 한번 해보자\"로 시작한 자동화",
+      "author": {
+        "id": 326,
+        "name": "아이엠조차장",
+        "author_url_identifier": "seperosjhg",
+        "tagline": "AI로 일하는 공공IT 사업관리자",
+        "image_url": "https://cdn.wishket.com/news_profiles/393311_20260709_95c53fca3579bda3.jpg"
+      },
+      "description": "지금 반복 업무에 짓눌려 있으면서도 '나는 코딩을 못 하니까'라며 미뤄 두고 있다면, 이 글은 그 자리에 서 본 사람의 기록이다. 업무가 두 배로 늘고 체계는 없었지만, 인력 요청마저 받아들여지지 않았을 때, 사업관리 담당자가 붙잡은 건 클로드 코드였다. 시연 하나를 보고 옆자리 동료와 나눈 \"이거 한번 해보자\"는 한마디와 명령어 한 줄을 복사해 붙여넣은 것이 시작의 전부였다. 자동화는 여유가 아니라 한계에서 시작됐다는 석 달의 기록을 정리했다.",
+      "date_published": "2026-08-25T09:00:17+09:00",
+      "repr_date_published": "2026.08.25.",
+      "featured": 0,
+      "view_count": 7169,
+      "read_time": 9,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3912/SUM.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3911,
+      "title": "아니요, 로컬 모델이 승리하진 않을 겁니다",
+      "author": {
+        "id": 8,
+        "name": "요즘IT의 번역글",
+        "author_url_identifier": "yozm_global",
+        "tagline": "작가",
+        "image_url": "/media/news/author/%EC%9A%94%EC%A6%98IT%EC%9D%98_%EB%B2%88%EC%97%AD%EA%B8%80%EB%93%A4_6tRv0qX.jpg"
+      },
+      "description": "새로운 오픈 웨이트(Open Weights), 모델의 가중치를 공개한 형태) AI 모델이 출시될 때마다 사람들은 “로컬 모델이 미래”라고 말합니다. 모두가 노트북이나 휴대폰에서 AI 모델을 실행할 수 있게 된다면, 굳이 수십억 달러를 들여 데이터센터를 구축할 필요가 있겠느냐는 것이죠. 하지만 저는 이런 생각이 결국 실패할 것이라고 봅니다. 오픈 웨이트 모델이 아무리 강력해지더라도 대부분의 AI 작업은 결국 데이터센터에서 이루어질 것입니다.",
+      "date_published": "2026-08-24T14:00:17+09:00",
+      "repr_date_published": "2026.08.24.",
+      "featured": 0,
+      "view_count": 6192,
+      "read_time": 9,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3911/Gemini_Generated_Image_tdm02ltdm02ltdm0.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3908,
+      "title": "요즘 클로드가 한국어를 어색하게 쓴다고 느꼈다면",
+      "author": {
+        "id": 307,
+        "name": "요즘 프로덕트 메이커",
+        "author_url_identifier": "FinalCatti",
+        "tagline": "프로덕트 메이커들의 영감이 될 콘텐츠",
+        "image_url": "https://cdn.wishket.com/news_profiles/325770_20260121_44cd5935b35e908a.jpg"
+      },
+      "description": "요즘 클로드가 쓰는 한국어가 어딘가 어색하다고 느끼셨나요? fluent-korean은 클로드가 조사와 어미를 빠뜨리지 않고 자연스러운 한국어를 쓰도록 잡아주는 도구입니다. 이와 함께 AI 에이전트가 어떻게 굴러가는지 두뇌와 눈, 손발에 빗대 풀어낸 무료 교과서도 소개하고요. AI가 뭐든 만들어주는 시대에 정작 사람이 챙겨야 할 것은 무엇인지 짚은 개발자의 글까지 담았습니다. 이번 주 프로덕트 메이커가 주목할 세 가지를 정리했습니다.",
+      "date_published": "2026-08-21T09:00:17+09:00",
+      "repr_date_published": "2026.08.21.",
+      "featured": 0,
+      "view_count": 35432,
+      "read_time": 10,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "프로덕트",
+          "flag": "product",
+          "order": 7,
+          "og_title": "IT 프로덕트 이야기들 | 요즘IT",
+          "og_description": "프로덕트를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_product.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3908/003_%EC%8D%B8%EB%84%A4%EC%9D%BC_edit.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3907,
+      "title": "클로드 코드 제대로 써먹는 프롬프트 작성 팁 6가지",
+      "author": {
+        "id": 185,
+        "name": "길벗",
+        "author_url_identifier": "gilbut",
+        "tagline": "작가",
+        "image_url": "https://cdn.wishket.com/news_profiles/110736_20231023_1168f4a774226940.png"
+      },
+      "description": "같은 에이전트를 만들더라도 요청 방식에 따라 결과물의 완성도는 크게 달라집니다. 배경과 목적, 제약을 먼저 설명해야 클로드 코드가 상황에 맞는 결과물을 설계할 수 있고, 이메일·PDF·JSON 등 매체에 맞는 출력 형식과 예외 처리까지 미리 말해 두면 결과의 신뢰도가 달라집니다. 복잡한 작업은 단계별로 나눠 요청하고, 결과가 마음에 들지 않을 때는 무엇이·왜·어떻게 문제인지 짚어야 원하는 방향에 닿습니다. 배경 설명부터 수정 요청, 그대로 쓰는 프롬프트 템플릿까지, 클로드 코드를 제대로 써먹는 프롬프트 작성 팁 6가지를 정리했습니다.",
+      "date_published": "2026-08-20T14:00:17+09:00",
+      "repr_date_published": "2026.08.20.",
+      "featured": 0,
+      "view_count": 13427,
+      "read_time": 8,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "개발",
+          "flag": "develop",
+          "order": 1,
+          "og_title": "IT 개발 이야기들 | 요즘IT",
+          "og_description": "개발을 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_develop.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3907/%EB%B8%94%EB%A1%9C%EA%B7%B8_read_IT_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3906,
+      "title": "출근하면 코드부터 짜던 개발자가 이제 봇부터 켭니다",
+      "author": {
+        "id": 313,
+        "name": "꼼비",
+        "author_url_identifier": "ggombee",
+        "tagline": "AI·프론트엔드 엔지니어, 강의자",
+        "image_url": "https://cdn.wishket.com/news_profiles/385835_20260430_2b29fbbce6597969.jpg"
+      },
+      "description": "요즘 출근해서 가장 먼저 하는 일은 코드 에디터를 켜는 게 아니라 봇을 켠다. QA가 Slack DM으로 \"고쳐줘\"라고 보내면 봇이 티켓을 분석하고 수정하고 MR까지 올리는데, 위임은 맡기는 게 아니라 맡겨도 같은 결과가 나온다는 보장이 있을 때만 성립한다. 그 보장을 만든 게 하네스 엔지니어링이다. 실제로 코드를 안 친 결과물을 AI 코드 리뷰에 맡겨보니 기술 완성도는 85점, 명세 반영률은 62.5%에 그쳤다. 그 틈에서 일을 \"몇 줄을 쳤나\"가 아니라 \"무엇을 정확히 정의했나\"로 다시 정의하게 된 이야기를 정리했다.",
+      "date_published": "2026-08-20T09:00:17+09:00",
+      "repr_date_published": "2026.08.20.",
+      "featured": 0,
+      "view_count": 7262,
+      "read_time": 10,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3906/img-01.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3903,
+      "title": "Orca vs. Paseo vs. 순정: 에이전트 관리 도구 비교하기",
+      "author": {
+        "id": 299,
+        "name": "프로덕트 밸리",
+        "author_url_identifier": "kimmoveit5",
+        "tagline": "IT 프로덕트 다 비교해 드림",
+        "image_url": "https://cdn.wishket.com/news_profiles/325765_20250828_9e6500f0c93510da.jpg"
+      },
+      "description": "‘에이전트를 몇 개 돌릴 수 있는가’에는 이미 한계가 없습니다. 지금의 한계선은 사람이 몇 개를 지켜볼 수 있느냐입니다. Orca는 에이전트 여러 대를 한 화면에서 보기 쉽게 해주는 로컬 설치형 에이전트 전용 개발 환경(ADE)이고, Paseo는 어디서든 쉽게 에이전트를 돌리는 데 최적화된 도구입니다. 그래서 이 글에서는 Orca와 Paseo가 무엇을 해결해 주는지 살펴보고, 터미널을 그대로 쓰는 ‘순정’과 견줘 언제 무엇을 고르면 좋을지 정리해 봤습니다.",
+      "date_published": "2026-08-18T14:00:17+09:00",
+      "repr_date_published": "2026.08.18.",
+      "featured": 0,
+      "view_count": 8402,
+      "read_time": 10,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "프로덕트",
+          "flag": "product",
+          "order": 7,
+          "og_title": "IT 프로덕트 이야기들 | 요즘IT",
+          "og_description": "프로덕트를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_product.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3903/img-04.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3899,
+      "title": "이제 클로드가 만든 글엔 눈에 안 보이는 워터마크가 붙습니다",
+      "author": {
+        "id": 307,
+        "name": "요즘 프로덕트 메이커",
+        "author_url_identifier": "FinalCatti",
+        "tagline": "프로덕트 메이커들의 영감이 될 콘텐츠",
+        "image_url": "https://cdn.wishket.com/news_profiles/325770_20260121_44cd5935b35e908a.jpg"
+      },
+      "description": "이제 클로드로 쓴 글과 만든 이미지에는 눈에 보이지 않는 표시가 들어갑니다. 앤트로픽이 EU AI법에 따라 AI가 만든 콘텐츠에 워터마크를 넣기 시작했는데, 그 방식과 한계를 함께 짚어보겠습니다. 더불어 AI가 만든 티 나는 디자인을 걷어내주는 도구 Hallmark, 자기 컴퓨터로 앱에 로그인해 일하는 AI 동료 Grok Bot도 함께 담았습니다. 이번 주 프로덕트 메이커가 주목할 세 가지를 정리했어요.",
+      "date_published": "2026-08-14T09:00:17+09:00",
+      "repr_date_published": "2026.08.14.",
+      "featured": 0,
+      "view_count": 6827,
+      "read_time": 9,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "프로덕트",
+          "flag": "product",
+          "order": 7,
+          "og_title": "IT 프로덕트 이야기들 | 요즘IT",
+          "og_description": "프로덕트를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_product.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3899/004_%EC%8D%B8%EB%84%A4%EC%9D%BC_edit__2_.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3890,
+      "title": "자동화할 일을 고르는 것도 실력이다",
+      "author": {
+        "id": 326,
+        "name": "아이엠조차장",
+        "author_url_identifier": "seperosjhg",
+        "tagline": "AI로 일하는 공공IT 사업관리자",
+        "image_url": "https://cdn.wishket.com/news_profiles/393311_20260709_95c53fca3579bda3.jpg"
+      },
+      "description": "비개발자가 넉 달 동안 자동화 도구 열두 개를 만들며 알게 된 건, 진짜 어려운 건 코드를 짜는 일이 아니라 손댈 일을 고르는 일이라는 사실이다. 이번 글은 '어떻게 만들었나'가 아니라, 무엇을 먼저 만들고 무엇은 아예 만들지 않았나에 대한 이야기다. 자주 하는가, 오래 걸리는가, 틀리면 위험한가, 다시 쓸 수 있는가. 이 네 가지 기준으로 서명 검사·출근부 대조·예산 이월까지 실제 사례를 짚고, 자동화하지 않기로 한 일까지 함께 정리했다.",
+      "date_published": "2026-08-10T09:00:17+09:00",
+      "repr_date_published": "2026.08.10.",
+      "featured": 0,
+      "view_count": 13809,
+      "read_time": 9,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3890/img-01.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3875,
+      "title": "앤트로픽이 시스템 프롬프트를 80% 덜어내며 배운 것 6가지",
+      "author": {
+        "id": 307,
+        "name": "요즘 프로덕트 메이커",
+        "author_url_identifier": "FinalCatti",
+        "tagline": "프로덕트 메이커들의 영감이 될 콘텐츠",
+        "image_url": "https://cdn.wishket.com/news_profiles/325770_20260121_44cd5935b35e908a.jpg"
+      },
+      "description": "AI에게 일을 시킬 때 지시를 자세히 쓸수록 좋다고 생각하기 쉽지만, 앤트로픽은 정반대로 시스템 프롬프트를 80% 덜어냈고 성능 손실은 없었다고 합니다. 최신 모델에는 규칙보다 판단을 맡기라는 여섯 가지 원칙, AI가 만든 밋밋한 화면을 다듬어주는 디자인 스킬 모음 UI Skills, 그리고 사람 없이 4.5일간 허깅페이스를 파고든 자율 AI 에이전트 침입 사건까지. 이번 주 프로덕트 메이커가 주목할 세 가지를 정리했습니다.",
+      "date_published": "2026-07-31T09:00:17+09:00",
+      "repr_date_published": "2026.07.31.",
+      "featured": 0,
+      "view_count": 7146,
+      "read_time": 10,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "프로덕트",
+          "flag": "product",
+          "order": 7,
+          "og_title": "IT 프로덕트 이야기들 | 요즘IT",
+          "og_description": "프로덕트를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_product.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3875/4_CVCQh07.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3874,
+      "title": "우리 팀의 CLAUDE.md, AGENTS.md로 바꿔도 될까",
+      "author": {
+        "id": 154,
+        "name": "조훈(Hoon Jo)",
+        "author_url_identifier": "pagaia",
+        "tagline": "CNCF & AAIF 앰버서더",
+        "image_url": "https://cdn.wishket.com/news_profiles/238906_20230719_147e64cd2f3d779d.jpg"
+      },
+      "description": "CLAUDE.md는 AI 코딩 에이전트에 프로젝트 규칙을 알려주는 컨텍스트 파일로, 한국에서는 사실상 표준처럼 쓰입니다. 그런데 실제 글로벌 표준 형식은 CLAUDE.md가 아니라 AGENTS.md죠. 표준인 걸 알겠는데, 옮기면 느려지거나 비용이 더 들지는 않을까요? 그래서 Haiku부터 Fable 5까지 5개 모델로 총 210회 실측을 돌렸습니다. 결론부터 말하면, 어떤 모델에서도 성능이 떨어지거나 비용이 늘지 않았습니다. AGENTS.md가 표준이 된 흐름부터 측정 방법, 그리고 한 시간이면 끝나는 마이그레이션 5단계까지 순서대로 정리했습니다.",
+      "date_published": "2026-07-30T14:00:17+09:00",
+      "repr_date_published": "2026.07.30.",
+      "featured": 0,
+      "view_count": 10756,
+      "read_time": 13,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "개발",
+          "flag": "develop",
+          "order": 1,
+          "og_title": "IT 개발 이야기들 | 요즘IT",
+          "og_description": "개발을 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_develop.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3874/img-01.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3873,
+      "title": "우리 개발팀 맞춤 하네스 엔지니어링 구축하기",
+      "author": {
+        "id": 305,
+        "name": "요즘 세미나",
+        "author_url_identifier": "idearunner",
+        "tagline": "작가",
+        "image_url": "https://cdn.wishket.com/news_profiles/325169_20251104_ebc67b0a1edc27ff.png"
+      },
+      "description": "8개월 동안 개발자 4명이 170만 줄을 쌓자, 클로드 코드 플랜 모드만으로는 엉뚱한 작업이 늘고 출시 속도가 느려지기 시작했습니다. 스타트업에게 출시 속도는 회사의 존속과 닿아 있는 문제죠. 바이버스 AI는 시니어의 암묵지를 스킬로 형식지화하고, 메인 에이전트는 오케스트레이터로만 두는 팀 하네스 '마에스트로 데브'를 만들었습니다. 스펙이 하나라도 AI가 결정하면 결국 부채로 돌아온다는 원칙부터, 플랜·구현·E2E 테스트·PR 4단계 설계와 도입 후 바뀐 것들까지, 클코나잇 2 웨비나 발표를 정리했습니다.",
+      "date_published": "2026-07-30T09:00:17+09:00",
+      "repr_date_published": "2026.07.30.",
+      "featured": 0,
+      "view_count": 9044,
+      "read_time": 5,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3873/img-06.jpg",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3870,
+      "title": "개인용 AI 에이전트 ‘openhuman’ 직접 써본 후기",
+      "author": {
+        "id": 261,
+        "name": "효빈",
+        "author_url_identifier": "hbin12212",
+        "tagline": "프론트엔드 개발자 | 교육자",
+        "image_url": "https://cdn.wishket.com/news_profiles/320678_20260715_02fb93140ff83ab4.png"
+      },
+      "description": "요즘 챗봇은 대화를 기억하는 능력은 좋아졌지만, 이메일이나 코드 저장소 같은 내 실제 작업 맥락까지는 알지 못합니다. 그렇다면 에이전트가 처음부터 내 맥락을 알고 시작하면 어떻게 될까요? 이 질문을 정면으로 붙든 오픈소스 프로젝트가 openhuman입니다. Gmail·GitHub을 연동해 로컬 메모리(SQLite)를 쌓고 새 대화에서도 맥락을 자동으로 이어가는 이 도구를 며칠간 직접 설치해 쓰면서, '몇 주 걸릴 맥락을 몇 분 만에'라는 공식 소개가 실제로 맞는지 확인해 보았습니다. 써보니 '설정 없이 똑똑한' 도구보다 '쌓을수록 똑똑해지는' 도구에 가까웠죠.",
+      "date_published": "2026-07-29T09:00:17+09:00",
+      "repr_date_published": "2026.07.29.",
+      "featured": 0,
+      "view_count": 15881,
+      "read_time": 10,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3870/img-01.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3868,
+      "title": "클로드 채널 활용법: 아는 사람만 쓰는 실험 기능",
+      "author": {
+        "id": 305,
+        "name": "요즘 세미나",
+        "author_url_identifier": "idearunner",
+        "tagline": "작가",
+        "image_url": "https://cdn.wishket.com/news_profiles/325169_20251104_ebc67b0a1edc27ff.png"
+      },
+      "description": "클로드 코드 자동화를 헤드리스 모드에서 채널 기반 세션으로 옮긴 이야기입니다. MCP가 필요할 때 당겨오는 풀(Pull) 구조라면, 채널은 외부 이벤트를 클로드 세션에 밀어 넣는 푸시(Push) 구조인데요. 살아 있는 라이브 클로드 세션을 PTY로 띄워 자동화 런타임으로 쓰고, 컨트롤러를 라우터 삼아 클로드와 코덱스를 대화시키는 구현까지. 정책 변경은 하루 만에 철회됐지만, 리서치 프리뷰 기능인 Claude Channel을 실무자가 실제 자동화에 어디까지 활용했는지 보여주는 사례로 클코나잇 2 발표를 정리했습니다.",
+      "date_published": "2026-07-28T14:00:17+09:00",
+      "repr_date_published": "2026.07.28.",
+      "featured": 0,
+      "view_count": 10401,
+      "read_time": 11,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3868/img-21.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3866,
+      "title": "우리 개발자들, 이제 어떻게 해야 해?",
+      "author": {
+        "id": 297,
+        "name": "나루브라운",
+        "author_url_identifier": "narubrown",
+        "tagline": "글쓰는 주니어 개발자, 김원정입니다.",
+        "image_url": "https://cdn.wishket.com/news_profiles/340383_20250624_51df3d7abd90b9e1.jpg"
+      },
+      "description": "같은 요청에도 매번 다른 결과를 내놓는 비결정론적인 도구가 우리 손에 쥐어졌다. 마치 어떤 마법이 나올지 모르는 지팡이를 들고 각자의 주문을 외우는 기분이다. '깊은 지식이 있어야 AI를 제대로 쓴다'는 전제도, '사람이 만들었기 때문에 더 낫다'는 말도 더 이상 충분한 방어선이 되지 않는다. 백엔드에서 AI를 다루는 풀스택으로 직무를 전환한 한 주니어 개발자가, 흔들린 믿음과 그래도 놓고 싶지 않은 한 가지를 기록했다.",
+      "date_published": "2026-07-28T09:00:17+09:00",
+      "repr_date_published": "2026.07.28.",
+      "featured": 0,
+      "view_count": 19525,
+      "read_time": 9,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "개발",
+          "flag": "develop",
+          "order": 1,
+          "og_title": "IT 개발 이야기들 | 요즘IT",
+          "og_description": "개발을 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_develop.png"
+        },
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        },
+        {
+          "name": "커리어",
+          "flag": "career",
+          "order": 8,
+          "og_title": "IT 커리어 이야기들 | 요즘IT",
+          "og_description": "커리어 발전을 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_career.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3866/%EC%9A%B0%EB%A6%AC%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%93%A4_%EB%8C%80%ED%91%9C%EC%9D%B4%EB%AF%B8%EC%A7%80.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3867,
+      "title": "Opus 5부터는 클로드를 다르게 써야 한다?",
+      "author": {
+        "id": 317,
+        "name": "미어캣",
+        "author_url_identifier": "vision_jmin",
+        "tagline": "AI 사바나 망보기 담당",
+        "image_url": "https://cdn.wishket.com/news_profiles/325769_20260521_4855bdf4ca82e715.jpg"
+      },
+      "description": "앤트로픽이 클로드 오푸스 5를 내놓으며 페이블 5·소넷 5에 이어 5세대 라인업을 마무리했습니다. 흥미로운 건 앤트로픽이 '이제 다르게 쓰라'는 메시지를 냈다는 건데요. 최상위 모델 하나로 모든 일을 처리하던 방식은 이제 피해야 합니다. 또한, 벤치마크는 실사용을 다 설명하지 못하며, 성능은 모델 이름보다 하네스에서 갈리기 시작했죠. 오푸스 5 출시에 맞춰 앤트로픽이 함께 공개한 5세대 사용법 가이드, 지금 프롬프트에서 당장 손볼 지점까지, 새로운 클로드 사용법을 짚었습니다.",
+      "date_published": "2026-07-27T14:00:17+09:00",
+      "repr_date_published": "2026.07.27.",
+      "featured": 0,
+      "view_count": 28776,
+      "read_time": 9,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        },
+        {
+          "name": "트렌드",
+          "flag": "trend",
+          "order": 9,
+          "og_title": "IT 트렌드 이야기들 | 요즘IT",
+          "og_description": "트렌드에 관한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_trend.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3867/opus5-erp-02.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3863,
+      "title": "클로드 코드 팀 워크플로우: 42주 운영하며 정착시킨 방법",
+      "author": {
+        "id": 104,
+        "name": "딜라이트룸 제품 인사이트 팀",
+        "author_url_identifier": "5ef6fdf32513aa7c",
+        "tagline": "작가",
+        "image_url": "/media/news/author/%EB%94%9C%EB%9D%BC%EC%9D%B4%ED%8A%B8%EB%A3%B8_%EC%A0%9C%ED%92%88_%EC%9D%B8%EC%82%AC%EC%9D%B4%ED%8A%B8_%ED%8C%80.png"
+      },
+      "description": "딜라이트룸 알라미 iOS 팀은 SwiftUI·TCA 기반의 모듈화된 프로젝트에서 AI와 함께하는 개발 워크플로우를 구축했습니다. 에이전틱 코딩을 도입해 빌드·테스트·린트 실행은 물론 이슈 등록, 브랜치 생성, PR 작성까지 반복 업무를 자동화했고, AI는 단순한 코드 자동완성 도구를 넘어 코드베이스를 이해하는 개발 동료가 되었습니다. 이번 글에서는 AI를 실제 제품 개발에 어떻게 녹여냈는지와, 그 과정에서 얻은 경험과 노하우를 소개합니다.",
+      "date_published": "2026-07-24T14:00:17+09:00",
+      "repr_date_published": "2026.07.24.",
+      "featured": 0,
+      "view_count": 17855,
+      "read_time": 9,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3863/3.webp",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3861,
+      "title": "AI 도구 26개를 직접 만들며 알게 된 자동화 노하우",
+      "author": {
+        "id": 305,
+        "name": "요즘 세미나",
+        "author_url_identifier": "idearunner",
+        "tagline": "작가",
+        "image_url": "https://cdn.wishket.com/news_profiles/325169_20251104_ebc67b0a1edc27ff.png"
+      },
+      "description": "이번 글은 클코나잇 시즌 2의 'AI 도구 26개를 직접 만들며 알게 된 자동화 노하우'를 정리한 것입니다. 게임업계 제너럴리스트가 3개월간 26개의 AI 도구를 직접 구축하며 체득한 실무 자동화(AX)의 핵심 노하우를 공유합니다. 단순히 기술을 배우는 것을 넘어, '문제 정의' 역량이 왜 자동화의 8할을 차지하는지 설명합니다. 적합한 도구 선택 전략(n8n, Claude Code 등)부터 개발 속도를 높이는 PRD 작성 및 CLAUDE.md 활용법, 비개발자가 꼭 알아야 할 보안·접근성·확장성 체크리스트를 소개하며, 팀 내 자동화 문화를 이끌기 위해 리더가 먼저 모방과 커스텀을 실천하는 법을 제시합니다.",
+      "date_published": "2026-07-23T14:00:17+09:00",
+      "repr_date_published": "2026.07.23.",
+      "featured": 0,
+      "view_count": 10332,
+      "read_time": 5,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3861/image6.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3857,
+      "title": "클로드 코드로 5일 만에 웹 포털 런칭한 방법",
+      "author": {
+        "id": 305,
+        "name": "요즘 세미나",
+        "author_url_identifier": "idearunner",
+        "tagline": "작가",
+        "image_url": "https://cdn.wishket.com/news_profiles/325169_20251104_ebc67b0a1edc27ff.png"
+      },
+      "description": "이번 글은 클코나잇 2 웨비나에서 '클로드 코드로 5일 만에 웹 포털 런칭한 방법'을 정리한 것입니다. 비개발자 기획자가 클로드 코드(Claude Code)를 활용해 단 5일 만에 사내 웹 포털을 런칭한 실전 경험을 공유합니다. 슬랙 기반 정산 업무의 비효율을 해결하기 위해 두 번의 피벗을 거쳐 MVP를 완성한 과정과, 운영 중 발생한 인프라 이슈를 AI와 함께 해결한 노하우를 담았습니다. AI 시대, 기술보다 중요한 문제 정의와 기획자의 새로운 역할을 살펴봅니다.",
+      "date_published": "2026-07-21T14:00:17+09:00",
+      "repr_date_published": "2026.07.21.",
+      "featured": 0,
+      "view_count": 21200,
+      "read_time": 6,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3857/image6.png",
+      "is_news_scrapped": false
+    },
+    {
+      "id": 3852,
+      "title": "AI와 200만 줄의 코드를 작성하며 깨달은 것들",
+      "author": {
+        "id": 324,
+        "name": "이정훈",
+        "author_url_identifier": "cnovice",
+        "tagline": "스타트업 CTO & 아키텍트",
+        "image_url": null
+      },
+      "description": "저는 25년 경력의 소프트웨어 아키텍트로, 현재 스타트업에서 CTO로 재직 중입니다. 그리고 지난 몇 달간, AI와 단둘이서 200만 줄이 넘는 코드를 짰습니다. 수십 개의 서비스, 여러 개의 AI 에이전트, 여러 개의 모바일 앱까지, 단 몇 시간 만에 서비스가 올라가고, 하룻밤 사이에 API가 생겨났습니다. 코드 리뷰를 하면 구조가 그럴듯했고, 모든 점검을 통과했습니다. 누가 봐도 “제품 출시 준비 완료”처럼 보였죠. 그런데 막상 돌려보니, 단 5분도 자율적으로 작동하지 못했습니다. 이번 글은 제품을 만드는 사람, 그리고 ‘AI를 도입하면 생산성이 오른다’는 말을 믿고, 의사결정을 내려야 하는 분들을 위해 썼습니다.",
+      "date_published": "2026-07-16T09:00:17+09:00",
+      "repr_date_published": "2026.07.16.",
+      "featured": 0,
+      "view_count": 25643,
+      "read_time": 13,
+      "is_popular_news": true,
+      "category": [
+        {
+          "name": "AI",
+          "flag": "ai",
+          "order": 2,
+          "og_title": "IT와 AI 이야기들 | 요즘IT",
+          "og_description": "AI를 위한 모든 IT 콘텐츠를 확인해 보세요.",
+          "og_image": "/media/news/category/ogimage_ai.png"
+        }
+      ],
+      "thumbnail_image": "/media/news/3852/image3.jpg",
+      "is_news_scrapped": false
+    }
+  ]
+}

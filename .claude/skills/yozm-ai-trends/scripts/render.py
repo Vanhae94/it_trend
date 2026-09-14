@@ -84,6 +84,17 @@ def now_str():
     return datetime.datetime.now().astimezone().strftime("%Y-%m-%d %H:%M")
 
 
+def previous_week_id(week_id):
+    try:
+        year, week = (int(part) for part in week_id.split("-W"))
+        monday = datetime.date.fromisocalendar(year, week, 1)
+    except (AttributeError, TypeError, ValueError):
+        return ""
+    previous = monday - datetime.timedelta(weeks=1)
+    y, w, _ = previous.isocalendar()
+    return f"{y}-W{w:02d}"
+
+
 def first_sentence(text):
     t = (text or "").replace("\n", " ").strip()
     if not t:
@@ -322,20 +333,17 @@ def render_week(root, week_id, taxonomy, index_data):
         articles = [a for a in all_articles if a.get("selected")]  # 분석 전 미리보기 폴백
     ws = week.get("week_summary") or {}
 
-    # 연속 등장(streak): 이번 주에서 거슬러 올라가며 연속으로 트렌딩한 주차 수
-    weeks_covered = (index_data or {}).get("weeks_covered") or []
+    # 연속 등장(streak): 실제 ISO 주차가 이어지는 경우만 연속으로 센다.
     article_weeks = (index_data or {}).get("article_weeks") or {}
 
     def streak_for(pid):
         appears = set(article_weeks.get(pid, []))
         appears.add(week_id)  # 이번 주는 당연히 포함
-        if week_id not in weeks_covered:
-            return 1
-        i = weeks_covered.index(week_id)
-        s = 0
-        while i >= 0 and weeks_covered[i] in appears:
+        cursor = week_id
+        s = 1
+        while previous_week_id(cursor) in appears:
+            cursor = previous_week_id(cursor)
             s += 1
-            i -= 1
         return s
 
     # 재조명 횟수: 이번 주 이전에 분석(selected)된 주차 수
@@ -497,7 +505,7 @@ def build_monthly_synthesis(root, month, mweeks, index_data):
                                    for a in (w.get("articles") or []) if a.get("selected")))
            for w in sorted(mweeks, key=lambda x: x.get("week_id", ""))]
     spark = build_sparkline(pts, label="이 달 주차별 관심도 추이")
-    headline = data.get("headline_ko") or "이 달의 요즘IT AI 트렌드"
+    headline = data.get("headline_ko") or "이 달의 요즘IT 위클리"
     return (
         '<section class="section"><h2 class="section-title"><span class="ix">∑</span> 월간 종합 트렌드</h2>'
         f'<p class="hero__lede" style="margin-bottom:1.3rem">{esc(headline)}</p>'

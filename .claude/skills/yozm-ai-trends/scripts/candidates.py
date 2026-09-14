@@ -42,19 +42,26 @@ def short(n):
     return f"{n/1000:.1f}k".replace(".0k", "k") if n >= 1000 else str(n)
 
 
+def previous_week_id(week_id):
+    try:
+        year, week = (int(part) for part in week_id.split("-W"))
+        monday = datetime.date.fromisocalendar(year, week, 1)
+    except (AttributeError, TypeError, ValueError):
+        return ""
+    previous = monday - datetime.timedelta(weeks=1)
+    y, w, _ = previous.isocalendar()
+    return f"{y}-W{w:02d}"
+
+
 def streak_of(pid, week_id, weeks_covered, article_weeks):
-    """이번 주에서 거슬러 올라가며 연속 등장한 주차 수(render.py와 동일 규칙)."""
+    """실제 ISO 주차가 이어지는 인기 등장 횟수(render.py와 동일 규칙)."""
     appears = set(article_weeks.get(pid, []))
     appears.add(week_id)
-    covered = list(weeks_covered)
-    if week_id not in covered:
-        covered.append(week_id)
-        covered.sort()
-    i = covered.index(week_id)
-    s = 0
-    while i >= 0 and covered[i] in appears:
+    cursor = week_id
+    s = 1
+    while previous_week_id(cursor) in appears:
+        cursor = previous_week_id(cursor)
         s += 1
-        i -= 1
     return s
 
 
