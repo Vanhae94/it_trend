@@ -53,6 +53,18 @@ def previous_week_id(week_id):
     return f"{y}-W{w:02d}"
 
 
+def weeks_between(a, b):
+    """ISO 주차 a→b 사이의 실제 주 수(관측하지 않은 빈 주차도 센다)."""
+    try:
+        ya, wa = (int(x) for x in a.split("-W"))
+        yb, wb = (int(x) for x in b.split("-W"))
+        da = datetime.date.fromisocalendar(ya, wa, 1)
+        db = datetime.date.fromisocalendar(yb, wb, 1)
+    except (AttributeError, TypeError, ValueError):
+        return None
+    return (db - da).days // 7
+
+
 def streak_of(pid, week_id, weeks_covered, article_weeks):
     """실제 ISO 주차가 이어지는 인기 등장 횟수(render.py와 동일 규칙)."""
     appears = set(article_weeks.get(pid, []))
@@ -83,13 +95,19 @@ def main():
     idx = load_json(os.path.join(root, "_data", "index.json"), {}) or {}
     # 직전 주차 조회수 → 주간 증가분(Δ). 재조명 우선순위 판단 근거(SKILL.md ②).
     prev_views = {}
+    prev_week, gap = None, 1
     covered = [w for w in (idx.get("weeks_covered") or []) if w < week_id]
     if covered:
-        prev = load_json(os.path.join(root, "_data", "weeks", f"{max(covered)}.json"))
+        prev_week = max(covered)
+        gap = weeks_between(prev_week, week_id) or 1   # 관측을 건너뛴 주가 있으면 2 이상
+        prev = load_json(os.path.join(root, "_data", "weeks", f"{prev_week}.json"))
         if prev:
             prev_views = {a.get("id"): (a.get("raw") or {}).get("view_count") or 0
                           for a in (prev.get("articles") or [])}
     analyzed = idx.get("analyzed_weeks") or {}
+    # 재조명 소진 목록: 새 재료가 없다고 판정한 글은 후보 맨 뒤로 보낸다
+    exhausted = {k: v for k, v in (load_json(os.path.join(root, "_data", "revisit_exhausted.json"), {}) or {}).items()
+                 if not k.startswith("_")}
     article_weeks = idx.get("article_weeks") or {}
     weeks_covered = [w for w in (idx.get("weeks_covered") or []) if w < week_id]
 
@@ -110,14 +128,18 @@ def main():
             "streak": streak_of(aid, week_id, weeks_covered, article_weeks),
             "has_body": bool(((a.get("raw") or {}).get("body") or "").strip()),
             "delta": (((a.get("raw") or {}).get("view_count") or 0) - prev_views[aid]) if aid in prev_views else None,
-            "stale": (len(covered) - covered.index(max(hist))) if hist and max(hist) in covered else None,
+            "stale": weeks_between(max(hist), week_id) if hist else None,
         }
+        row["exhausted"] = exhausted.get(aid)
+        row["delta_pw"] = None if row["delta"] is None else row["delta"] / gap   # 주당 증가분
         (revisit if hist else fresh).append(row)
 
     pool = wk.get("pool_stats") or {}
     print(f"WEEK={week_id}  기간 {wk.get('date_range_ko','')}  "
           f"인기 {pool.get('popular_fetched')}건 중 AI {pool.get('ai_in_pool')}건 "
           f"({round((pool.get('pool_ai_share') or 0)*100)}%)")
+    if gap > 1:
+        print(f"⚠ 직전 관측 주차는 {prev_week}({gap}주 전) — 그사이 {gap - 1}주가 비어 Δ는 {gap}주 누적치이고, '식음' 판정·재조명 정렬은 주당 값으로 합니다.")
     print(f"후보 {len(arts)}건 = 신규 {len(fresh)} / 재조명 {len(revisit)}\n")
 
     def show(rows, title, want):
@@ -128,10 +150,18 @@ def main():
         for r in rows:
             hist = ("분석 " + "·".join(w.replace("2026-", "") for w in r["hist"])) if r["hist"] else "미분석"
             body = "" if r["has_body"] else "  ⚠본문없음(--pool 확대 필요)"
-            dt = "  Δ신규" if r["delta"] is None else f'  Δ{r["delta"]:+,}'
-            if r["delta"] is not None and r["delta"] < 50:
+            if r["delta"] is None:
+                dt = "  Δ신규"
+            elif gap > 1:
+                dt = f'  Δ{r["delta"]:+,}/{gap}주(주당 {r["delta_pw"]:+,.0f})'
+            else:
+                dt = f'  Δ{r["delta"]:+,}'
+            if r["delta_pw"] is not None and r["delta_pw"] < 50:
                 dt += "(식음)"
             stale = f' · 분석후 {r["stale"]}주 경과' if r["stale"] else ""
+            if r.get("exhausted"):
+                stale += f' · ⛔소진({r["exhausted"].get("week", "")})'
+
             print(f'   {r["rank"]:>2}위 {short(r["views"]):>6}{dt} [{r["cat"]}] {hist}{stale}'
                   f' · 인기 {r["streak"]}주 연속 · {r["read"]}분 · id:{r["id"]}{body}')
             print(f'        {r["title"][:60]}')
@@ -139,7 +169,7 @@ def main():
 
     show(fresh, "① 신규 트랙 — 한 번도 분석하지 않은 글", args.fresh)
     # 재조명은 '조회수 × 마지막 분석 이후 경과 주차'로 정렬(SKILL.md ②). Δ<50은 식은 글로 후순위.
-    revisit.sort(key=lambda r: -(r["views"] * max(1, r["stale"] or 1) * (0.2 if (r["delta"] or 0) < 50 else 1)))
+    revisit.sort(key=lambda r: -(r["views"] * max(1, r["stale"] or 1) * (0.2 if (r["delta_pw"] or 0) < 50 else 1) * (0 if r.get("exhausted") else 1)))
     show(revisit, "② 재조명 트랙 — 이미 분석했으나 인기 풀에 남은 글 (우선순위 정렬)", args.revisit)
 
     nonai = [r for r in arts if "ai" not in [f.lower() for f in ((r.get("raw") or {}).get("category_flags") or [])]]
