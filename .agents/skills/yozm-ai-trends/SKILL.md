@@ -44,8 +44,10 @@ py "<ROOT>\.Codex\skills\yozm-ai-trends\scripts\candidates.py" --root "<ROOT>" -
 각 기사의 `raw.summary`+`raw.body`(raw_content 평문)+`raw.keywords`로 판단한다.
 
 1. **선별 — 2트랙으로 5건**에 `selected: true` (단순 광고성·홍보성 제외):
-   - **신규 3건**: 한 번도 분석하지 않은 글 중 인기 상위부터.
-   - **재조명 2건**: 이미 분석했으나 인기 풀에 계속 살아남은 글.
+   - **신규 4건**: 한 번도 분석하지 않은 글 중 인기 상위부터.
+   - **재조명 1건**: 이미 분석했으나 인기 풀에 계속 살아남은 글.
+     기본값은 W42부터 1건이다(W34~W41은 2건). 그때까지 재조명한 여섯 건이 모두 두 번째 분석에서
+     새 재료가 소진됐고(`_data/revisit_exhausted.json`), 후보 대부분이 1~2주 전에 막 분석한 글이었다.
      우선순위는 **조회수 × 마지막 분석 이후 경과 주차**로 잡는다(연속 등장 길이만 보지 말 것).
      `candidates.py` 출력의 '분석 Wnn' 이력과 조회수를 함께 보고, **주간 조회 증가분이 사실상 0인 글**은
      이미 식은 글이므로 우선순위를 낮춘다(직전 주차 weeks JSON과 view_count를 비교하면 나온다).
@@ -53,9 +55,10 @@ py "<ROOT>\.Codex\skills\yozm-ai-trends\scripts\candidates.py" --root "<ROOT>" -
      `_data/analysis/<이전주차>.patch.json`에서 확인하고 겹치면 다른 관점(누적 관점, 후속 사건,
      반대 사례, 실무 적용 각도)으로 다시 쓴다. `why_now`에 **몇 번째 재조명인지와 이전 주차**를 밝힌다.
    - 두 트랙 합쳐 `primary_category` 5개가 **서로 겹치지 않게** 조합한다.
-   - 신규가 3건에 못 미치면 재조명을 늘리고(그 반대도 가능), 그 사실을 `week_summary`에 적는다.
+   - 신규가 4건에 못 미치면 재조명을 늘린다. 반대로 쓸 만한 재조명 후보가 없으면(전부 소진·식음이거나
+     직전 1~2주에 막 분석한 글) 신규 5건으로 간다. 어느 쪽이든 그 사실을 `week_summary`에 적는다.
    - 선정 근거는 사실대로 쓴다. "미분석 글만 골랐다"처럼 **후보 수를 감추는 표현 금지**
-     (예: "미분석 9건 중 주제가 겹치지 않도록 3건" + "재조명 2건").
+     (예: "미분석 9건 중 주제가 겹치지 않도록 4건" + "재조명 1건").
 2. 선별한 각 기사에 schema.json 형식대로 채운다:
    - `classify`: taxonomy.json의 **폐쇄형 10 카테고리**에서 `primary_category` 1개 + `categories` ≤2개.
      `topic_tags`는 `raw.keywords`(hash_tags)를 `keyword_aliases`로 정규화. `article_type`, `confidence`.

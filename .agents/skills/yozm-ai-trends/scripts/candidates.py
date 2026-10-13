@@ -6,8 +6,9 @@ candidates.py — 2트랙 선별 보조 (신규 / 재조명 후보 분류)
 요즘IT 인기 목록은 롤링이라 상위권 글이 여러 주 눌러앉는다. 매주 '아직 안 다룬 글'만
 좇으면 선정작이 계속 하위권으로 내려가므로, 주간 리포트는 두 트랙으로 고른다.
 
-  · 신규(3건)   — 한 번도 분석하지 않은 글 중 상위
-  · 재조명(2건) — 이미 분석했지만 인기 풀에 계속 살아남은 글을 다른 각도로 다시
+  · 신규(4건)   — 한 번도 분석하지 않은 글 중 상위
+  · 재조명(1건) — 이미 분석했지만 인기 풀에 계속 살아남은 글을 다른 각도로 다시
+                 (W34~W41은 3+2였다. 재조명 글이 모두 2회차에 소진돼 W42부터 4+1)
 
 이 스크립트는 판단하지 않고 후보만 정리해 보여준다(선별은 Claude가 한다).
 
@@ -62,8 +63,8 @@ def main():
     ap = argparse.ArgumentParser(description="2트랙(신규/재조명) 선별 후보 정리")
     ap.add_argument("--root", required=True)
     ap.add_argument("--week", default="auto")
-    ap.add_argument("--fresh", type=int, default=3, help="신규 트랙 목표 건수")
-    ap.add_argument("--revisit", type=int, default=2, help="재조명 트랙 목표 건수")
+    ap.add_argument("--fresh", type=int, default=4, help="신규 트랙 목표 건수")
+    ap.add_argument("--revisit", type=int, default=1, help="재조명 트랙 목표 건수")
     args = ap.parse_args()
 
     week_id = iso_week_id(datetime.date.today()) if args.week == "auto" else args.week
