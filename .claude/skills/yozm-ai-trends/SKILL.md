@@ -14,7 +14,7 @@ description: >-
 
 ## 핵심 경로
 - ROOT 기본값: `C:\Users\juse9\OneDrive\Desktop\지성\요즘IT`
-- 스크립트: `<ROOT>\.claude\skills\yozm-ai-trends\scripts\` (fetch_trends/merge_analysis/rollup/render)
+- 스크립트: `<ROOT>\.claude\skills\yozm-ai-trends\scripts\` (fetch_trends/candidates/merge_analysis/rollup/render)
 - 데이터: `<ROOT>\_data\` (weeks/ analysis/ months/ taxonomy.json index.json)
 - 산출물: `<ROOT>\<YYYY.MM>\<week>_주간리포트.html`, 각 월 index.html, 루트 index.html
 - 명세: 같은 폴더 schema.json, `<ROOT>\_data\taxonomy.json`
@@ -58,6 +58,8 @@ py "<ROOT>\.claude\skills\yozm-ai-trends\scripts\candidates.py" --root "<ROOT>" 
      재조명은 **반드시 새 각도**여야 한다 — 직전 분석의 `one_liner`/`key_points`/`key_terms`를
      `_data/analysis/<이전주차>.patch.json`에서 확인하고 겹치면 다른 관점(누적 관점, 후속 사건,
      반대 사례, 실무 적용 각도)으로 다시 쓴다. `why_now`에 **몇 번째 재조명인지와 이전 주차**를 밝힌다.
+     이번 회차로 본문의 새 재료를 다 썼다고 판단하면 `_data/revisit_exhausted.json`에
+     `"<id>": {"week": "<week>", "reason": "…"}`를 추가한다 — 다음 주부터 `candidates.py`가 그 글을 ⛔소진으로 맨 뒤에 둔다.
    - 두 트랙 합쳐 `primary_category` 5개가 **서로 겹치지 않게** 조합한다.
    - 신규가 4건에 못 미치면 재조명을 늘린다. 반대로 쓸 만한 재조명 후보가 없으면(전부 소진·식음이거나
      직전 1~2주에 막 분석한 글) 신규 5건으로 간다. 어느 쪽이든 그 사실을 `week_summary`에 적는다.

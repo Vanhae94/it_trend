@@ -14,7 +14,7 @@ description: >-
 
 ## 핵심 경로
 - ROOT 기본값: `C:\Users\juse9\OneDrive\Desktop\지성\요즘IT`
-- 스크립트: `<ROOT>\.Codex\skills\yozm-ai-trends\scripts\` (fetch_trends/merge_analysis/rollup/render)
+- 스크립트: `<ROOT>\.agents\skills\yozm-ai-trends\scripts\` (fetch_trends/candidates/merge_analysis/rollup/render)
 - 데이터: `<ROOT>\_data\` (weeks/ analysis/ months/ taxonomy.json index.json)
 - 산출물: `<ROOT>\<YYYY.MM>\<week>_주간리포트.html`, 각 월 index.html, 루트 index.html
 - 명세: 같은 폴더 schema.json, `<ROOT>\_data\taxonomy.json`
@@ -25,7 +25,7 @@ description: >-
 
 ### ① 수집 (스크립트)
 ```
-py "<ROOT>\.Codex\skills\yozm-ai-trends\scripts\fetch_trends.py" --root "<ROOT>" --week auto
+py "<ROOT>\.agents\skills\yozm-ai-trends\scripts\fetch_trends.py" --root "<ROOT>" --week auto
 ```
 - stdout 요약(순위·제목·👁조회수·카테고리·키워드)만 읽는다. 거대 JSON 통독 금지.
 - `STATUS=exists`면 이미 수집됨 → 재수집 필요 시 `--force`.
@@ -34,10 +34,14 @@ py "<ROOT>\.Codex\skills\yozm-ai-trends\scripts\fetch_trends.py" --root "<ROOT>"
 
 ### ①-2 후보 정리 (스크립트)
 ```
-py "<ROOT>\.Codex\skills\yozm-ai-trends\scripts\candidates.py" --root "<ROOT>" --week <week>
+py "<ROOT>\.agents\skills\yozm-ai-trends\scripts\candidates.py" --root "<ROOT>" --week <week>
 ```
 - 인기 목록이 **롤링**이라 상위권 글이 여러 주 눌러앉는다. 후보를 **신규/재조명**으로 갈라 보여준다.
 - `⚠본문없음`이 뜨면 `fetch_trends.py --pool 20 --force`로 재수집(집계 기준 `--pages 2`는 유지 — AI 비중 시계열 보존).
+- **관측을 건너뛴 주가 있으면**(예: W37·W39 미실행) 지난 주차는 **소급 수집하지 않는다** — 인기 목록은 실시간이라 과거 상태를 되살릴 수 없다.
+  `candidates.py`가 직전 관측 주차와의 간격을 표시하고, 주간 증가분(Δ)은 누적치를 **주당 값으로 나눠** '식음' 판정·재조명 정렬에 쓴다.
+  경과 주차는 빈 주도 센 실제 ISO 주 수다. 연속 인기(🔁)는 실제로 이어진 주차만 세므로 빈 주 직후에는 모두 끊긴다.
+  요약 `caveats_ko`에 빈 주와 그 영향(조회수 시계열 간격, 연속 등장 소멸, Δ가 누적치라는 점)을 밝힌다.
 
 ### ② 선별 + 1차 분석 (너 — 본문 기반)
 `<ROOT>\_data\weeks\<week>.json`의 `articles[]`(view_count 상위 인기 후보 pool)를 읽는다.
@@ -54,6 +58,8 @@ py "<ROOT>\.Codex\skills\yozm-ai-trends\scripts\candidates.py" --root "<ROOT>" -
      재조명은 **반드시 새 각도**여야 한다 — 직전 분석의 `one_liner`/`key_points`/`key_terms`를
      `_data/analysis/<이전주차>.patch.json`에서 확인하고 겹치면 다른 관점(누적 관점, 후속 사건,
      반대 사례, 실무 적용 각도)으로 다시 쓴다. `why_now`에 **몇 번째 재조명인지와 이전 주차**를 밝힌다.
+     이번 회차로 본문의 새 재료를 다 썼다고 판단하면 `_data/revisit_exhausted.json`에
+     `"<id>": {"week": "<week>", "reason": "…"}`를 추가한다 — 다음 주부터 `candidates.py`가 그 글을 ⛔소진으로 맨 뒤에 둔다.
    - 두 트랙 합쳐 `primary_category` 5개가 **서로 겹치지 않게** 조합한다.
    - 신규가 4건에 못 미치면 재조명을 늘린다. 반대로 쓸 만한 재조명 후보가 없으면(전부 소진·식음이거나
      직전 1~2주에 막 분석한 글) 신규 5건으로 간다. 어느 쪽이든 그 사실을 `week_summary`에 적는다.
@@ -68,19 +74,20 @@ py "<ROOT>\.Codex\skills\yozm-ai-trends\scripts\candidates.py" --root "<ROOT>" -
 3. **패치 JSON** 작성 → `<ROOT>\_data\analysis\<week>.patch.json`
    (형식: `{week_id, articles:{<id>:{selected,classify,analysis,learning}}, week_summary}`). 그다음:
 ```
-py "<ROOT>\.Codex\skills\yozm-ai-trends\scripts\merge_analysis.py" --root "<ROOT>" --patch "<ROOT>\_data\analysis\<week>.patch.json"
+py "<ROOT>\.agents\skills\yozm-ai-trends\scripts\merge_analysis.py" --root "<ROOT>" --patch "<ROOT>\_data\analysis\<week>.patch.json"
 ```
 
 ### ③ 트렌드 인사이트 (너 + 누적 데이터)
 ```
-py "<ROOT>\.Codex\skills\yozm-ai-trends\scripts\rollup.py" --root "<ROOT>"
+py "<ROOT>\.agents\skills\yozm-ai-trends\scripts\rollup.py" --root "<ROOT>"
 ```
 - rollup stdout(누적 상위 키워드)과 `index.json`의 `category_timeseries`/`keyword_freq`/`ai_share_timeseries`/`totals.weeks`를
   근거로 `week_summary` 작성(패치에 포함해 재머지).
 - `headline_ko`, `clusters`(primary_category로 묶어 ≥2건이면 클러스터), `narrative_ko`(3~5문장, **정량 근거 인용**),
   `recent_trend_ko`, `ai_share_note`("인기 N개 중 AI M개(P%)"), `caveats_ko`.
 - **콜드스타트 분기**(`totals.weeks`): 1주=기준선 수립 중 / 2주=단순 등장·소멸 / 3주+=지속·부상·식어감.
-- **부상 판정 기준**: 서로 다른 **2주 이상** 등장한 키만 "부상". 1주만 나온 키는 판정을 다음 주로 미루고
+- **부상 판정 기준**: 서로 다른 **2주 이상**, 서로 다른 기사로 등장한 키만 "부상". 단 두 등장이 **최근 6개 관측 주 안**에 있어야 하며,
+  그보다 간격이 벌어진 키는 "재등장"으로 적는다(W42 gemini·autonomous-agent처럼 9~10주 만에 다시 나온 경우). 1주만 나온 키는 판정을 다음 주로 미루고
   그 사실을 `recent_trend_ko`에 남긴다(다음 주에 실제로 재등장했는지 확인해 결론낸다).
 - **선별이 만든 착시를 반드시 분리**: 조회수 합·키워드 결번/복귀는 트렌드가 아니라 **선별 결과**일 때가 많다.
   재조명 트랙은 같은 기사의 태그를 다시 집계하므로 누적 카운트를 부풀린다. 신규 트랙만 고르면 조회수 합이 내려간다.
@@ -103,7 +110,7 @@ py "<ROOT>\.Codex\skills\yozm-ai-trends\scripts\rollup.py" --root "<ROOT>"
 
 ### ④ HTML 렌더 (스크립트)
 ```
-py "<ROOT>\.Codex\skills\yozm-ai-trends\scripts\render.py" --root "<ROOT>" --week <week>
+py "<ROOT>\.agents\skills\yozm-ai-trends\scripts\render.py" --root "<ROOT>" --week <week>
 ```
 - 주간 리포트 + 월간 index + 마스터 index 멱등 재생성. 연속 등장 글은 "🔁 N주 연속 인기",
   재조명 트랙은 "🔎 재조명 N회차" 배지가 `index.json`의 `analyzed_weeks` 기준으로 자동 표시된다.

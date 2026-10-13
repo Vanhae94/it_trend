@@ -74,18 +74,20 @@ Claude Code에서 이 폴더를 열고:
 ├─ _data/                                ← 모든 데이터 (재생성·트렌드 분석 소스)
 │  ├─ taxonomy.json                      ← 폐쇄형 카테고리 10개 + 키워드 별칭 사전
 │  ├─ index.json                         ← 전 주차 정량 롤업 (rollup.py가 매주 재생성)
+│  ├─ revisit_exhausted.json             ← 재조명 소진 목록 (candidates.py가 후보 맨 뒤로)
 │  ├─ weeks/<주차>.json                  ← 주차별 원본+분석 기록 (불변 raw)
 │  ├─ weeks/<주차>.raw.json              ← API 원본 응답 박제 (감사용)
 │  ├─ analysis/<주차>.patch.json         ← Claude가 작성하는 분석 패치
 │  └─ months/<YYYY.MM>.json              ← 월간 종합 트렌드 (월말 생성)
 ├─ docs/superpowers/{specs,plans}/       ← 설계·계획 문서
-└─ .claude/
-   ├─ launch.json                        ← 미리보기용 정적 서버 설정 (선택)
-   └─ skills/yozm-ai-trends/
-      ├─ SKILL.md                        ← 주간 워크플로우 절차 (Claude의 지침)
-      ├─ schema.json                     ← weeks 기사 객체 데이터 명세
-      ├─ scripts/                        ← fetch_trends / merge_analysis / rollup / render
-      └─ templates/                      ← report / monthly / master_index / article_card
+├─ .claude/
+│  ├─ launch.json                        ← 미리보기용 정적 서버 설정 (선택)
+│  └─ skills/yozm-ai-trends/             ← 스킬 원본 (Claude Code)
+│     ├─ SKILL.md                        ← 주간 워크플로우 절차 (Claude의 지침)
+│     ├─ schema.json                     ← weeks 기사 객체 데이터 명세
+│     ├─ scripts/                        ← fetch_trends / candidates / merge_analysis / rollup / render
+│     └─ templates/                      ← report / monthly / master_index / article_card
+└─ .agents/skills/yozm-ai-trends/        ← Codex용 사본 (아래 '스킬 사본 동기화')
 ```
 
 ---
@@ -121,6 +123,13 @@ Claude Code에서 이 폴더를 열고:
 | `render.py` | 분석 JSON → HTML 렌더 + 인덱스 재생성 | `--root` `--week YYYY-Wnn`(생략 시 인덱스만) |
 
 **멱등성:** 같은 주차 재수집은 `--force` 없으면 스킵(`STATUS=exists`). merge/rollup/render는 항상 안전하게 재실행 가능(중복 없음).
+
+**스킬 사본 동기화:** 스킬은 두 벌이다 — 원본 `.claude/skills/yozm-ai-trends/`(Claude Code)와 사본 `.agents/skills/yozm-ai-trends/`(Codex).
+둘 다 같은 `_data/`를 읽고 같은 HTML을 다시 쓰므로(`render.py`는 자기 폴더의 `templates/`로 월간·마스터 인덱스까지 재생성),
+한쪽만 낡으면 사이트 전체가 옛 로직으로 덮인다(W38~W42에 실제로 사본이 뒤처졌다). 원본을 고치면 **같은 커밋에서** 사본도 맞춘다 —
+SKILL.md 외 파일은 그대로 복사하고, SKILL.md만 `너(Claude)`→`너(Codex)`, `<ROOT>\.claude\skills\`→`<ROOT>\.agents\skills\` 두 가지를 바꾼다.
+`diff -r --exclude=__pycache__ --exclude=.pytest_cache .claude/skills/yozm-ai-trends .agents/skills/yozm-ai-trends`의 차이가
+SKILL.md의 그 7줄뿐이면 맞춰진 것이다.
 
 ---
 
