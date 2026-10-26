@@ -268,9 +268,11 @@
       "sovereign ai"
     ],
     "frontier-model": [
-      "프론티어모델",
+      "covered frontier model",
+      "프론티어 llm",
       "프론티어 모델",
-      "covered frontier model"
+      "프론티어llm",
+      "프론티어모델"
     ],
     "context-engineering": [
       "컨텍스트엔지니어링",
@@ -421,9 +423,13 @@
       "출력 스타일"
     ],
     "token-cost": [
-      "토큰비용",
+      "ai 모델 가격",
+      "ai모델가격",
+      "에이전트비용",
+      "토큰 가격",
       "토큰 비용",
-      "에이전트비용"
+      "토큰가격",
+      "토큰비용"
     ],
     "permission-settings": [
       "권한설정",
@@ -518,6 +524,20 @@
     "generative-ai": [
       "생성형ai",
       "생성형 ai"
+    ],
+    "grok-bot": [
+      "grok bot",
+      "grokbot",
+      "그록봇",
+      "그록 봇"
+    ],
+    "reverse-engineering": [
+      "리버스엔지니어링",
+      "리버스 엔지니어링",
+      "역공학"
+    ],
+    "mentoring": [
+      "멘토링"
     ]
   }
 }
