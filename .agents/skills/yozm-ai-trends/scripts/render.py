@@ -504,7 +504,7 @@ def build_monthly_synthesis(root, month, mweeks, index_data):
     pts = [(w.get("week_id"), sum(int(a.get("raw", {}).get("view_count") or 0)
                                    for a in (w.get("articles") or []) if a.get("selected")))
            for w in sorted(mweeks, key=lambda x: x.get("week_id", ""))]
-    spark = build_sparkline(pts, label="이 달 주차별 관심도 추이")
+    spark = build_sparkline(pts, label="이 달 주차별 선정 5건 조회수 합")
     headline = data.get("headline_ko") or "이 달의 요즘IT 위클리"
     return (
         '<section class="section"><h2 class="section-title"><span class="ix">∑</span> 월간 종합 트렌드</h2>'
