@@ -538,6 +538,43 @@
     ],
     "mentoring": [
       "멘토링"
+    ],
+    "worktree": [
+      "git worktree",
+      "깃워킹트리",
+      "워킹트리"
+    ],
+    "dev-pipeline": [
+      "개발 파이프라인",
+      "개발파이프라인"
+    ],
+    "prompt-cache": [
+      "프롬프트 캐시",
+      "프롬프트캐시"
+    ],
+    "reasoning-effort": [
+      "effort",
+      "추론 강도",
+      "추론강도"
+    ],
+    "cursor": [
+      "cursor"
+    ],
+    "midjourney": [
+      "midjourney",
+      "미드저니"
+    ],
+    "sql": [
+      "sql"
+    ],
+    "webassembly": [
+      "wasm",
+      "webassembly",
+      "웹어셈블리"
+    ],
+    "learning-service": [
+      "학습 서비스",
+      "학습서비스"
     ]
   }
 }
