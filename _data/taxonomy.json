@@ -459,9 +459,11 @@
       "semantic layer"
     ],
     "quality-gate": [
-      "품질게이트",
+      "qa",
+      "quality gate",
       "품질 게이트",
-      "quality gate"
+      "품질게이트",
+      "품질관리"
     ],
     "prompt-template": [
       "프롬프트템플릿",
@@ -506,7 +508,8 @@
       "1인 개발자"
     ],
     "monetization": [
-      "수익화"
+      "수익화",
+      "앤트로픽매출"
     ],
     "guardrail": [
       "가드레일"
@@ -588,6 +591,20 @@
     ],
     "multimodal": [
       "멀티모달"
+    ],
+    "requirements-traceability": [
+      "요구사항 명세",
+      "요구사항 추적표",
+      "요구사항명세",
+      "요구사항추적표"
+    ],
+    "test-automation": [
+      "bdd",
+      "e2e 테스트",
+      "e2e테스트",
+      "mock",
+      "테스트 자동화",
+      "테스트자동화"
     ]
   }
 }
