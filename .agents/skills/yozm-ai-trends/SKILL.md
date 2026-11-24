@@ -14,7 +14,7 @@ description: >-
 
 ## 핵심 경로
 - ROOT 기본값: `C:\Users\juse9\OneDrive\Desktop\지성\요즘IT`
-- 스크립트: `<ROOT>\.agents\skills\yozm-ai-trends\scripts\` (fetch_trends/candidates/merge_analysis/rollup/render)
+- 스크립트: `<ROOT>\.agents\skills\yozm-ai-trends\scripts\` (fetch_trends/candidates/prep/merge_analysis/rollup/render)
 - 데이터: `<ROOT>\_data\` (weeks/ analysis/ months/ taxonomy.json index.json)
 - 산출물: `<ROOT>\<YYYY.MM>\<week>_주간리포트.html`, 각 월 index.html, 루트 index.html
 - 명세: 같은 폴더 schema.json, `<ROOT>\_data\taxonomy.json`
@@ -67,6 +67,16 @@ py "<ROOT>\.agents\skills\yozm-ai-trends\scripts\candidates.py" --root "<ROOT>" 
      직전 1~2주에 막 분석한 글) 신규 5건으로 간다. 어느 쪽이든 그 사실을 `week_summary`에 적는다.
    - 선정 근거는 사실대로 쓴다. "미분석 글만 골랐다"처럼 **후보 수를 감추는 표현 금지**
      (예: "미분석 9건 중 주제가 겹치지 않도록 4건" + "재조명 1건").
+   - **준비 파일 (스크립트)** — 분석할 기사와 검토할 재조명 후보가 정해지면:
+     ```
+     py "<ROOT>\.agents\skills\yozm-ai-trends\scripts\prep.py" --root "<ROOT>" --week <week> --out "<작업 폴더>" --sel <id,...> --related "<id>=<관련id,...>;<id>=..." [--pick <최종 선정 id,...>] [--coverage <재조명 후보 id,...>]
+     ```
+     `--out`은 스크래치패드 같은 작업 폴더다(리포에 넣지 않는다). 기사 본문 `w<주>_<id>.txt`, 관련 과거 카드 `w<주>_related_<id>.txt`
+     (같은 시리즈·같은 필자·같은 주제, 재조명이면 자기 id도 넣는다), 과거 용어 `w<주>_past_terms.txt`를 만들어 분석 단계에 이 경로를 넘긴다.
+     과거 카드는 대상 주차보다 앞선 패치에서만 모으므로 이번 주 패치를 쓴 뒤 다시 돌려도 결과가 같다.
+     `--sel`에 검토만 할 후보를 넣었다면 최종 선정을 `--pick`으로 준다(생략하면 `--sel` 전체를 선정 합으로 센다).
+     stdout에는 상위 5건 합, 미분석 후보 합, 선정 합(신규·재조명 구분), 직전 관측 주차 대비 증가(빈 주가 있으면 주당 값도), 풀 이탈·첫 등장, 해시태그→기존 키가 나온다.
+     `--coverage`는 재조명 후보의 본문 문장을 직전 카드와 대조한 어림 지표다 — 소진 판정의 출발점일 뿐이고, 판정은 절 단위로 본문과 카드를 직접 대조해서 한다.
 2. 선별한 각 기사에 schema.json 형식대로 채운다:
    - `classify`: taxonomy.json의 **폐쇄형 10 카테고리**에서 `primary_category` 1개 + `categories` ≤2개.
      `topic_tags`는 `raw.keywords`(hash_tags)를 `keyword_aliases`로 정규화. `article_type`, `confidence`.

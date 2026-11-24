@@ -35,6 +35,7 @@ Claude Code에서 이 폴더를 열고:
   ├─ ① fetch_trends.py   요즘IT JSON API 호출 → 인기 상위 평탄화(+AI 비중 집계) → _data/weeks/<주차>.json 저장 (멱등)
   ├─ ①-2 candidates.py   후보를 신규/재조명 두 트랙으로 분류해 출력 (선별 근거)
   ├─ ② [Claude]          본문(raw_content) 기반 2트랙 선별(신규 4 + 재조명 1) + 분석 → 패치 JSON 작성
+  │   └ prep.py          선별 뒤 분석 전: 본문·관련 과거 카드·과거 용어 파일을 작업 폴더에 만들고 조회수 합·키 대응 출력
   │                       → merge_analysis.py로 weeks 기록에 병합
   ├─ ③ rollup.py         전 주차 집계 → _data/index.json (정량 신호 단일 출처)
   │     [Claude]          누적 신호 근거로 week_summary(동향) 작성 → 재머지
@@ -85,7 +86,7 @@ Claude Code에서 이 폴더를 열고:
 │  └─ skills/yozm-ai-trends/             ← 스킬 원본 (Claude Code)
 │     ├─ SKILL.md                        ← 주간 워크플로우 절차 (Claude의 지침)
 │     ├─ schema.json                     ← weeks 기사 객체 데이터 명세
-│     ├─ scripts/                        ← fetch_trends / candidates / merge_analysis / rollup / render
+│     ├─ scripts/                        ← fetch_trends / candidates / prep / merge_analysis / rollup / render
 │     └─ templates/                      ← report / monthly / master_index / article_card
 └─ .agents/skills/yozm-ai-trends/        ← Codex용 사본 (아래 '스킬 사본 동기화')
 ```
@@ -118,6 +119,7 @@ Claude Code에서 이 폴더를 열고:
 |---|---|---|
 | `fetch_trends.py` | 요즘IT 인기 목록+본문 API 수집·평탄화·멱등 저장 | `--root` `--week auto\|YYYY-Wnn` `--pool 20` `--pages 2` `--force` `--ai-only` `--date YYYY-MM-DD` |
 | `candidates.py` | 후보를 **신규/재조명** 2트랙으로 분류(분석 이력·연속 등장 표시) | `--root` `--week` `--fresh 4` `--revisit 1` |
+| `prep.py` | 분석 준비: 본문·관련 과거 카드·과거 용어 파일 생성 + 조회수 합·풀 변화·해시태그→기존 키·(선택) 재조명 후보 커버리지 출력 | `--root` `--week` `--out <작업 폴더>` `--sel` `--related` `--pick` `--coverage` |
 | `merge_analysis.py` | Claude의 분석 패치를 주차 기록에 병합(`raw` 보존) | `--root` `--patch <경로>` |
 | `rollup.py` | 전 주차 정량 롤업(`index.json`) 재생성 | `--root` |
 | `render.py` | 분석 JSON → HTML 렌더 + 인덱스 재생성 | `--root` `--week YYYY-Wnn`(생략 시 인덱스만) |
@@ -129,7 +131,7 @@ Claude Code에서 이 폴더를 열고:
 한쪽만 낡으면 사이트 전체가 옛 로직으로 덮인다(W38~W42에 실제로 사본이 뒤처졌다). 원본을 고치면 **같은 커밋에서** 사본도 맞춘다 —
 SKILL.md 외 파일은 그대로 복사하고, SKILL.md만 `너(Claude)`→`너(Codex)`, `<ROOT>\.claude\skills\`→`<ROOT>\.agents\skills\` 두 가지를 바꾼다.
 `diff -r --exclude=__pycache__ --exclude=.pytest_cache .claude/skills/yozm-ai-trends .agents/skills/yozm-ai-trends`의 차이가
-SKILL.md의 그 7줄뿐이면 맞춰진 것이다.
+SKILL.md의 `너(Claude)` 한 줄과 `<ROOT>\.claude\skills\` 경로가 든 줄들뿐이면 맞춰진 것이다(경로가 든 명령 줄이 늘면 차이 줄 수도 함께 는다).
 
 ---
 
@@ -199,6 +201,9 @@ SKILL.md의 그 7줄뿐이면 맞춰진 것이다.
 ```bash
 # 이번 주 수집
 py ".claude/skills/yozm-ai-trends/scripts/fetch_trends.py" --root "." --week auto
+
+# 분석 준비 (본문·관련 카드·과거 용어 파일을 작업 폴더에)
+py ".claude/skills/yozm-ai-trends/scripts/prep.py" --root "." --week <주차> --out "<작업 폴더>" --sel <id,...> --related "<id>=<관련id,...>" --pick <최종 선정 id,...> --coverage <재조명 후보 id>
 
 # 분석 병합 (Claude가 작성한 패치를 반영)
 py ".claude/skills/yozm-ai-trends/scripts/merge_analysis.py" --root "." --patch "_data/analysis/2026-W27.patch.json"
