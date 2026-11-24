@@ -605,6 +605,16 @@
       "mock",
       "테스트 자동화",
       "테스트자동화"
+    ],
+    "stack-overflow": [
+      "stack overflow",
+      "stackoverflow",
+      "스택오버플로"
+    ],
+    "agentic-retrieval": [
+      "agentic retrieval",
+      "에이전틱 검색",
+      "에이전틱검색"
     ]
   }
 }
